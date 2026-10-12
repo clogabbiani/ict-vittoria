@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How the parts talk · Unit 1 · ICT · Liceo Vittoria</title>
+<meta name="description" content="The CPU, the RAM, the GPU and the SSD are separate parts. So how do they talk to each other? In a PC they meet on one board. In your phone, most of them live on one chip.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../../static/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var d=document.documentElement;function g(k){try{var v=localStorage.getItem(k);return v===null?null:JSON.parse(v);}catch(e){return null;}}
+var t=g('ict-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
+if(g('ict-read'))d.setAttribute('data-read','1');if(g('ict-font')==='atkinson')d.setAttribute('data-font','atkinson');
+d.className+=' js';})();
+</script>
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/ix-a.css">
+<link rel="stylesheet" href="../../static/css/ix-b.css">
+<link rel="stylesheet" href="../../static/css/ix-c.css">
+<script defer src="../../static/js/ict-core.js"></script>
+<script defer src="../../static/js/site.js"></script>
+<script defer src="../../static/js/ix/spec-decoder.js"></script>
+</head>
+<body data-root="../../" data-page="chapter" data-slug="07-how-the-parts-talk">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-row wrap-wide">
+    <a class="brand" href="../../index.html"><span class="brand-ict">ICT</span><span class="brand-dot" aria-hidden="true">·</span><span class="brand-school">Liceo Vittoria</span></a>
+    <div class="tools" role="group" aria-label="Display options">
+      <button type="button" class="tool" data-action="theme" aria-label="Theme: auto. Change theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <span class="tool-label">Auto</span>
+      </button>
+      <button type="button" class="tool" data-action="read" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M3 19 8.5 5h1L15 19M5 14.5h8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5c1-1 4-1.2 4 1.3V19m0-3.2c-3.2-.4-4.6.5-4.6 1.8 0 2 3.4 2 4.6-.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="tool-label">Readable</span>
+      </button>
+      <button type="button" class="tool tool-font" data-action="font" aria-pressed="false">
+        <span class="tool-glyph" aria-hidden="true">Ag</span>
+        <span class="tool-label">Easy font</span>
+      </button>
+      <button type="button" class="tool" data-action="print">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="tool-label">Print</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav wrap-wide" aria-label="Main">
+    <a href="../../index.html">Home</a>
+    <a href="../../unit-1/index.html" aria-current="page">Unit 1</a>
+    <a href="../../unit-1/review/index.html">Review</a>
+    <a href="../../about/index.html">About</a>
+  </nav>
+</header>
+<div class="progress" data-progress-slug="07-how-the-parts-talk">
+  <div class="progress-track" role="progressbar" aria-label="Chapter progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-fill"></span></div>
+  <span class="progress-text">0% done</span>
+</div>
+<main id="main" tabindex="-1">
+<article class="chapter">
+  <header class="ch-head wrap">
+    <p class="eyebrow"><a href="../../unit-1/index.html">Unit 1</a> · Lesson 7</p>
+    <h1 class="ch-title">How the parts talk</h1>
+    <p class="ch-hook">The CPU, the RAM, the GPU and the SSD are separate parts. So how do they talk to each other? In a PC they meet on one board. In your phone, most of them live on one chip.</p>
+  </header>
+
+
+  <section class="block story" aria-labelledby="story-h">
+    <h2 id="story-h" class="block-h wrap"><span class="block-n" aria-hidden="true">01</span>The story</h2>
+      <p class="wrap story-p">In 1981 IBM started selling the IBM Personal Computer, the IBM PC. Inside the box there was one main board. IBM called it the &#34;system board&#34;; today we call it the motherboard. The processor (CPU), the memory chips and the slots for extra cards were all on that one board.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/v6_ibm_pc.jpg"
+       srcset="../../img/v6_ibm_pc-800.jpg 800w, ../../img/v6_ibm_pc.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1200" alt="The IBM PC, 1981. Inside the box, one main board connected all the parts." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">The IBM PC, 1981. Inside the box, one main board connected all the parts.</span>    <span class="credit">Photo: Federigo Federighi, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:IBM_Personal_Computer_(1981).jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">A motherboard is covered in thin copper lines called traces. Each trace connects one part to another. Electrical signals travel along these copper paths in billionths of a second. So the CPU can ask the RAM for a number and get it back almost at once. Almost every PC since 1981 is built the same way: a motherboard with sockets and slots, and parts that plug into it.</p>
+      <p class="wrap story-p">Phones had a problem. A board with many separate chips takes space and uses a lot of battery. So phone makers put the CPU, the GPU and the memory controller (the part that talks to the RAM) on one chip: a system on a chip, or SoC. Phones led the way: the first iPhone, in 2007, already ran on one.</p>
+      <p class="wrap story-p">In 2020 Apple&#39;s M1 chip brought the same idea to laptops like the MacBook Air. Inside one chip the distances are tiny, so the signals need less energy. That saves battery and space: a thin laptop can stay cool and last all day.</p>
+      <div class="wrap-photo wrap-portrait"><figure class="photo is-portrait ">
+  <img src="../../img/v6_m1.jpg"
+       srcset="../../img/v6_m1-800.jpg 701w, ../../img/v6_m1.jpg 1304w"
+       sizes="(min-width: 760px) 640px, 100vw"
+       width="1304" height="1488" alt="An Apple M1 chip (2020): CPU, GPU and memory controller in one package." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">An Apple M1 chip (2020): CPU, GPU and memory controller in one package.</span>    <span class="credit">Photo: Sonic8400, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Mac_Mini_M1_chip.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">Inside your computer today: a motherboard in every desktop PC and laptop, and an SoC in every phone and in many thin laptops.</p>
+  </section>
+
+  <section class="block science wrap" aria-labelledby="sci-h">
+    <h2 id="sci-h" class="block-h"><span class="block-n" aria-hidden="true">02</span>The science</h2>
+    <div class="concept">
+      <h3 class="concept-h">Inside the box</h3>
+      <p>The box is not the CPU: the CPU is one small chip inside it. Every part has one job. The CPU follows the instructions: it is the cook. RAM is the workbench: fast, but it forgets when the power goes. Storage (an SSD or a hard disk) is the pantry: it keeps everything. The GPU is a team of thousands of simple cooks that draw the pixels. The power supply turns mains electricity into the low voltage the parts need. Ports are sockets on the edge of the board for cables: USB, the screen, the network.</p>
+<div class="kitchen" data-part="cook">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-1-t">
+    <title id="k-1-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The cook.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part is-on">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li class="is-on"><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li><span class="k-l">The workbench</span> = RAM</li>
+    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div><figure class="photo photo-inline">
+  <img src="../../img/L5_desktop_open.jpg"
+       srcset="../../img/L5_desktop_open-800.jpg 800w, ../../img/L5_desktop_open.jpg 1280w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1280" height="960" alt="Inside the box" loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">Inside the box</span>    <span class="credit">Photo: Douglas Muth from Philadelphia, PA, USA, CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Insides_of_my_PC_(1314722197).jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure>    </div>
+    <div class="concept">
+      <h3 class="concept-h">The motherboard: where every part meets</h3>
+      <p>The motherboard is the big board that every part plugs into. It has a socket for the CPU, slots for the RAM and for a graphics card, connectors for the SSD, and ports on its edge. Copper traces join them. When you open a photo, its bits leave the SSD, travel along the traces to the RAM, and the CPU works on them there. In the kitchen, the motherboard is the floor of the kitchen: the cook, the workbench and the pantry all stand on it, close enough to pass things in billionths of a second.</p>
+<div class="kitchen" data-part="workbench">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-2-t">
+    <title id="k-2-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The workbench.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part is-on">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li class="is-on"><span class="k-l">The workbench</span> = RAM</li>
+    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div><figure class="photo is-portrait photo-inline">
+  <img src="../../img/v6_motherboard.jpg"
+       srcset="../../img/v6_motherboard-800.jpg 735w, ../../img/v6_motherboard.jpg 1469w"
+       sizes="(min-width: 760px) 640px, 100vw"
+       width="1469" height="1600" alt="The motherboard: where every part meets" loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">The motherboard: where every part meets</span>    <span class="credit">Photo: Jacek Halicki, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:2023_P%C5%82yta_g%C5%82%C3%B3wna_ASRock_A320M-DVS.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure>    </div>
+    <div class="concept">
+      <h3 class="concept-h">The whole kitchen on one chip</h3>
+      <p>A system on a chip (SoC) puts the CPU cores, the GPU and the memory controller on one piece of silicon. Phones also add the radios and the camera&#39;s image processor. The RAM chips sit right next to it. Short distances mean less energy and less space: that is why a phone lasts a day on a small battery. The price: you cannot change one part. If you want a faster CPU, you need a new phone.</p>
+<div class="kitchen" data-part="cook">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-3-t">
+    <title id="k-3-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The cook.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part is-on">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li class="is-on"><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li><span class="k-l">The workbench</span> = RAM</li>
+    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div><figure class="photo photo-inline">
+  <img src="../../img/L3_phone_soc.jpg"
+       srcset="../../img/L3_phone_soc-800.jpg 800w, ../../img/L3_phone_soc.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="900" alt="The whole kitchen on one chip" loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">The whole kitchen on one chip</span>    <span class="credit">Photo: Jaredryandloneria, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Qualcomm_snapdragon_450_chipset.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure>    </div>
+    <div class="concept">
+      <h3 class="concept-h">Phone or PC: same jobs, different packing</h3>
+      <p>A phone and a PC do the same four things: input, process, output, storage. Both run fetch, decode, execute. The difference is the packing. A desktop PC has separate parts on a big board: easy to repair and upgrade, but it needs more power and space. A phone has one SoC and memory chips soldered to a tiny board: small and efficient, but you cannot upgrade it.</p>
+    </div>
+  </section>
+
+  <section class="block check-now wrap" aria-labelledby="check-h" data-section="check">
+    <h2 id="check-h" class="block-h"><span class="block-n" aria-hidden="true">03</span>Check now</h2>
+    <p class="block-lede">Quick questions. You see the answer at once.</p>
+    <ol class="q-list" role="list">
+<li><div class="q q-type-mc" id="q-07-how-the-parts-talk-c1" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L7_PARTS&#34;,&#34;q&#34;:&#34;Which part turns mains electricity into what the other parts need?&#34;,&#34;options&#34;:[&#34;the motherboard&#34;,&#34;the power supply&#34;,&#34;the GPU&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;The power supply. The motherboard connects the parts; the GPU draws the pixels.&#34;}">
+  <p class="q-text">Which part turns mains electricity into what the other parts need?</p>
+  <ol class="q-fallback" type="a"><li>the motherboard</li><li>the power supply</li><li>the GPU</li></ol>
+</div></li><li><div class="q q-type-tf" id="q-07-how-the-parts-talk-c2" data-kind="check" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L7_MOTHERBOARD&#34;,&#34;q&#34;:&#34;On a motherboard, signals travel along copper paths in billionths of a second.&#34;,&#34;answer&#34;:true,&#34;explain&#34;:&#34;Copper traces connect the parts. A signal crosses the board in about two billionths of a second.&#34;}">
+  <p class="q-text">On a motherboard, signals travel along copper paths in billionths of a second.</p>
+  <p class="q-fallback">True or false?</p>
+</div></li><li><div class="q q-type-mc" id="q-07-how-the-parts-talk-c3" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L7_SOC&#34;,&#34;q&#34;:&#34;What is a system on a chip (SoC)?&#34;,&#34;options&#34;:[&#34;the SIM card&#34;,&#34;the CPU, the GPU and the memory controller on one chip&#34;,&#34;the phone&#39;s battery&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;The whole kitchen on one chip. It saves battery and space.&#34;}">
+  <p class="q-text">What is a system on a chip (SoC)?</p>
+  <ol class="q-fallback" type="a"><li>the SIM card</li><li>the CPU, the GPU and the memory controller on one chip</li><li>the phone&#39;s battery</li></ol>
+</div></li>    </ol>
+  </section>
+
+  <section class="block try" aria-labelledby="try-h">
+    <h2 id="try-h" class="block-h wrap"><span class="block-n" aria-hidden="true">04</span>Try it</h2>
+    <div class="wrap-ix"><figure class="ix" data-ix="spec-decoder" data-config="{&#34;device&#34;:&#34;laptop&#34;}" id="ix-07-1">
+  <figcaption class="ix-title">Decode the laptop listing</figcaption>
+<p class="ix-intro">A laptop listing is a list of parts. Click each line to see which part it is and what the number means. Then choose a device for each person.</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>A laptop listing, line by line. Intel Core i5, 10 cores, up to 4.6 GHz: the CPU. 10 cores = 10 cooks; the metronome beats up to 4.6 billion times a second. · 16 GB RAM: the workbench. Many programs can stay open at once. · 512 GB SSD: the pantry. Flash chips, nothing moves, so it is fast. · 15.6-inch Full HD 60 Hz: the screen. About 40 cm across, 1920 × 1080 pixels, redrawn 60 times a second. · 3 USB ports, Wi-Fi 6: sockets for cables, and a radio for the wireless network. · 54 Wh battery: how much energy the battery holds (Wh = watt-hours), not how many hours it lasts. All of these parts are connected by the motherboard. The listing has no graphics card: a small GPU is built into the same chip as the CPU.</p>
+  </div>
+</figure></div>
+  </section>
+
+  <section class="block your-turn wrap" aria-labelledby="turn-h" data-section="turn">
+    <h2 id="turn-h" class="block-h"><span class="block-n" aria-hidden="true">05</span>Your turn</h2>
+    <label class="turn-prompt" for="turn-u1-07-how-the-parts-talk-turn">Your cousin wants a computer for school that will last five years. Would you choose a desktop PC with separate parts, or a thin laptop with everything on one chip? Give two reasons, using the words motherboard or SoC.</label>
+    <textarea id="turn-u1-07-how-the-parts-talk-turn" class="turn-text" data-turn-id="u1-07-how-the-parts-talk-turn" rows="6" spellcheck="true"></textarea>
+    <div class="turn-bar">
+      <button type="button" class="btn btn-ghost" data-action="copy-turn" data-target="turn-u1-07-how-the-parts-talk-turn">Copy</button>
+      <p class="turn-note" aria-live="polite">Saved in this browser only. Nothing is sent anywhere.</p>
+    </div>
+  </section>
+
+  <section class="block exercises wrap" aria-labelledby="ex-h" data-section="exercises">
+    <h2 id="ex-h" class="block-h"><span class="block-n" aria-hidden="true">06</span>Exercises</h2>
+    <p class="block-lede">From ★☆☆ (easy) to ★★★ (hard). Use a hint if you are stuck.</p>
+    <ol class="ex-list" role="list">
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 1</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-match" id="q-07-how-the-parts-talk-e1" data-kind="exercise" data-q="{&#34;type&#34;:&#34;match&#34;,&#34;obj&#34;:&#34;L7_PARTS&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Match each part to its job.&#34;,&#34;pairs&#34;:[[&#34;CPU&#34;,&#34;follows the instructions: the cook&#34;],[&#34;RAM&#34;,&#34;the workbench: fast, forgets without power&#34;],[&#34;SSD&#34;,&#34;the pantry: keeps everything&#34;],[&#34;motherboard&#34;,&#34;the board every part plugs into&#34;],[&#34;power supply&#34;,&#34;turns mains electricity into what the parts need&#34;]],&#34;explain&#34;:&#34;Every part has one job. The kitchen helps you remember three of them.&#34;,&#34;hint&#34;:&#34;Think of the kitchen: who cooks, where do you work, where do you keep food?&#34;,&#34;solution&#34;:&#34;CPU: the cook. RAM: the workbench. SSD: the pantry. Motherboard: the board every part plugs into. Power supply: turns mains electricity into what the parts need.&#34;}">
+  <p class="q-text">Match each part to its job.</p>
+  <ul class="q-fallback"><li>CPU — ?</li><li>RAM — ?</li><li>SSD — ?</li><li>motherboard — ?</li><li>power supply — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 2</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-tf" id="q-07-how-the-parts-talk-e2" data-kind="exercise" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L7_PARTS&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;The whole box of a desktop computer is called the CPU.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;The CPU is one small chip inside the box, under a fan. The box is the case, with many parts inside.&#34;,&#34;hint&#34;:&#34;Look at the photo in the first science box. How many parts can you see?&#34;,&#34;solution&#34;:&#34;False. The CPU is a small chip that plugs into a socket on the motherboard.&#34;}">
+  <p class="q-text">The whole box of a desktop computer is called the CPU.</p>
+  <p class="q-fallback">True or false?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 3</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-order" id="q-07-how-the-parts-talk-e3" data-kind="exercise" data-q="{&#34;type&#34;:&#34;order&#34;,&#34;obj&#34;:&#34;L7_MOTHERBOARD&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;You open a photo on a PC. Put the journey of its bits in order.&#34;,&#34;items&#34;:[&#34;the SSD reads the photo&#39;s bits&#34;,&#34;the bits travel along copper traces on the motherboard&#34;,&#34;the photo waits in the RAM&#34;,&#34;the CPU decodes the file&#34;,&#34;the GPU draws the pixels on the screen&#34;],&#34;explain&#34;:&#34;Pantry → the board → workbench → cook → screen. The motherboard connects every step.&#34;,&#34;hint&#34;:&#34;The photo starts in the pantry and ends on the screen.&#34;,&#34;solution&#34;:&#34;SSD → copper traces on the motherboard → RAM → CPU → GPU and screen.&#34;}">
+  <p class="q-text">You open a photo on a PC. Put the journey of its bits in order.</p>
+  <ul class="q-fallback"><li>the bits travel along copper traces on the motherboard</li><li>the CPU decodes the file</li><li>the GPU draws the pixels on the screen</li><li>the photo waits in the RAM</li><li>the SSD reads the photo&#39;s bits</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 4</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-mc" id="q-07-how-the-parts-talk-e4" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L7_MOTHERBOARD&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;What did IBM call the main board of the IBM PC in 1981?&#34;,&#34;options&#34;:[&#34;the system board&#34;,&#34;the mill&#34;,&#34;the SoC&#34;],&#34;answer&#34;:0,&#34;explain&#34;:&#34;IBM called it the system board. Today we say motherboard.&#34;,&#34;hint&#34;:&#34;The mill was Babbage&#39;s word, and the SoC came much later.&#34;,&#34;solution&#34;:&#34;The system board.&#34;}">
+  <p class="q-text">What did IBM call the main board of the IBM PC in 1981?</p>
+  <ol class="q-fallback" type="a"><li>the system board</li><li>the mill</li><li>the SoC</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 5</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-num" id="q-07-how-the-parts-talk-e5" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L7_SOC&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;The first iPhone ran on an SoC in 2007. Apple&#39;s M1 brought the idea to laptops in 2020. How many years later?&#34;,&#34;answer&#34;:13,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;years&#34;,&#34;explain&#34;:&#34;2020 − 2007 = 13 years. Phones led the way, laptops followed.&#34;,&#34;hint&#34;:&#34;Subtract the two years.&#34;,&#34;solution&#34;:&#34;13 years.&#34;}">
+  <p class="q-text">The first iPhone ran on an SoC in 2007. Apple&#39;s M1 brought the idea to laptops in 2020. How many years later?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 6</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-07-how-the-parts-talk-e6" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L7_SOC&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Why can&#39;t you put a faster CPU into your phone?&#34;,&#34;options&#34;:[&#34;a phone has no CPU&#34;,&#34;the CPU is part of the SoC, soldered to the board&#34;,&#34;phones do not use electricity&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;The CPU, the GPU and the memory controller are one chip, fixed to the board. A phone has a CPU: it is inside the SoC.&#34;,&#34;hint&#34;:&#34;Where is the CPU in a phone?&#34;,&#34;solution&#34;:&#34;The CPU is inside the SoC, which is soldered to the board: you cannot change one part.&#34;}">
+  <p class="q-text">Why can&#39;t you put a faster CPU into your phone?</p>
+  <ol class="q-fallback" type="a"><li>a phone has no CPU</li><li>the CPU is part of the SoC, soldered to the board</li><li>phones do not use electricity</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 7</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-07-how-the-parts-talk-e7" data-kind="exercise" data-q="{&#34;type&#34;:&#34;open&#34;,&#34;obj&#34;:&#34;L7_PARTS&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;The laptop listing in the spec decoder has no line for a graphics card. How does that laptop draw the screen?&#34;,&#34;hint&#34;:&#34;Think of the whole kitchen on one chip.&#34;,&#34;solution&#34;:&#34;A small GPU is built into the same chip as the CPU. It is enough for school work and videos, but not for new 3D games: for those you need a separate graphics card with thousands of simple cooks.&#34;}">
+  <p class="q-text">The laptop listing in the spec decoder has no line for a graphics card. How does that laptop draw the screen?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 8</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-07-how-the-parts-talk-e8" data-kind="exercise" data-q="{&#34;type&#34;:&#34;open&#34;,&#34;obj&#34;:&#34;L7_MOTHERBOARD&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;Explain to a ten-year-old how the parts of a PC talk to each other, and how it is different in a phone.&#34;,&#34;hint&#34;:&#34;Board, copper, billionths of a second; then one chip.&#34;,&#34;solution&#34;:&#34;In a PC every part plugs into the motherboard. Thin copper paths connect them, and electrical signals travel along them in billionths of a second, so the CPU, the RAM, the GPU and the SSD can exchange numbers. In a phone most of these parts are inside one chip, the SoC, so the signals travel even shorter distances: it saves battery and space, but you cannot upgrade it.&#34;}">
+  <p class="q-text">Explain to a ten-year-old how the parts of a PC talk to each other, and how it is different in a phone.</p>
+</div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block one-sentence wrap" aria-labelledby="one-h">
+    <h2 id="one-h" class="block-h"><span class="block-n" aria-hidden="true">07</span>In one sentence</h2>
+    <p class="one-line">The motherboard lets the parts talk; in a phone, most of them live on one chip.</p>
+  </section>
+
+  <section class="block words wrap" aria-labelledby="words-h">
+    <h2 id="words-h" class="block-h"><span class="block-n" aria-hidden="true">08</span>Words of the chapter</h2>
+    <dl class="gloss">
+      <div class="gloss-row">
+        <dt>motherboard</dt>
+        <dd>the board that connects CPU, RAM, GPU and storage <span class="it" lang="it">scheda madre</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>trace</dt>
+        <dd>a thin copper line on a board that carries electrical signals <span class="it" lang="it">pista (di rame)</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>socket</dt>
+        <dd>the place on the motherboard where the CPU sits <span class="it" lang="it">socket (zoccolo)</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>slot</dt>
+        <dd>a long connector on the motherboard for RAM or a card <span class="it" lang="it">slot</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>power supply</dt>
+        <dd>the part that turns mains electricity into what the other parts need <span class="it" lang="it">alimentatore</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>port</dt>
+        <dd>a socket for a cable: USB, screen, network <span class="it" lang="it">porta</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>SoC (system on a chip)</dt>
+        <dd>CPU, GPU and memory controller on one chip <span class="it" lang="it">SoC (sistema su chip)</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>memory controller</dt>
+        <dd>the part of a chip that talks to the RAM <span class="it" lang="it">controller di memoria</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav class="pager wrap" aria-label="Chapters">
+    <a class="pager-link pager-prev" href="../../unit-1/06-interface-and-gpu/index.html" rel="prev"><span class="pager-dir">Previous</span><span class="pager-title">Seeing it: the interface and the GPU</span></a>
+    <a class="pager-link pager-next" href="../../unit-1/08-software-os-and-files/index.html" rel="next"><span class="pager-dir">Next</span><span class="pager-title">Software, the OS and files</span></a>
+  </nav>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap-wide foot-grid">
+    <p class="foot-title">ICT · Liceo Vittoria<br><span>Prof. Claudio</span></p>
+    <p>No accounts, no tracking, no cookies. Your answers stay in this browser.<br>
+      Photos are free licences, credited under each photo and on the <a href="../../about/index.html">About</a> page.</p>
+  </div>
+</footer>
+</body>
+</html>

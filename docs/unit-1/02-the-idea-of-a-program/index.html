@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The idea of a program · Unit 1 · ICT · Liceo Vittoria</title>
+<meta name="description" content="This machine was never finished. So why is it in every history of the computer?">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../../static/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var d=document.documentElement;function g(k){try{var v=localStorage.getItem(k);return v===null?null:JSON.parse(v);}catch(e){return null;}}
+var t=g('ict-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
+if(g('ict-read'))d.setAttribute('data-read','1');if(g('ict-font')==='atkinson')d.setAttribute('data-font','atkinson');
+d.className+=' js';})();
+</script>
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/ix-a.css">
+<link rel="stylesheet" href="../../static/css/ix-b.css">
+<link rel="stylesheet" href="../../static/css/ix-c.css">
+<script defer src="../../static/js/ict-core.js"></script>
+<script defer src="../../static/js/site.js"></script>
+<script defer src="../../static/js/ix/turing-machine.js"></script>
+</head>
+<body data-root="../../" data-page="chapter" data-slug="02-the-idea-of-a-program">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-row wrap-wide">
+    <a class="brand" href="../../index.html"><span class="brand-ict">ICT</span><span class="brand-dot" aria-hidden="true">·</span><span class="brand-school">Liceo Vittoria</span></a>
+    <div class="tools" role="group" aria-label="Display options">
+      <button type="button" class="tool" data-action="theme" aria-label="Theme: auto. Change theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <span class="tool-label">Auto</span>
+      </button>
+      <button type="button" class="tool" data-action="read" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M3 19 8.5 5h1L15 19M5 14.5h8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5c1-1 4-1.2 4 1.3V19m0-3.2c-3.2-.4-4.6.5-4.6 1.8 0 2 3.4 2 4.6-.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="tool-label">Readable</span>
+      </button>
+      <button type="button" class="tool tool-font" data-action="font" aria-pressed="false">
+        <span class="tool-glyph" aria-hidden="true">Ag</span>
+        <span class="tool-label">Easy font</span>
+      </button>
+      <button type="button" class="tool" data-action="print">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="tool-label">Print</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav wrap-wide" aria-label="Main">
+    <a href="../../index.html">Home</a>
+    <a href="../../unit-1/index.html" aria-current="page">Unit 1</a>
+    <a href="../../unit-1/review/index.html">Review</a>
+    <a href="../../about/index.html">About</a>
+  </nav>
+</header>
+<div class="progress" data-progress-slug="02-the-idea-of-a-program">
+  <div class="progress-track" role="progressbar" aria-label="Chapter progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-fill"></span></div>
+  <span class="progress-text">0% done</span>
+</div>
+<main id="main" tabindex="-1">
+<article class="chapter">
+  <header class="ch-head wrap">
+    <p class="eyebrow"><a href="../../unit-1/index.html">Unit 1</a> · Lesson 2</p>
+    <h1 class="ch-title">The idea of a program</h1>
+    <p class="ch-hook">This machine was never finished. So why is it in every history of the computer?</p>
+  </header>
+
+
+  <section class="block story" aria-labelledby="story-h">
+    <h2 id="story-h" class="block-h wrap"><span class="block-n" aria-hidden="true">01</span>The story</h2>
+      <p class="wrap story-p">In London in the 1830s, Charles Babbage designed a machine that could calculate anything: the Analytical Engine. He wrote down the full design in 1837.</p>
+      <p class="wrap story-p">It had two main parts. The store kept the numbers, like a memory. The mill did the calculations. The orders came from punched cards: cards with holes, where each hole was part of an instruction. Babbage worked on it for the rest of his life, but it was never completed.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/v6_analytical_engine.jpg"
+       srcset="../../img/v6_analytical_engine-800.jpg 800w, ../../img/v6_analytical_engine.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1067" alt="Part of the mill of Babbage&#39;s Analytical Engine, built as a trial model. Science Museum, London." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">Part of the mill of Babbage&#39;s Analytical Engine, built as a trial model. Science Museum, London.</span>    <span class="credit">Photo: Daderot, CC0 · <a href="https://commons.wikimedia.org/wiki/File:Analytical_engine_trial_model,_Charles_Babbage,_1834-1871_-_Science_Museum,_London_-_DSC05565.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">In 1843 Ada Lovelace published a step-by-step method for the Engine. It is often called the first computer program.</p>
+      <p class="wrap story-p">About a hundred years later, in 1936, Alan Turing wrote a paper called &#39;On Computable Numbers&#39;. In it he imagined a machine on paper: a long tape divided into squares, a head that reads and writes one square, and a list of rules. Give it the right rules and it can do any calculation that can be done by following rules.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/v5_turing_machine_model.jpg"
+       srcset="../../img/v5_turing_machine_model-800.jpg 800w, ../../img/v5_turing_machine_model.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1067" alt="A model of a Turing machine, built many years later. Turing&#39;s machine was imaginary: it existed only on paper." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A model of a Turing machine, built many years later. Turing&#39;s machine was imaginary: it existed only on paper.</span>    <span class="credit">Photo: Rocky Acosta, CC BY 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Turing_Machine_Model_Davey_2012.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">Turing&#39;s big idea: one machine can do any job, if you change the rules. The machine stays the same; the rules change. Inside your computer today: the mill is the processor (the CPU), the store is the memory, and every app on your phone is a new list of rules for the same machine.</p>
+  </section>
+
+  <section class="block science wrap" aria-labelledby="sci-h">
+    <h2 id="sci-h" class="block-h"><span class="block-n" aria-hidden="true">02</span>The science</h2>
+    <div class="concept">
+      <h3 class="concept-h">A program is a list of precise instructions</h3>
+      <p>A program is a list of precise steps that a machine follows exactly, one after the other. An algorithm is the method behind the steps: a step-by-step method that always ends. In the kitchen, the cook follows the recipe step by step, without guessing. The cook is the processor; the recipe is the program. A machine never guesses: if a step is missing, the result is wrong.</p>
+<div class="kitchen" data-part="cook">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-1-t">
+    <title id="k-1-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The cook.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part is-on">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li class="is-on"><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li><span class="k-l">The workbench</span> = RAM</li>
+    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div>    </div>
+    <div class="concept">
+      <h3 class="concept-h">The program and the data, side by side in memory</h3>
+      <p>Data means the numbers, words and pictures a program works on. In Babbage&#39;s store, and in every computer today, the program and the data are kept side by side in memory. Example: box 7 holds 4, box 8 holds 3, and the program says &#39;ADD box 7 + box 8 → box 6&#39;. In the kitchen, the recipe and the ingredients sit together on the workbench, ready for the cook.</p>
+<div class="kitchen" data-part="workbench">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-2-t">
+    <title id="k-2-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The workbench.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part is-on">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li class="is-on"><span class="k-l">The workbench</span> = RAM</li>
+    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div>    </div>
+    <div class="concept">
+      <h3 class="concept-h">Hardware and software</h3>
+      <p>Hardware is the part you can touch: the chip, the keyboard, the screen, the whole phone. Software is the instructions: the programs and apps. You cannot touch software. The same hardware can do a new job when you change the software. That is Turing&#39;s idea.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">The Turing machine: a tape, a head, rules</h3>
+      <p>A tape divided into squares. A head that reads one square. A table of rules like: &#39;if you read 1, write 0 and move left&#39;. Read the square, follow the rule, write, move, repeat. Example, the rules for &#39;add one&#39; to a binary number: start on the last digit; a 1 becomes 0 and you move left; a 0 or an empty square becomes 1 and you stop. 1011 becomes 1100. The head understands nothing: the rules do the work.</p>
+    </div>
+  </section>
+
+  <section class="block check-now wrap" aria-labelledby="check-h" data-section="check">
+    <h2 id="check-h" class="block-h"><span class="block-n" aria-hidden="true">03</span>Check now</h2>
+    <p class="block-lede">Quick questions. You see the answer at once.</p>
+    <ol class="q-list" role="list">
+<li><div class="q q-type-tf" id="q-02-the-idea-of-a-program-c1" data-kind="check" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L2_HW_SW&#34;,&#34;q&#34;:&#34;Software is the part of a computer you can touch.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;That is hardware. Software is the instructions: programs and apps.&#34;}">
+  <p class="q-text">Software is the part of a computer you can touch.</p>
+  <p class="q-fallback">True or false?</p>
+</div></li><li><div class="q q-type-mc" id="q-02-the-idea-of-a-program-c2" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L2_TURING&#34;,&#34;q&#34;:&#34;Which of these is NOT part of a Turing machine?&#34;,&#34;options&#34;:[&#34;a tape&#34;,&#34;a head&#34;,&#34;a screen&#34;,&#34;a table of rules&#34;],&#34;answer&#34;:2,&#34;explain&#34;:&#34;A Turing machine has only a tape, a head and rules. No screen.&#34;}">
+  <p class="q-text">Which of these is NOT part of a Turing machine?</p>
+  <ol class="q-fallback" type="a"><li>a tape</li><li>a head</li><li>a screen</li><li>a table of rules</li></ol>
+</div></li><li><div class="q q-type-match" id="q-02-the-idea-of-a-program-c3" data-kind="check" data-q="{&#34;type&#34;:&#34;match&#34;,&#34;obj&#34;:&#34;L2_PROGRAM&#34;,&#34;q&#34;:&#34;Match each part of Babbage&#39;s Analytical Engine to the part of a computer today.&#34;,&#34;pairs&#34;:[[&#34;the store&#34;,&#34;the memory&#34;],[&#34;the mill&#34;,&#34;the processor (CPU)&#34;],[&#34;the punched cards&#34;,&#34;the program&#34;]],&#34;explain&#34;:&#34;The store keeps numbers (memory), the mill calculates (CPU), the cards give the orders (program).&#34;}">
+  <p class="q-text">Match each part of Babbage&#39;s Analytical Engine to the part of a computer today.</p>
+  <ul class="q-fallback"><li>the store — ?</li><li>the mill — ?</li><li>the punched cards — ?</li></ul>
+</div></li>    </ol>
+  </section>
+
+  <section class="block try" aria-labelledby="try-h">
+    <h2 id="try-h" class="block-h wrap"><span class="block-n" aria-hidden="true">04</span>Try it</h2>
+    <div class="wrap-ix"><figure class="ix" data-ix="turing-machine" data-config="{&#34;preset&#34;:&#34;add-one&#34;,&#34;tape&#34;:&#34;1011&#34;}" id="ix-02-1">
+  <figcaption class="ix-title">Turing machine</figcaption>
+<p class="ix-intro">Press Step to watch the head follow the rules. Start with &#39;add one&#39; on 1011, then try 111 and the &#39;flip bits&#39; machine.</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>Rules for &#39;add one&#39;: start on the LAST digit, state CARRY. Read 1 → write 0, move left, stay in CARRY. Read 0 → write 1, stop. Read an empty square → write 1, stop.
+Trace for 1011 (eleven): head on the 4th digit (1) → write 0, move left: 1010 · head on the 3rd digit (1) → write 0, move left: 1000 · head on the 2nd digit (0) → write 1, stop: 1100 (twelve). 3 rules applied.
+Trace for 111 (seven): 110 · 100 · 000 · the empty square on the left becomes 1, stop: 1000 (eight). 4 rules applied.
+Rules for &#39;flip bits&#39;: start on the FIRST digit. Read 0 → write 1, move right. Read 1 → write 0, move right. Read an empty square → stop. 1001 becomes 0110 (5 rules applied).</p>
+  </div>
+</figure></div>
+  </section>
+
+  <section class="block your-turn wrap" aria-labelledby="turn-h" data-section="turn">
+    <h2 id="turn-h" class="block-h"><span class="block-n" aria-hidden="true">05</span>Your turn</h2>
+    <label class="turn-prompt" for="turn-u1-02-the-idea-of-a-program-turn">Write a program of five steps for a friend who must make a cup of tea. Be precise: your friend follows every step literally and never guesses. Then write one rule of your own for the Turing machine: &#39;if you read …, write …, move …&#39;.</label>
+    <textarea id="turn-u1-02-the-idea-of-a-program-turn" class="turn-text" data-turn-id="u1-02-the-idea-of-a-program-turn" rows="6" spellcheck="true"></textarea>
+    <div class="turn-bar">
+      <button type="button" class="btn btn-ghost" data-action="copy-turn" data-target="turn-u1-02-the-idea-of-a-program-turn">Copy</button>
+      <p class="turn-note" aria-live="polite">Saved in this browser only. Nothing is sent anywhere.</p>
+    </div>
+  </section>
+
+  <section class="block exercises wrap" aria-labelledby="ex-h" data-section="exercises">
+    <h2 id="ex-h" class="block-h"><span class="block-n" aria-hidden="true">06</span>Exercises</h2>
+    <p class="block-lede">From ★☆☆ (easy) to ★★★ (hard). Use a hint if you are stuck.</p>
+    <ol class="ex-list" role="list">
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 1</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-match" id="q-02-the-idea-of-a-program-e1" data-kind="exercise" data-q="{&#34;type&#34;:&#34;match&#34;,&#34;obj&#34;:&#34;L2_HW_SW&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Hardware or software? Match each thing to its kind.&#34;,&#34;pairs&#34;:[[&#34;a keyboard&#34;,&#34;hardware&#34;],[&#34;a game app&#34;,&#34;software&#34;],[&#34;the processor chip&#34;,&#34;hardware&#34;],[&#34;the operating system&#34;,&#34;software&#34;]],&#34;explain&#34;:&#34;If you can touch it, it is hardware. If it is a list of instructions, it is software.&#34;,&#34;hint&#34;:&#34;Can you touch it, or is it instructions?&#34;,&#34;solution&#34;:&#34;keyboard: hardware · game app: software · processor chip: hardware · operating system: software.&#34;}">
+  <p class="q-text">Hardware or software? Match each thing to its kind.</p>
+  <ul class="q-fallback"><li>a keyboard — ?</li><li>a game app — ?</li><li>the processor chip — ?</li><li>the operating system — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 2</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-mc" id="q-02-the-idea-of-a-program-e2" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L2_PROGRAM&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;What is an algorithm?&#34;,&#34;options&#34;:[&#34;a part of the processor&#34;,&#34;a step-by-step method that always ends&#34;,&#34;a kind of punched card&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;An algorithm is a method made of precise steps, and it always ends. A program is an algorithm written for a machine.&#34;,&#34;hint&#34;:&#34;Think of a recipe.&#34;,&#34;solution&#34;:&#34;A step-by-step method that always ends.&#34;}">
+  <p class="q-text">What is an algorithm?</p>
+  <ol class="q-fallback" type="a"><li>a part of the processor</li><li>a step-by-step method that always ends</li><li>a kind of punched card</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 3</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-order" id="q-02-the-idea-of-a-program-e3" data-kind="exercise" data-q="{&#34;type&#34;:&#34;order&#34;,&#34;obj&#34;:&#34;L2_PROGRAM&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Put these in time order, from the oldest.&#34;,&#34;items&#34;:[&#34;Babbage writes down the design of the Analytical Engine&#34;,&#34;Ada Lovelace publishes her method for the Engine&#34;,&#34;Turing imagines his machine in &#39;On Computable Numbers&#39;&#34;],&#34;explain&#34;:&#34;1837, 1843, 1936.&#34;,&#34;hint&#34;:&#34;Lovelace wrote about Babbage&#39;s machine, so she came after him.&#34;,&#34;solution&#34;:&#34;Babbage (1837) → Lovelace (1843) → Turing (1936).&#34;}">
+  <p class="q-text">Put these in time order, from the oldest.</p>
+  <ul class="q-fallback"><li>Ada Lovelace publishes her method for the Engine</li><li>Babbage writes down the design of the Analytical Engine</li><li>Turing imagines his machine in &#39;On Computable Numbers&#39;</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 4</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-num" id="q-02-the-idea-of-a-program-e4" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L2_TURING&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;The tape shows 111 (seven in binary). The machine runs &#39;add one&#39;. What number, in decimal, is on the tape at the end?&#34;,&#34;answer&#34;:8,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;&#34;,&#34;explain&#34;:&#34;7 + 1 = 8. The tape ends as 1000: the three 1s became 0s, and the empty square on the left became 1.&#34;,&#34;hint&#34;:&#34;What is 7 + 1?&#34;,&#34;solution&#34;:&#34;8. The tape goes from 111 to 1000.&#34;}">
+  <p class="q-text">The tape shows 111 (seven in binary). The machine runs &#39;add one&#39;. What number, in decimal, is on the tape at the end?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 5</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-02-the-idea-of-a-program-e5" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L2_TURING&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;The machine runs &#39;flip bits&#39; on the tape 1001. What is on the tape at the end?&#34;,&#34;options&#34;:[&#34;0110&#34;,&#34;1001&#34;,&#34;1010&#34;],&#34;answer&#34;:0,&#34;explain&#34;:&#34;Flip bits changes every 1 into 0 and every 0 into 1: 1001 becomes 0110.&#34;,&#34;hint&#34;:&#34;Change every digit: 1 → 0, 0 → 1.&#34;,&#34;solution&#34;:&#34;0110.&#34;}">
+  <p class="q-text">The machine runs &#39;flip bits&#39; on the tape 1001. What is on the tape at the end?</p>
+  <ol class="q-fallback" type="a"><li>0110</li><li>1001</li><li>1010</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 6</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-tf" id="q-02-the-idea-of-a-program-e6" data-kind="exercise" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L2_TURING&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Turing built his machine in a workshop in 1936.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;It was an imaginary machine, on paper. The models you see in photos were built many years later.&#34;,&#34;hint&#34;:&#34;Read the story again: where did the machine exist?&#34;,&#34;solution&#34;:&#34;False: it existed only on paper.&#34;}">
+  <p class="q-text">Turing built his machine in a workshop in 1936.</p>
+  <p class="q-fallback">True or false?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 7</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-02-the-idea-of-a-program-e7" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L2_WORD&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Your team document needs a table of contents that updates by itself. What must you use for the headings?&#34;,&#34;options&#34;:[&#34;bold text, size 16&#34;,&#34;the Heading 1 and Heading 2 styles&#34;,&#34;capital letters&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;Word builds the automatic table of contents (References → Table of Contents) from the Heading styles.&#34;,&#34;hint&#34;:&#34;Word needs to know which lines are headings.&#34;,&#34;solution&#34;:&#34;The Heading 1 and Heading 2 styles.&#34;}">
+  <p class="q-text">Your team document needs a table of contents that updates by itself. What must you use for the headings?</p>
+  <ol class="q-fallback" type="a"><li>bold text, size 16</li><li>the Heading 1 and Heading 2 styles</li><li>capital letters</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 8</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-02-the-idea-of-a-program-e8" data-kind="exercise" data-q="{&#34;type&#34;:&#34;open&#34;,&#34;obj&#34;:&#34;L2_PROGRAM&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;&#39;Your phone is a universal machine.&#39; Explain this sentence using the words hardware, software and program.&#34;,&#34;hint&#34;:&#34;What changes when you install a new app? What stays the same?&#34;,&#34;solution&#34;:&#34;The phone&#39;s hardware stays the same. Every app is software: a new program, a new list of rules. Like Turing&#39;s universal machine, one machine can follow any program you give it.&#34;}">
+  <p class="q-text">&#39;Your phone is a universal machine.&#39; Explain this sentence using the words hardware, software and program.</p>
+</div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block one-sentence wrap" aria-labelledby="one-h">
+    <h2 id="one-h" class="block-h"><span class="block-n" aria-hidden="true">07</span>In one sentence</h2>
+    <p class="one-line">A program is a list of precise rules; the same machine can follow any program.</p>
+  </section>
+
+  <section class="block words wrap" aria-labelledby="words-h">
+    <h2 id="words-h" class="block-h"><span class="block-n" aria-hidden="true">08</span>Words of the chapter</h2>
+    <dl class="gloss">
+      <div class="gloss-row">
+        <dt>program</dt>
+        <dd>a list of precise instructions a machine follows <span class="it" lang="it">programma</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>algorithm</dt>
+        <dd>a step-by-step method that always ends <span class="it" lang="it">algoritmo</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>data</dt>
+        <dd>the numbers, words and pictures a program works on <span class="it" lang="it">dati</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>hardware</dt>
+        <dd>the parts of a computer you can touch <span class="it" lang="it">hardware</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>software</dt>
+        <dd>the instructions: programs and apps <span class="it" lang="it">software</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>store · mill</dt>
+        <dd>Babbage&#39;s names for the memory and the calculating part <span class="it" lang="it">magazzino · mulino</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>punched card</dt>
+        <dd>a card with holes; the holes are instructions or data <span class="it" lang="it">scheda perforata</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>Turing machine</dt>
+        <dd>an imaginary machine: a tape, a head, a list of rules <span class="it" lang="it">macchina di Turing</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav class="pager wrap" aria-label="Chapters">
+    <a class="pager-link pager-prev" href="../../unit-1/01-can-machines-think/index.html" rel="prev"><span class="pager-dir">Previous</span><span class="pager-title">Can machines think?</span></a>
+    <a class="pager-link pager-next" href="../../unit-1/03-switches/index.html" rel="next"><span class="pager-dir">Next</span><span class="pager-title">Switches</span></a>
+  </nav>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap-wide foot-grid">
+    <p class="foot-title">ICT · Liceo Vittoria<br><span>Prof. Claudio</span></p>
+    <p>No accounts, no tracking, no cookies. Your answers stay in this browser.<br>
+      Photos are free licences, credited under each photo and on the <a href="../../about/index.html">About</a> page.</p>
+  </div>
+</footer>
+</body>
+</html>

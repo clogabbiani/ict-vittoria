@@ -1,0 +1,125 @@
+/* ix-c.css — v6 components: milestone-timeline (unit page) and be-the-gpu (lesson 6).
+   Every selector is scoped to .ix-<name>. Colours come from the site tokens (site.css / SITE_SPEC.md),
+   which already switch for the dark theme. No gradients, radius 6px max, 44px touch targets. */
+
+/* ================================================================ milestone-timeline */
+.ix-milestone-timeline, .ix-milestone-timeline * { box-sizing: border-box; }
+.ix-milestone-timeline { min-width: 0; }
+.ix-milestone-timeline .mt-instr { margin: 0 0 .75rem; color: var(--muted); font-size: .9375rem; }
+
+.ix-milestone-timeline .mt-scroller { overflow-x: auto; overflow-y: hidden; padding: 4px 2px 6px; scrollbar-width: thin; }
+.ix-milestone-timeline .mt-track { position: relative; display: flex; margin: 0; padding: 0; min-width: 100%; }
+.ix-milestone-timeline .mt-track::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 20px; height: 2px; background: var(--fg);
+}
+.ix-milestone-timeline .mt-marker {
+  position: relative; flex: 1 0 96px; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  min-height: 44px; padding: 13px 4px 10px; margin: 0; background: transparent; color: var(--fg);
+  border: 0; border-radius: var(--radius, 6px); cursor: pointer; text-align: center; font: inherit; line-height: 1.25;
+}
+.ix-milestone-timeline .mt-dot {
+  position: relative; z-index: 1; width: 16px; height: 16px; border-radius: 50%; flex: none;
+  background: var(--bg); border: 2px solid var(--fg);
+}
+.ix-milestone-timeline .mt-year { font-family: var(--mono); font-size: .8125rem; font-weight: 600; overflow-wrap: break-word; }
+.ix-milestone-timeline .mt-short { font-size: .8125rem; color: var(--muted); overflow-wrap: break-word; hyphens: manual; }
+.ix-milestone-timeline .mt-marker:hover .mt-short { color: var(--fg); text-decoration: underline; text-underline-offset: .2em; }
+.ix-milestone-timeline .mt-marker:hover .mt-dot { border-width: 3px; }
+.ix-milestone-timeline .mt-marker:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+
+/* bookends: 1950 and today — a square marker and a dashed frame */
+.ix-milestone-timeline .mt-marker.is-bookend .mt-dot { border-radius: 2px; transform: rotate(45deg); background: var(--fg); }
+.ix-milestone-timeline .mt-marker.is-bookend .mt-short { font-style: italic; }
+
+/* the open marker */
+.ix-milestone-timeline .mt-marker.is-open .mt-dot { background: var(--yellow); border-color: var(--navy); box-shadow: 0 0 0 3px var(--fg); }
+.ix-milestone-timeline .mt-marker.is-open .mt-short { color: var(--fg); font-weight: 600; }
+.ix-milestone-timeline .mt-marker.is-open { background: var(--surface-2); }
+
+/* detail panel */
+.ix-milestone-timeline .mt-panel {
+  margin-top: 14px; padding: clamp(14px, 3vw, 22px); border: 1px solid var(--line); border-radius: var(--radius, 6px);
+  background: var(--bg); display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px 24px; min-width: 0;
+}
+.ix-milestone-timeline .mt-panel.is-bookend { border-style: dashed; border-width: 2px; }
+.ix-milestone-timeline .mt-panel:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+@media (min-width: 701px) {
+  .ix-milestone-timeline .mt-panel.has-photo { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; }
+}
+.ix-milestone-timeline .mt-photo { margin: 0; min-width: 0; }
+.ix-milestone-timeline .mt-photo img {
+  display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: var(--surface-2); border-radius: 2px;
+}
+.ix-milestone-timeline .mt-photo.is-missing { display: none; }
+.ix-milestone-timeline .mt-credit {
+  display: block; margin-top: 6px; font-size: .8125rem; line-height: 1.4; color: var(--muted); overflow-wrap: anywhere;
+}
+.ix-milestone-timeline .mt-credit a { color: var(--muted); }
+.ix-milestone-timeline .mt-text { min-width: 0; overflow-wrap: anywhere; }
+.ix-milestone-timeline .mt-p-year { font-family: var(--mono); font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.05; margin: 0 0 .25rem; }
+.ix-milestone-timeline .mt-p-title { font-size: clamp(1.25rem, 2.4vw, 1.5rem); margin: 0 0 .75rem; }
+.ix-milestone-timeline .mt-line { margin: 0 0 .5rem; }
+.ix-milestone-timeline .mt-today { margin: 1rem 0 0; padding: 4px 0 4px 12px; border-left: 4px solid var(--yellow); }
+.ix-milestone-timeline .mt-more { margin: .75rem 0 0; }
+.ix-milestone-timeline .mt-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--link, var(--fg)); }
+.ix-milestone-timeline .ix-live { margin: .5rem 0 0; min-height: 1.5em; font-size: .9375rem; color: var(--muted); overflow-wrap: anywhere; }
+
+/* narrow screens: a vertical list */
+@media (max-width: 700px) {
+  .ix-milestone-timeline .mt-scroller { overflow: visible; padding: 0; }
+  .ix-milestone-timeline .mt-track { flex-direction: column; padding-left: 0; }
+  .ix-milestone-timeline .mt-track::before { left: 13px; right: auto; top: 12px; bottom: 12px; width: 2px; height: auto; }
+  .ix-milestone-timeline .mt-marker {
+    flex: none; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-start;
+    gap: 2px 12px; padding: 8px 8px 8px 38px; text-align: left; min-height: 44px;
+  }
+  .ix-milestone-timeline .mt-dot { position: absolute; left: 6px; top: 50%; margin-top: -8px; }
+  .ix-milestone-timeline .mt-year { min-width: 7.5rem; font-size: .875rem; }
+  .ix-milestone-timeline .mt-short { font-size: .9375rem; flex: 1 1 8rem; }
+}
+
+/* ================================================================ be-the-gpu */
+.ix-be-the-gpu, .ix-be-the-gpu * { box-sizing: border-box; }
+.ix-be-the-gpu { min-width: 0; }
+.ix-be-the-gpu .bg-instr { margin: 0 0 .75rem; font-weight: 600; }
+.ix-be-the-gpu .bg-stage { display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: flex-start; }
+.ix-be-the-gpu .bg-grid {
+  display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 2px; padding: 2px;
+  width: min(100%, 320px); aspect-ratio: 1 / 1; background: var(--line); border: 2px solid var(--fg); border-radius: 2px; flex: none;
+}
+.ix-be-the-gpu .bg-cell { display: block; background: var(--surface-2); min-width: 0; min-height: 0; }
+.ix-be-the-gpu .bg-cell.is-cook { box-shadow: inset 0 0 0 2px var(--fg), inset 0 0 0 4px var(--yellow); }
+.ix-be-the-gpu .bg-side { flex: 1 1 200px; min-width: 0; }
+.ix-be-the-gpu .bg-clocks { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.ix-be-the-gpu .bg-clock { border: 1px solid var(--line); border-radius: var(--radius, 6px); padding: 10px 12px; background: var(--bg); min-width: 0; }
+.ix-be-the-gpu .bg-clock dt { font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.ix-be-the-gpu .bg-clock dd { margin: 2px 0 0; font-family: var(--mono); font-size: 1.375rem; font-weight: 700; overflow-wrap: anywhere; }
+.ix-be-the-gpu .bg-phase { margin: 12px 0 0; min-height: 3em; overflow-wrap: anywhere; }
+.ix-be-the-gpu .bg-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+.ix-be-the-gpu .bg-btn {
+  font: inherit; font-weight: 600; font-size: .95rem; min-height: 44px; padding: 8px 14px; cursor: pointer;
+  border: 2px solid var(--fg); border-radius: var(--radius, 6px); background: transparent; color: var(--fg);
+}
+.ix-be-the-gpu .bg-btn:hover { background: var(--surface-2); }
+.ix-be-the-gpu .bg-primary { background: var(--fg); color: var(--bg); }
+.ix-be-the-gpu .bg-primary:hover { background: var(--fg); opacity: .9; }
+.ix-be-the-gpu .bg-btn:disabled { opacity: .55; cursor: default; }
+.ix-be-the-gpu .bg-note { margin: .25rem 0 0; font-size: .875rem; color: var(--muted); }
+.ix-be-the-gpu .ix-live { margin: .5rem 0 0; min-height: 1.5em; font-weight: 600; overflow-wrap: anywhere; }
+.ix-be-the-gpu .ix-live.is-ok { color: var(--ok); }
+
+.ix-be-the-gpu .bg-compare { margin-top: 16px; padding: clamp(12px, 3vw, 18px); border: 1px solid var(--line); border-radius: var(--radius, 6px); background: var(--bg); }
+.ix-be-the-gpu .bg-compare[hidden] { display: none; }
+.ix-be-the-gpu .bg-compare-h { font-size: 1.125rem; margin: 0 0 .75rem; }
+.ix-be-the-gpu .bg-chart { display: grid; gap: 8px; }
+.ix-be-the-gpu .bg-row { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) 5.5rem; gap: 10px; align-items: center; }
+.ix-be-the-gpu .bg-row-label { font-weight: 600; font-size: .9375rem; }
+.ix-be-the-gpu .bg-row-val { font-family: var(--mono); font-size: .875rem; text-align: right; }
+.ix-be-the-gpu .bg-track { display: block; height: 18px; background: var(--surface-2); border-radius: 2px; overflow: hidden; }
+.ix-be-the-gpu .bg-fill { display: block; height: 100%; background: var(--fg); }
+.ix-be-the-gpu .is-many .bg-fill { background: var(--yellow); box-shadow: inset 0 0 0 1px var(--navy); }
+.ix-be-the-gpu .bg-explain { margin: 14px 0 0; padding-left: 1.2rem; display: grid; gap: 6px; overflow-wrap: anywhere; }
+@media (max-width: 420px) {
+  .ix-be-the-gpu .bg-row { grid-template-columns: 5.2rem minmax(0, 1fr) 4.8rem; gap: 6px; }
+  .ix-be-the-gpu .bg-grid { width: 100%; }
+}

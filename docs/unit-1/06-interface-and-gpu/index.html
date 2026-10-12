@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seeing it: the interface and the GPU · Unit 1 · ICT · Liceo Vittoria</title>
+<meta name="description" content="Everything on your screen used to be typed. Today you point and tap, and a special chip draws millions of coloured squares many times a second.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../../static/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var d=document.documentElement;function g(k){try{var v=localStorage.getItem(k);return v===null?null:JSON.parse(v);}catch(e){return null;}}
+var t=g('ict-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
+if(g('ict-read'))d.setAttribute('data-read','1');if(g('ict-font')==='atkinson')d.setAttribute('data-font','atkinson');
+d.className+=' js';})();
+</script>
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/ix-a.css">
+<link rel="stylesheet" href="../../static/css/ix-b.css">
+<link rel="stylesheet" href="../../static/css/ix-c.css">
+<script defer src="../../static/js/ict-core.js"></script>
+<script defer src="../../static/js/site.js"></script>
+<script defer src="../../static/js/ix/be-the-gpu.js"></script>
+<script defer src="../../static/js/ix/label-machine.js"></script>
+</head>
+<body data-root="../../" data-page="chapter" data-slug="06-interface-and-gpu">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-row wrap-wide">
+    <a class="brand" href="../../index.html"><span class="brand-ict">ICT</span><span class="brand-dot" aria-hidden="true">·</span><span class="brand-school">Liceo Vittoria</span></a>
+    <div class="tools" role="group" aria-label="Display options">
+      <button type="button" class="tool" data-action="theme" aria-label="Theme: auto. Change theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <span class="tool-label">Auto</span>
+      </button>
+      <button type="button" class="tool" data-action="read" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M3 19 8.5 5h1L15 19M5 14.5h8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5c1-1 4-1.2 4 1.3V19m0-3.2c-3.2-.4-4.6.5-4.6 1.8 0 2 3.4 2 4.6-.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="tool-label">Readable</span>
+      </button>
+      <button type="button" class="tool tool-font" data-action="font" aria-pressed="false">
+        <span class="tool-glyph" aria-hidden="true">Ag</span>
+        <span class="tool-label">Easy font</span>
+      </button>
+      <button type="button" class="tool" data-action="print">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="tool-label">Print</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav wrap-wide" aria-label="Main">
+    <a href="../../index.html">Home</a>
+    <a href="../../unit-1/index.html" aria-current="page">Unit 1</a>
+    <a href="../../unit-1/review/index.html">Review</a>
+    <a href="../../about/index.html">About</a>
+  </nav>
+</header>
+<div class="progress" data-progress-slug="06-interface-and-gpu">
+  <div class="progress-track" role="progressbar" aria-label="Chapter progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-fill"></span></div>
+  <span class="progress-text">0% done</span>
+</div>
+<main id="main" tabindex="-1">
+<article class="chapter">
+  <header class="ch-head wrap">
+    <p class="eyebrow"><a href="../../unit-1/index.html">Unit 1</a> · Lesson 6</p>
+    <h1 class="ch-title">Seeing it: the interface and the GPU</h1>
+    <p class="ch-hook">Everything on your screen used to be typed. Today you point and tap, and a special chip draws millions of coloured squares many times a second.</p>
+  </header>
+
+
+  <section class="block story" aria-labelledby="story-h">
+    <h2 id="story-h" class="block-h wrap"><span class="block-n" aria-hidden="true">01</span>The story</h2>
+      <p class="wrap story-p">The first computers had no pictures on the screen. You typed a command, an exact order in the computer&#39;s own words, and the computer answered with text. You had to learn the commands first.</p>
+      <p class="wrap story-p">The mouse was invented in the 1960s; Douglas Engelbart showed it to the public in 1968. With the mouse came windows and icons: small pictures you point at and click, instead of typing commands.</p>
+      <p class="wrap story-p">In 1984 the Apple Macintosh brought the mouse and windows to the public, and in the following years they reached most personal computers. Now people could use a computer without learning any commands. This is a graphical interface: windows, icons and a pointer.</p>
+      <div class="wrap-photo wrap-portrait"><figure class="photo is-portrait ">
+  <img src="../../img/h_macintosh.jpg"
+       srcset="../../img/h_macintosh-800.jpg 543w, ../../img/h_macintosh.jpg 1087w"
+       sizes="(min-width: 760px) 640px, 100vw"
+       width="1087" height="1600" alt="The Macintosh (1984) brought the mouse and windows to the public." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">The Macintosh (1984) brought the mouse and windows to the public.</span>    <span class="credit">Photo: Photo: Bernard Gotfryd - Edited from tif by Cart, Public domain · <a href="https://commons.wikimedia.org/wiki/File:Steve_Jobs_and_Macintosh_computer,_January_1984,_by_Bernard_Gotfryd_-_edited.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">Windows and icons meant much more drawing work. In the mid-1990s, 3D graphics cards for games arrived. In 1999 NVIDIA sold its GeForce 256 as &#39;the world&#39;s first GPU&#39; and made the name popular. GPU means graphics processing unit.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/v6_geforce256.jpg"
+       srcset="../../img/v6_geforce256-800.jpg 800w, ../../img/v6_geforce256.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="950" alt="A GeForce 256 graphics card (1999)." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A GeForce 256 graphics card (1999).</span>    <span class="credit">Photo: Hyins, Public domain · <a href="https://commons.wikimedia.org/wiki/File:VisionTek_GeForce_256.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">A GPU does the same small sum for many pixels at the same time. Today&#39;s GPUs have thousands of small calculators. Built for 3D games, now they also train AI.</p>
+      <p class="wrap story-p">Inside your computer today: every window, icon and touch screen; and a GPU in your phone, laptop or games console, and in the data centres where chatbots run.</p>
+  </section>
+
+  <section class="block science wrap" aria-labelledby="sci-h">
+    <h2 id="sci-h" class="block-h"><span class="block-n" aria-hidden="true">02</span>The science</h2>
+    <div class="concept">
+      <h3 class="concept-h">A screen is a grid of numbers</h3>
+      <p>Zoom far enough into any picture and it becomes small squares: pixels. Each pixel is three numbers, for red, green and blue (RGB), each from 0 to 255: one byte each (lesson 3). (255, 0, 0) is red, (255, 255, 0) is yellow, (0, 0, 0) is black, (255, 255, 255) is white. A Full HD screen has 1,920 × 1,080 pixels: about 2 million, redrawn 60 times a second or more.</p>
+<figure class="photo photo-inline">
+  <img src="../../img/L2_pixels_mid.jpg"
+       srcset="../../img/L2_pixels_mid-800.jpg 800w, ../../img/L2_pixels_mid.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1600" alt="A screen is a grid of numbers" loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A screen is a grid of numbers</span>    <span class="credit">Photo: LeonardoRamos, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Arara-vermelha_-_PARNA_da_Serra_da_Capivara_-_LeonardoRamos(001).jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure>    </div>
+    <div class="concept">
+      <h3 class="concept-h">A few fast cooks, or thousands of simple ones</h3>
+      <p>The CPU is a few cooks, each very clever and fast. They are good at one long job, step by step, where each step needs the one before. The GPU is thousands of simple cooks. Each one is slower, but they all work at the same time, in parallel. They are good at the same small job done many times: colour this pixel, and this one, and this one.</p>
+<div class="kitchen" data-part="cook">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-2-t">
+    <title id="k-2-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The cook.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part is-on">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li class="is-on"><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li><span class="k-l">The workbench</span> = RAM</li>
+    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div><figure class="photo photo-inline">
+  <img src="../../img/L5_gpu_card2.jpg"
+       srcset="../../img/L5_gpu_card2-800.jpg 800w, ../../img/L5_gpu_card2.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1067" alt="A few fast cooks, or thousands of simple ones" loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A few fast cooks, or thousands of simple ones</span>    <span class="credit">Photo: PantheraLeo1359531, CC BY 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Gigabyte_GeForce_RTX_3090_Eagle_OC_24G,_24576_MiB_GDDR6X_Front_20201114_DSC5880.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure>    </div>
+    <div class="concept">
+      <h3 class="concept-h">Why games and AI use GPUs</h3>
+      <p>A game must work out millions of pixels many times a second: the same small sum, again and again. AI is the same kind of work: millions of small, similar sums. So the chips made for games now train and run chatbots (lesson 9). A GPU is not just a faster CPU: give it one long step-by-step job and it is slower.</p>
+<div class="kitchen" data-part="cook">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-3-t">
+    <title id="k-3-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The cook.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part is-on">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li class="is-on"><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li><span class="k-l">The workbench</span> = RAM</li>
+    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div>    </div>
+  </section>
+
+  <section class="block check-now wrap" aria-labelledby="check-h" data-section="check">
+    <h2 id="check-h" class="block-h"><span class="block-n" aria-hidden="true">03</span>Check now</h2>
+    <p class="block-lede">Quick questions. You see the answer at once.</p>
+    <ol class="q-list" role="list">
+<li><div class="q q-type-mc" id="q-06-interface-and-gpu-c1" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L6_PIXELS&#34;,&#34;q&#34;:&#34;A pixel has the numbers (255, 255, 0): full red, full green, no blue. What colour is it?&#34;,&#34;options&#34;:[&#34;yellow&#34;,&#34;black&#34;,&#34;blue&#34;],&#34;answer&#34;:0,&#34;explain&#34;:&#34;Red light and green light together make yellow. (0, 0, 0) would be black.&#34;}">
+  <p class="q-text">A pixel has the numbers (255, 255, 0): full red, full green, no blue. What colour is it?</p>
+  <ol class="q-fallback" type="a"><li>yellow</li><li>black</li><li>blue</li></ol>
+</div></li><li><div class="q q-type-tf" id="q-06-interface-and-gpu-c2" data-kind="check" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L6_GPU&#34;,&#34;q&#34;:&#34;A GPU is just a faster CPU.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;A GPU has thousands of simple cooks. It is fast only when the same small job can be done many times at once.&#34;}">
+  <p class="q-text">A GPU is just a faster CPU.</p>
+  <p class="q-fallback">True or false?</p>
+</div></li><li><div class="q q-type-mc" id="q-06-interface-and-gpu-c3" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L6_GUI&#34;,&#34;q&#34;:&#34;When did the mouse and windows reach the public?&#34;,&#34;options&#34;:[&#34;in the 1940s&#34;,&#34;in the 1980s&#34;,&#34;in the 2010s&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;Invented in the 1960s, sold to the public in the 1980s (the Macintosh, 1984).&#34;}">
+  <p class="q-text">When did the mouse and windows reach the public?</p>
+  <ol class="q-fallback" type="a"><li>in the 1940s</li><li>in the 1980s</li><li>in the 2010s</li></ol>
+</div></li>    </ol>
+  </section>
+
+  <section class="block try" aria-labelledby="try-h">
+    <h2 id="try-h" class="block-h wrap"><span class="block-n" aria-hidden="true">04</span>Try it</h2>
+    <div class="wrap-ix"><figure class="ix" data-ix="be-the-gpu" data-config="{}" id="ix-06-1">
+  <figcaption class="ix-title">Be the GPU</figcaption>
+<p class="ix-intro">Colour the 10 × 10 picture with one cook, then with 100 cooks working at the same time. Compare the two times.</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>A 10 × 10 picture (a yellow smiling face) has 100 squares.
+Round 1, one cook (like one CPU core): colours one square per tick, so 100 squares take 100 ticks.
+Round 2, 100 cooks (like a GPU): 1 tick to hand out the squares, 1 tick to colour all of them at once, 1 tick to put the picture together: 3 ticks.
+If a tick is about 1 second, as in class: about 100 seconds against about 3 seconds.
+The slow part of round 2 is handing out and collecting the squares. In a real computer, moving data to the GPU also takes time.
+CPU = a few fast cooks for long step-by-step jobs; GPU = thousands of simple cooks for the same small job, many times.</p>
+  </div>
+</figure></div>
+    <div class="wrap-ix"><figure class="ix" data-ix="label-machine" data-config="{&#34;machine&#34;:&#34;pc&#34;,&#34;image&#34;:&#34;img/L5_desktop_open.jpg&#34;,&#34;labels&#34;:[{&#34;text&#34;:&#34;power supply&#34;,&#34;x&#34;:26,&#34;y&#34;:12},{&#34;text&#34;:&#34;power cables&#34;,&#34;x&#34;:42,&#34;y&#34;:24},{&#34;text&#34;:&#34;motherboard&#34;,&#34;x&#34;:28,&#34;y&#34;:50},{&#34;text&#34;:&#34;ribbon cables (data)&#34;,&#34;x&#34;:34,&#34;y&#34;:62},{&#34;text&#34;:&#34;expansion card&#34;,&#34;x&#34;:40,&#34;y&#34;:86},{&#34;text&#34;:&#34;drive bays (storage)&#34;,&#34;x&#34;:64,&#34;y&#34;:15},{&#34;text&#34;:&#34;the CPU (taken out, on the bench)&#34;,&#34;x&#34;:88,&#34;y&#34;:88}]}" id="ix-06-2">
+  <figcaption class="ix-title">Label the PC</figcaption>
+<p class="ix-intro">This is an old desktop PC with the side panel off. Drag each label to its number, or click a label and then a number. In a gaming PC, the graphics card plugs into the motherboard like the expansion card here.</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>An old desktop PC, opened. Find and name: 1 power supply (top left, the grey box with vents) · 2 power cables (red, yellow and black wires) · 3 motherboard (the green board on the back wall) · 4 ribbon cables (grey and flat: they carry data to the drives) · 5 expansion card (a board plugged into the motherboard, at the bottom) · 6 drive bays (metal cages for storage drives, top right) · 7 the CPU, taken out of its socket and left on the bench (bottom right).</p>
+  </div>
+</figure></div>
+    <div class="wrap-ix"><figure class="ix" data-ix="label-machine" data-config="{&#34;machine&#34;:&#34;phone&#34;,&#34;image&#34;:&#34;img/L1_cold_teardown.jpg&#34;,&#34;labels&#34;:[{&#34;text&#34;:&#34;camera&#34;,&#34;x&#34;:26.5,&#34;y&#34;:10.5},{&#34;text&#34;:&#34;logic board (the SoC is under this shield)&#34;,&#34;x&#34;:31,&#34;y&#34;:30},{&#34;text&#34;:&#34;battery connector (under the cover)&#34;,&#34;x&#34;:31,&#34;y&#34;:45},{&#34;text&#34;:&#34;battery&#34;,&#34;x&#34;:64,&#34;y&#34;:60},{&#34;text&#34;:&#34;charging (dock) connector&#34;,&#34;x&#34;:50,&#34;y&#34;:96},{&#34;text&#34;:&#34;metal frame: also the antenna&#34;,&#34;x&#34;:87.5,&#34;y&#34;:60}]}" id="ix-06-3">
+  <figcaption class="ix-title">Label the phone</figcaption>
+<p class="ix-intro">This is an old smartphone with the back taken off. Drag each label to its number, or click a label and then a number. Where is the GPU? Inside the same chip as the CPU, under the metal shield (chapter 7).</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>An opened smartphone (an iPhone 4). Find and name: 1 camera (top left) · 2 logic board: the system on a chip (CPU and GPU together) is under the metal shield · 3 battery connector, under the small metal cover · 4 battery (the big black block) · 5 charging (dock) connector (bottom) · 6 the metal frame, which is also the antenna for the radios.</p>
+  </div>
+</figure></div>
+  </section>
+
+  <section class="block your-turn wrap" aria-labelledby="turn-h" data-section="turn">
+    <h2 id="turn-h" class="block-h"><span class="block-n" aria-hidden="true">05</span>Your turn</h2>
+    <label class="turn-prompt" for="turn-u1-06-interface-and-gpu-turn">Before the mouse, people typed every command. Think of one thing you do on your phone or computer every day. How would you do it with typed commands only? Who would find that hardest? Write three sentences.</label>
+    <textarea id="turn-u1-06-interface-and-gpu-turn" class="turn-text" data-turn-id="u1-06-interface-and-gpu-turn" rows="6" spellcheck="true"></textarea>
+    <div class="turn-bar">
+      <button type="button" class="btn btn-ghost" data-action="copy-turn" data-target="turn-u1-06-interface-and-gpu-turn">Copy</button>
+      <p class="turn-note" aria-live="polite">Saved in this browser only. Nothing is sent anywhere.</p>
+    </div>
+  </section>
+
+  <section class="block exercises wrap" aria-labelledby="ex-h" data-section="exercises">
+    <h2 id="ex-h" class="block-h"><span class="block-n" aria-hidden="true">06</span>Exercises</h2>
+    <p class="block-lede">From ★☆☆ (easy) to ★★★ (hard). Use a hint if you are stuck.</p>
+    <ol class="ex-list" role="list">
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 1</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-match" id="q-06-interface-and-gpu-e1" data-kind="exercise" data-q="{&#34;type&#34;:&#34;match&#34;,&#34;obj&#34;:&#34;L6_PIXELS&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Match each pixel&#39;s numbers (red, green, blue) to its colour.&#34;,&#34;pairs&#34;:[[&#34;(255, 0, 0)&#34;,&#34;red&#34;],[&#34;(0, 0, 255)&#34;,&#34;blue&#34;],[&#34;(255, 255, 255)&#34;,&#34;white&#34;],[&#34;(0, 0, 0)&#34;,&#34;black&#34;]],&#34;explain&#34;:&#34;Each number says how much red, green or blue light. All full = white; all zero = black.&#34;,&#34;hint&#34;:&#34;The first number is red, the second green, the third blue.&#34;,&#34;solution&#34;:&#34;(255, 0, 0) red · (0, 0, 255) blue · (255, 255, 255) white · (0, 0, 0) black.&#34;}">
+  <p class="q-text">Match each pixel&#39;s numbers (red, green, blue) to its colour.</p>
+  <ul class="q-fallback"><li>(255, 0, 0) — ?</li><li>(0, 0, 255) — ?</li><li>(255, 255, 255) — ?</li><li>(0, 0, 0) — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 2</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-tf" id="q-06-interface-and-gpu-e2" data-kind="exercise" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L6_GUI&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Apple invented the mouse.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;The mouse was invented in the 1960s and shown by Douglas Engelbart in 1968. The Macintosh (1984) brought it to the public.&#34;,&#34;hint&#34;:&#34;Read the story again: when was the mouse invented, and when was the Macintosh?&#34;,&#34;solution&#34;:&#34;False. Invented in the 1960s; sold to the public with the Macintosh in 1984.&#34;}">
+  <p class="q-text">Apple invented the mouse.</p>
+  <p class="q-fallback">True or false?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 3</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-num" id="q-06-interface-and-gpu-e3" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L6_PIXELS&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;The Be the GPU picture is 10 × 10 pixels. Each pixel is three numbers (red, green, blue). How many numbers is the whole picture?&#34;,&#34;answer&#34;:300,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;numbers&#34;,&#34;explain&#34;:&#34;10 × 10 = 100 pixels; 100 × 3 = 300 numbers.&#34;,&#34;hint&#34;:&#34;First count the pixels, then multiply by 3.&#34;,&#34;solution&#34;:&#34;300 numbers.&#34;}">
+  <p class="q-text">The Be the GPU picture is 10 × 10 pixels. Each pixel is three numbers (red, green, blue). How many numbers is the whole picture?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 4</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-order" id="q-06-interface-and-gpu-e4" data-kind="exercise" data-q="{&#34;type&#34;:&#34;order&#34;,&#34;obj&#34;:&#34;L6_GUI&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Put these events in time order, oldest first.&#34;,&#34;items&#34;:[&#34;Engelbart shows the mouse (1968)&#34;,&#34;the Macintosh (1984)&#34;,&#34;3D graphics cards for games (mid-1990s)&#34;,&#34;the GeForce 256 is sold as a &#39;GPU&#39; (1999)&#34;],&#34;explain&#34;:&#34;1968, 1984, mid-1990s, 1999: from pointing to drawing in 3D.&#34;,&#34;hint&#34;:&#34;The mouse came before the windows on every desk; 3D games came after.&#34;,&#34;solution&#34;:&#34;Engelbart&#39;s mouse → Macintosh → 3D cards → GeForce 256.&#34;}">
+  <p class="q-text">Put these events in time order, oldest first.</p>
+  <ul class="q-fallback"><li>3D graphics cards for games (mid-1990s)</li><li>Engelbart shows the mouse (1968)</li><li>the GeForce 256 is sold as a &#39;GPU&#39; (1999)</li><li>the Macintosh (1984)</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 5</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-num" id="q-06-interface-and-gpu-e5" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L6_GPU&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;In Be the GPU, one cook takes 100 ticks and 100 cooks take 3 ticks. About how many times faster are the 100 cooks? (Round to a whole number.)&#34;,&#34;answer&#34;:33,&#34;tolerance&#34;:1,&#34;unit&#34;:&#34;times&#34;,&#34;explain&#34;:&#34;100 ÷ 3 = 33.3, so about 33 times faster. Not 100 times: handing out and collecting the squares takes time.&#34;,&#34;hint&#34;:&#34;Divide the slow time by the fast time.&#34;,&#34;solution&#34;:&#34;About 33 times (100 ÷ 3).&#34;}">
+  <p class="q-text">In Be the GPU, one cook takes 100 ticks and 100 cooks take 3 ticks. About how many times faster are the 100 cooks? (Round to a whole number.)</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 6</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-06-interface-and-gpu-e6" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L6_GPU&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Which job is best for a GPU?&#34;,&#34;options&#34;:[&#34;making every pixel of a photo a little brighter&#34;,&#34;one long calculation where every step needs the step before&#34;,&#34;deciding which app to open next&#34;],&#34;answer&#34;:0,&#34;explain&#34;:&#34;Brightening is the same small job on millions of pixels: thousands of simple cooks can do it at once.&#34;,&#34;hint&#34;:&#34;GPU = the same small job, many times, at the same time.&#34;,&#34;solution&#34;:&#34;Making every pixel of a photo a little brighter.&#34;}">
+  <p class="q-text">Which job is best for a GPU?</p>
+  <ol class="q-fallback" type="a"><li>making every pixel of a photo a little brighter</li><li>one long calculation where every step needs the step before</li><li>deciding which app to open next</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 7</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-num" id="q-06-interface-and-gpu-e7" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L6_PIXELS&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;A Full HD screen has 1,920 × 1,080 pixels. How many pixels is that, in millions? (One decimal place.)&#34;,&#34;answer&#34;:2.1,&#34;tolerance&#34;:0.05,&#34;unit&#34;:&#34;million pixels&#34;,&#34;explain&#34;:&#34;1,920 × 1,080 = 2,073,600 pixels: about 2.1 million. Each one is three numbers, redrawn 60 times a second or more.&#34;,&#34;hint&#34;:&#34;Multiply, then divide by 1,000,000.&#34;,&#34;solution&#34;:&#34;About 2.1 million (2,073,600 pixels).&#34;}">
+  <p class="q-text">A Full HD screen has 1,920 × 1,080 pixels. How many pixels is that, in millions? (One decimal place.)</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 8</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-06-interface-and-gpu-e8" data-kind="exercise" data-q="{&#34;type&#34;:&#34;open&#34;,&#34;obj&#34;:&#34;L6_GPU&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;Why are chatbots trained on GPUs and not only on CPUs? Use the kitchen.&#34;,&#34;hint&#34;:&#34;What kind of work is AI made of: one long job, or many small similar ones?&#34;,&#34;solution&#34;:&#34;Training a chatbot is millions of small, similar sums. The CPU is a few fast cooks who work step by step; the GPU is thousands of simple cooks who can all do the same small job at the same time. So the GPU finishes this kind of work much sooner, even if each of its cooks is slower.&#34;}">
+  <p class="q-text">Why are chatbots trained on GPUs and not only on CPUs? Use the kitchen.</p>
+</div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block one-sentence wrap" aria-labelledby="one-h">
+    <h2 id="one-h" class="block-h"><span class="block-n" aria-hidden="true">07</span>In one sentence</h2>
+    <p class="one-line">A screen is millions of numbers; the GPU computes them all at once.</p>
+  </section>
+
+  <section class="block words wrap" aria-labelledby="words-h">
+    <h2 id="words-h" class="block-h"><span class="block-n" aria-hidden="true">08</span>Words of the chapter</h2>
+    <dl class="gloss">
+      <div class="gloss-row">
+        <dt>command</dt>
+        <dd>an exact order typed for the computer <span class="it" lang="it">comando</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>graphical interface</dt>
+        <dd>windows, icons and a pointer instead of typed commands <span class="it" lang="it">interfaccia grafica</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>pixel</dt>
+        <dd>one square of a picture or a screen <span class="it" lang="it">pixel</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>RGB</dt>
+        <dd>red, green, blue: the three numbers of a pixel, each from 0 to 255 <span class="it" lang="it">RGB (rosso, verde, blu)</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>GPU</dt>
+        <dd>graphics processing unit: thousands of simple cooks for pixels and AI <span class="it" lang="it">GPU (processore grafico)</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>parallel</dt>
+        <dd>many jobs done at the same time <span class="it" lang="it">in parallelo</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav class="pager wrap" aria-label="Chapters">
+    <a class="pager-link pager-prev" href="../../unit-1/05-memory/index.html" rel="prev"><span class="pager-dir">Previous</span><span class="pager-title">Memory: the workbench and the pantry</span></a>
+    <a class="pager-link pager-next" href="../../unit-1/07-how-the-parts-talk/index.html" rel="next"><span class="pager-dir">Next</span><span class="pager-title">How the parts talk</span></a>
+  </nav>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap-wide foot-grid">
+    <p class="foot-title">ICT · Liceo Vittoria<br><span>Prof. Claudio</span></p>
+    <p>No accounts, no tracking, no cookies. Your answers stay in this browser.<br>
+      Photos are free licences, credited under each photo and on the <a href="../../about/index.html">About</a> page.</p>
+  </div>
+</footer>
+</body>
+</html>

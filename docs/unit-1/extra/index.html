@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extra: codes, Enigma and Moore&#39;s law · Unit 1 · ICT · Liceo Vittoria</title>
+<meta name="description" content="Secret codes turn letters into other letters, and machines can do it much faster than people. Try two of them, then see how fast chips grew.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../../static/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var d=document.documentElement;function g(k){try{var v=localStorage.getItem(k);return v===null?null:JSON.parse(v);}catch(e){return null;}}
+var t=g('ict-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
+if(g('ict-read'))d.setAttribute('data-read','1');if(g('ict-font')==='atkinson')d.setAttribute('data-font','atkinson');
+d.className+=' js';})();
+</script>
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/ix-a.css">
+<link rel="stylesheet" href="../../static/css/ix-b.css">
+<link rel="stylesheet" href="../../static/css/ix-c.css">
+<script defer src="../../static/js/ict-core.js"></script>
+<script defer src="../../static/js/site.js"></script>
+<script defer src="../../static/js/ix/caesar-wheel.js"></script>
+<script defer src="../../static/js/ix/mini-enigma.js"></script>
+<script defer src="../../static/js/ix/moore-chart.js"></script>
+</head>
+<body data-root="../../" data-page="extra">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-row wrap-wide">
+    <a class="brand" href="../../index.html"><span class="brand-ict">ICT</span><span class="brand-dot" aria-hidden="true">·</span><span class="brand-school">Liceo Vittoria</span></a>
+    <div class="tools" role="group" aria-label="Display options">
+      <button type="button" class="tool" data-action="theme" aria-label="Theme: auto. Change theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <span class="tool-label">Auto</span>
+      </button>
+      <button type="button" class="tool" data-action="read" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M3 19 8.5 5h1L15 19M5 14.5h8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5c1-1 4-1.2 4 1.3V19m0-3.2c-3.2-.4-4.6.5-4.6 1.8 0 2 3.4 2 4.6-.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="tool-label">Readable</span>
+      </button>
+      <button type="button" class="tool tool-font" data-action="font" aria-pressed="false">
+        <span class="tool-glyph" aria-hidden="true">Ag</span>
+        <span class="tool-label">Easy font</span>
+      </button>
+      <button type="button" class="tool" data-action="print">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="tool-label">Print</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav wrap-wide" aria-label="Main">
+    <a href="../../index.html">Home</a>
+    <a href="../../unit-1/index.html">Unit 1</a>
+    <a href="../../unit-1/review/index.html">Review</a>
+    <a href="../../about/index.html">About</a>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+<article class="chapter extra">
+  <header class="ch-head wrap">
+    <p class="eyebrow"><a href="../../unit-1/index.html">Unit 1</a> · Extra</p>
+    <h1 class="ch-title">Extra: codes, Enigma and Moore&#39;s law</h1>
+    <p class="ch-hook">Secret codes turn letters into other letters, and machines can do it much faster than people. Try two of them, then see how fast chips grew.</p>
+    <p class="extra-note">Not part of the test. For anyone who wants more after lesson 1.</p>
+  </header>
+
+  <section class="block try" aria-labelledby="extra-h-1">
+    <h2 id="extra-h-1" class="block-h wrap"><span class="block-n" aria-hidden="true">01</span>The Caesar wheel</h2>
+<p class="wrap">More than 2,000 years ago, Julius Caesar hid his messages by moving each letter three places in the alphabet: A becomes D, B becomes E. It is easy to use, and also easy to break: there are only 25 keys to try.</p>    <div class="wrap-ix"><figure class="ix" data-ix="caesar-wheel" data-config="{&#34;shift&#34;:3,&#34;message&#34;:&#34;CAN MACHINES THINK&#34;,&#34;challenge&#34;:&#34;AOL MPYZA IVTIL DHZ JHSSLK CPJAVYF&#34;}" id="ix-extra-1">
+  <figcaption class="ix-title">Caesar wheel</figcaption>
+<p class="ix-intro">Turn the inner ring to choose the key. Encode the question of the unit, then break the secret message at the bottom.</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>Key 3: plain A B C D E F G H I J K L M N O P Q R S T U V W X Y Z → cipher D E F G H I J K L M N O P Q R S T U V W X Y Z A B C. Worked example: CAN MACHINES THINK → FDQ PDFKLQHV WKLQN. Challenge: AOL MPYZA IVTIL DHZ JHSSLK CPJAVYF. Try every key from 1 to 25 until the words make sense. (Answer: key 7, THE FIRST BOMBE WAS CALLED VICTORY.)</p>
+  </div>
+</figure></div>
+  </section>
+  <section class="block try" aria-labelledby="extra-h-2">
+    <h2 id="extra-h-2" class="block-h wrap"><span class="block-n" aria-hidden="true">02</span>A mini Enigma</h2>
+<p class="wrap">Enigma was a coding machine used in the Second World War. Inside, wheels called rotors changed each letter, and they moved after every key press. To read a message you needed the same machine with the wheels in the same starting position.</p>    <div class="wrap-ix"><figure class="ix" data-ix="mini-enigma" data-config="{}" id="ix-extra-2">
+  <figcaption class="ix-title">Mini-Enigma</figcaption>
+<p class="ix-intro">Three real rotors (I, II, III) and a reflector. Type a message and watch the rotors turn. Can any letter light up as itself?</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>Rotors I, II, III, start position AAA, reflector B, no plugboard. Type AAAAA: the lamps show BDZGO. Reset to AAA and type BDZGO: the lamps show AAAAA, so the same machine decodes. The same letter gives a different result each time, because a rotor turns at every key press. No letter ever lights up as itself: this was Enigma&#39;s flaw.</p>
+  </div>
+</figure></div>
+  </section>
+  <section class="block try" aria-labelledby="extra-h-3">
+    <h2 id="extra-h-3" class="block-h wrap"><span class="block-n" aria-hidden="true">03</span>Moore&#39;s law</h2>
+<p class="wrap">In 1965 Gordon Moore, a chip engineer, predicted that the number of transistors on one chip would keep doubling; in 1975 he said about every two years. It kept happening for about 50 years: from about 2,300 in the Intel 4004 (1971) to billions in the chip of your phone.</p>    <div class="wrap-ix"><figure class="ix" data-ix="moore-chart" data-config="{&#34;scale&#34;:&#34;log&#34;}" id="ix-extra-3">
+  <figcaption class="ix-title">Moore&#39;s law chart</figcaption>
+<p class="ix-intro">Each dot is one chip. Switch between the linear and the log scale, and press &#39;Find your phone&#39;.</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>Transistors on one chip (rounded):
+1971 Intel 4004: about 2,300 · 1974 Intel 8080: about 4,500 · 1978 Intel 8086: 29,000 · 1985 Intel 80386: 275,000 · 1989 Intel 80486: about 1.2 million · 1993 Pentium: 3.1 million · 2000 Pentium 4: 42 million · 2006 Core 2 Duo: 291 million · 2013 Apple A7 (iPhone 5s): about 1 billion · 2020 Apple A14 (iPhone 12): 11.8 billion · 2023 Apple A17 Pro (iPhone 15 Pro): 19 billion · 2024 NVIDIA B200 (two dies): 208 billion.
+On a linear scale the early chips look like zero. On a log scale (each line is 10 times the one below) the dots make an almost straight line: doubling about every two years.</p>
+  </div>
+</figure></div>
+  </section>
+
+  <nav class="pager wrap" aria-label="Back">
+    <a class="pager-link pager-prev" href="../../unit-1/01-can-machines-think/index.html"><span class="pager-dir">Back to</span><span class="pager-title">Can machines think?</span></a>
+  </nav>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap-wide foot-grid">
+    <p class="foot-title">ICT · Liceo Vittoria<br><span>Prof. Claudio</span></p>
+    <p>No accounts, no tracking, no cookies. Your answers stay in this browser.<br>
+      Photos are free licences, credited under each photo and on the <a href="../../about/index.html">About</a> page.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software, the OS and files · Unit 1 · ICT · Liceo Vittoria</title>
+<meta name="description" content="You switch on your phone, open a chat and take a photo. Dozens of programs start, share one CPU and save your files, and you never see them. Who decides what runs?">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../../static/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var d=document.documentElement;function g(k){try{var v=localStorage.getItem(k);return v===null?null:JSON.parse(v);}catch(e){return null;}}
+var t=g('ict-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
+if(g('ict-read'))d.setAttribute('data-read','1');if(g('ict-font')==='atkinson')d.setAttribute('data-font','atkinson');
+d.className+=' js';})();
+</script>
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/ix-a.css">
+<link rel="stylesheet" href="../../static/css/ix-b.css">
+<link rel="stylesheet" href="../../static/css/ix-c.css">
+<script defer src="../../static/js/ict-core.js"></script>
+<script defer src="../../static/js/site.js"></script>
+<script defer src="../../static/js/ix/path-builder.js"></script>
+</head>
+<body data-root="../../" data-page="chapter" data-slug="08-software-os-and-files">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-row wrap-wide">
+    <a class="brand" href="../../index.html"><span class="brand-ict">ICT</span><span class="brand-dot" aria-hidden="true">·</span><span class="brand-school">Liceo Vittoria</span></a>
+    <div class="tools" role="group" aria-label="Display options">
+      <button type="button" class="tool" data-action="theme" aria-label="Theme: auto. Change theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <span class="tool-label">Auto</span>
+      </button>
+      <button type="button" class="tool" data-action="read" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M3 19 8.5 5h1L15 19M5 14.5h8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5c1-1 4-1.2 4 1.3V19m0-3.2c-3.2-.4-4.6.5-4.6 1.8 0 2 3.4 2 4.6-.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="tool-label">Readable</span>
+      </button>
+      <button type="button" class="tool tool-font" data-action="font" aria-pressed="false">
+        <span class="tool-glyph" aria-hidden="true">Ag</span>
+        <span class="tool-label">Easy font</span>
+      </button>
+      <button type="button" class="tool" data-action="print">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="tool-label">Print</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav wrap-wide" aria-label="Main">
+    <a href="../../index.html">Home</a>
+    <a href="../../unit-1/index.html" aria-current="page">Unit 1</a>
+    <a href="../../unit-1/review/index.html">Review</a>
+    <a href="../../about/index.html">About</a>
+  </nav>
+</header>
+<div class="progress" data-progress-slug="08-software-os-and-files">
+  <div class="progress-track" role="progressbar" aria-label="Chapter progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-fill"></span></div>
+  <span class="progress-text">0% done</span>
+</div>
+<main id="main" tabindex="-1">
+<article class="chapter">
+  <header class="ch-head wrap">
+    <p class="eyebrow"><a href="../../unit-1/index.html">Unit 1</a> · Lesson 8</p>
+    <h1 class="ch-title">Software, the OS and files</h1>
+    <p class="ch-hook">You switch on your phone, open a chat and take a photo. Dozens of programs start, share one CPU and save your files, and you never see them. Who decides what runs?</p>
+  </header>
+
+
+  <section class="block story" aria-labelledby="story-h">
+    <h2 id="story-h" class="block-h wrap"><span class="block-n" aria-hidden="true">01</span>The story</h2>
+      <p class="wrap story-p">7:00. You press the power button. Before you see anything, one program starts first: the operating system (OS). It checks the hardware, copies itself into the RAM and draws the lock screen. Every other app waits for it.</p>
+      <p class="wrap story-p">7:05. You open a chat, your music and the camera. There is only one CPU, with a few cores. The OS shares them out, many times a second, so every app seems to run at the same time. It gives each app its own space on the workbench (RAM), and it talks to the speaker, the camera and the Wi-Fi for them.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/v5_chat_phone.jpg"
+       srcset="../../img/v5_chat_phone-800.jpg 800w, ../../img/v5_chat_phone.jpg 1280w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1280" height="853" alt="Every app on this phone asks the operating system for the CPU, the memory and the screen." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">Every app on this phone asks the operating system for the CPU, the memory and the screen.</span>    <span class="credit">Photo: Océanos y dados, CC0 · <a href="https://commons.wikimedia.org/wiki/File:Smartphone_Use.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">7:10. You take a photo. The camera app does not know where the bits go on the storage chips. It asks the OS: &#34;save this&#34;. The OS gives the photo a name, puts it in a folder and remembers its address. Tomorrow you find it in the gallery. Inside your computer today: the OS is the first program to start and the last one to stop.</p>
+  </section>
+
+  <section class="block science wrap" aria-labelledby="sci-h">
+    <h2 id="sci-h" class="block-h"><span class="block-n" aria-hidden="true">02</span>The science</h2>
+    <div class="concept">
+      <h3 class="concept-h">The operating system runs the machine</h3>
+      <p>The operating system (OS) is the program that runs the machine for all the other programs. Windows, macOS, Android and iOS are operating systems. It has six jobs: it starts the machine; it shares the CPU between programs; it hands out space in memory (RAM); it talks to the hardware; it keeps your files in order; and it gives you the screen, with windows and a pointer. Apps ask the OS, and the OS asks the hardware. In the kitchen, the OS is the head cook who opens up in the morning and gives everyone a place on the workbench.</p>
+<div class="kitchen" data-part="workbench">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-1-t">
+    <title id="k-1-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The workbench.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part is-on">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li class="is-on"><span class="k-l">The workbench</span> = RAM</li>
+    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div>    </div>
+    <div class="concept">
+      <h3 class="concept-h">System software or application?</h3>
+      <p>System software works for the other software: the operating system and the drivers. A driver is a small program that tells the OS how to use one piece of hardware, like the Wi-Fi card or a printer. Applications (apps) work for you: a browser, Word, a game. An update is a new version of a program. Most updates are repairs: they fix bugs (errors) and close security holes, so install them soon.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">A file: a name, the bits, an address</h3>
+      <p>A file is a set of bits with a name, kept in storage (the pantry). The extension is the end of the name, like .docx, .jpg or .mp3. It is a label: it tells the OS which app opens the file. It is not the truth: if you rename photo.jpg to photo.docx, the bits are still a photo. A folder is a list of files and other folders. The path is the full address of a file, from the drive through each folder to the name, for example C:\Users\Student\Documents\ICT\Rossi_Anna_Unit1.docx.</p>
+<div class="kitchen" data-part="pantry">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-3-t">
+    <title id="k-3-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The pantry.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part is-on">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li><span class="k-l">The workbench</span> = RAM</li>
+    <li class="is-on"><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div>    </div>
+    <div class="concept">
+      <h3 class="concept-h">Name it well, keep three copies</h3>
+      <p>The naming rule: Surname_Name_Task.docx, for example Rossi_Anna_Essay.docx. Who, what, no spaces, no &#34;final&#34;. Names like final.docx, final_v2_REAL.docx or Document1.docx tell nobody what is inside. The backup rule 3-2-1: three copies, on two kinds of storage, with one somewhere else. For example: your phone, your laptop at home, and the cloud. The Recycle Bin is not a backup: it is on the same disk, and it gets emptied. A synced folder is not a backup either: sync copies your mistakes, so if you delete a photo on one device, it disappears everywhere.</p>
+    </div>
+  </section>
+
+  <section class="block check-now wrap" aria-labelledby="check-h" data-section="check">
+    <h2 id="check-h" class="block-h"><span class="block-n" aria-hidden="true">03</span>Check now</h2>
+    <p class="block-lede">Quick questions. You see the answer at once.</p>
+    <ol class="q-list" role="list">
+<li><div class="q q-type-tf" id="q-08-software-os-and-files-c1" data-kind="check" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L8_BACKUP&#34;,&#34;q&#34;:&#34;A synced cloud folder is a backup.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;Sync copies your mistakes too: delete a file on one device and it disappears from all of them.&#34;}">
+  <p class="q-text">A synced cloud folder is a backup.</p>
+  <p class="q-fallback">True or false?</p>
+</div></li><li><div class="q q-type-mc" id="q-08-software-os-and-files-c2" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L8_FILES&#34;,&#34;q&#34;:&#34;Which file name follows the naming rule?&#34;,&#34;options&#34;:[&#34;final_v2_REAL.docx&#34;,&#34;Rossi_Anna_Essay.docx&#34;,&#34;my essay (3).docx&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;Surname_Name_Task.docx: who, what, no spaces, no \&#34;final\&#34;.&#34;}">
+  <p class="q-text">Which file name follows the naming rule?</p>
+  <ol class="q-fallback" type="a"><li>final_v2_REAL.docx</li><li>Rossi_Anna_Essay.docx</li><li>my essay (3).docx</li></ol>
+</div></li><li><div class="q q-type-mc" id="q-08-software-os-and-files-c3" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L8_OS&#34;,&#34;q&#34;:&#34;Which of these is system software?&#34;,&#34;options&#34;:[&#34;a browser&#34;,&#34;the Wi-Fi driver&#34;,&#34;a game&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;A driver works for the operating system, not for you. A browser and a game are applications.&#34;}">
+  <p class="q-text">Which of these is system software?</p>
+  <ol class="q-fallback" type="a"><li>a browser</li><li>the Wi-Fi driver</li><li>a game</li></ol>
+</div></li>    </ol>
+  </section>
+
+  <section class="block try" aria-labelledby="try-h">
+    <h2 id="try-h" class="block-h wrap"><span class="block-n" aria-hidden="true">04</span>Try it</h2>
+    <div class="wrap-ix"><figure class="ix" data-ix="path-builder" data-config="{}" id="ix-08-1">
+  <figcaption class="ix-title">Path builder</figcaption>
+<p class="ix-intro">Click the drive, then the folders, then the file, to build the full path. Then test some file names with the naming checker.</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>Build the path of Anna Rossi&#39;s ICT homework: C:\Users\Student\Documents\ICT\Rossi_Anna_Unit1.docx. Read it from the left: C: is the drive; Users, Student, Documents and ICT are folders, one inside the other; Rossi_Anna_Unit1 is the name and .docx is the extension (a Word document). Naming checker: Rossi_Anna_Unit1.docx is good (surname, name, task, no spaces). compito finale (2).docx is bad: spaces, no name, &#34;finale&#34;.</p>
+  </div>
+</figure></div>
+  </section>
+
+  <section class="block your-turn wrap" aria-labelledby="turn-h" data-section="turn">
+    <h2 id="turn-h" class="block-h"><span class="block-n" aria-hidden="true">05</span>Your turn</h2>
+    <label class="turn-prompt" for="turn-u1-08-software-os-and-files-turn">Write your own 3-2-1 plan for your photos or your school work. Where are the three copies? Which two kinds of storage? Which copy is somewhere else?</label>
+    <textarea id="turn-u1-08-software-os-and-files-turn" class="turn-text" data-turn-id="u1-08-software-os-and-files-turn" rows="6" spellcheck="true"></textarea>
+    <div class="turn-bar">
+      <button type="button" class="btn btn-ghost" data-action="copy-turn" data-target="turn-u1-08-software-os-and-files-turn">Copy</button>
+      <p class="turn-note" aria-live="polite">Saved in this browser only. Nothing is sent anywhere.</p>
+    </div>
+  </section>
+
+  <section class="block exercises wrap" aria-labelledby="ex-h" data-section="exercises">
+    <h2 id="ex-h" class="block-h"><span class="block-n" aria-hidden="true">06</span>Exercises</h2>
+    <p class="block-lede">From ★☆☆ (easy) to ★★★ (hard). Use a hint if you are stuck.</p>
+    <ol class="ex-list" role="list">
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 1</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-order" id="q-08-software-os-and-files-e1" data-kind="exercise" data-q="{&#34;type&#34;:&#34;order&#34;,&#34;obj&#34;:&#34;L8_FILES&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Put the parts of this path in order, from the drive to the file.&#34;,&#34;items&#34;:[&#34;C:&#34;,&#34;Users&#34;,&#34;Student&#34;,&#34;Documents&#34;,&#34;ICT&#34;,&#34;Rossi_Anna_Unit1.docx&#34;],&#34;explain&#34;:&#34;A path goes from the drive, through each folder, to the file: C:\\Users\\Student\\Documents\\ICT\\Rossi_Anna_Unit1.docx.&#34;,&#34;hint&#34;:&#34;The drive always comes first, the file name always last.&#34;,&#34;solution&#34;:&#34;C: → Users → Student → Documents → ICT → Rossi_Anna_Unit1.docx&#34;}">
+  <p class="q-text">Put the parts of this path in order, from the drive to the file.</p>
+  <ul class="q-fallback"><li>C:</li><li>Documents</li><li>ICT</li><li>Rossi_Anna_Unit1.docx</li><li>Student</li><li>Users</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 2</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-match" id="q-08-software-os-and-files-e2" data-kind="exercise" data-q="{&#34;type&#34;:&#34;match&#34;,&#34;obj&#34;:&#34;L8_FILES&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Match each extension to the kind of file.&#34;,&#34;pairs&#34;:[[&#34;.docx&#34;,&#34;a Word document&#34;],[&#34;.jpg&#34;,&#34;a photo&#34;],[&#34;.xlsx&#34;,&#34;a spreadsheet&#34;],[&#34;.mp3&#34;,&#34;a sound&#34;],[&#34;.pptx&#34;,&#34;a slide presentation&#34;]],&#34;explain&#34;:&#34;The extension is the label the OS reads to choose the app.&#34;,&#34;hint&#34;:&#34;x at the end means a recent Microsoft Office file: Word, Excel or PowerPoint.&#34;,&#34;solution&#34;:&#34;.docx: Word document · .jpg: photo · .xlsx: spreadsheet · .mp3: sound · .pptx: slides.&#34;}">
+  <p class="q-text">Match each extension to the kind of file.</p>
+  <ul class="q-fallback"><li>.docx — ?</li><li>.jpg — ?</li><li>.xlsx — ?</li><li>.mp3 — ?</li><li>.pptx — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 3</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-tf" id="q-08-software-os-and-files-e3" data-kind="exercise" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L8_FILES&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;If you rename holiday.jpg to holiday.docx, the photo becomes a Word document.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;The extension is only a label. The bits inside are still a photo; Word will not open it properly.&#34;,&#34;hint&#34;:&#34;Does renaming change the bits inside the file?&#34;,&#34;solution&#34;:&#34;False. The label changes, the bits do not: it is still a photo with the wrong label.&#34;}">
+  <p class="q-text">If you rename holiday.jpg to holiday.docx, the photo becomes a Word document.</p>
+  <p class="q-fallback">True or false?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 4</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-match" id="q-08-software-os-and-files-e4" data-kind="exercise" data-q="{&#34;type&#34;:&#34;match&#34;,&#34;obj&#34;:&#34;L8_OS&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;System software or application?&#34;,&#34;pairs&#34;:[[&#34;Word&#34;,&#34;application&#34;],[&#34;the Wi-Fi driver&#34;,&#34;system software&#34;],[&#34;Android&#34;,&#34;system software&#34;],[&#34;a game&#34;,&#34;application&#34;],[&#34;Windows&#34;,&#34;system software&#34;]],&#34;explain&#34;:&#34;System software works for other software; applications work for you.&#34;,&#34;hint&#34;:&#34;Ask: does it work for me, or for the other programs?&#34;,&#34;solution&#34;:&#34;Word and a game are applications. The Wi-Fi driver, Android and Windows are system software.&#34;}">
+  <p class="q-text">System software or application?</p>
+  <ul class="q-fallback"><li>Word — ?</li><li>the Wi-Fi driver — ?</li><li>Android — ?</li><li>a game — ?</li><li>Windows — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 5</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-num" id="q-08-software-os-and-files-e5" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L8_BACKUP&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;In the 3-2-1 rule, how many copies must be kept somewhere else?&#34;,&#34;answer&#34;:1,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;copy&#34;,&#34;explain&#34;:&#34;Three copies, two kinds of storage, one somewhere else: if the house burns, one copy survives.&#34;,&#34;hint&#34;:&#34;Read the rule: 3 … 2 … 1.&#34;,&#34;solution&#34;:&#34;1 copy somewhere else, for example in the cloud.&#34;}">
+  <p class="q-text">In the 3-2-1 rule, how many copies must be kept somewhere else?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 6</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-08-software-os-and-files-e6" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L8_BACKUP&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Which plan follows the 3-2-1 rule?&#34;,&#34;options&#34;:[&#34;the phone + a USB stick in the same bag + the Recycle Bin&#34;,&#34;the phone + the laptop at home + a copy in the cloud&#34;,&#34;the phone + a synced cloud folder only&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;Three copies, two kinds of storage (phone and laptop), one somewhere else (the cloud).&#34;,&#34;hint&#34;:&#34;The Recycle Bin and sync are not backups. A stick in the same bag is not somewhere else.&#34;,&#34;solution&#34;:&#34;The phone + the laptop at home + a copy in the cloud.&#34;}">
+  <p class="q-text">Which plan follows the 3-2-1 rule?</p>
+  <ol class="q-fallback" type="a"><li>the phone + a USB stick in the same bag + the Recycle Bin</li><li>the phone + the laptop at home + a copy in the cloud</li><li>the phone + a synced cloud folder only</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 7</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-open" id="q-08-software-os-and-files-e7" data-kind="exercise" data-q="{&#34;type&#34;:&#34;open&#34;,&#34;obj&#34;:&#34;L8_FILES&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Anna Rossi&#39;s ICT homework about the operating system is called final_v2_REAL.docx. Rename it with the naming rule, and say what was wrong with the old name.&#34;,&#34;hint&#34;:&#34;Surname_Name_Task.docx.&#34;,&#34;solution&#34;:&#34;Rossi_Anna_OperatingSystem.docx (or Rossi_Anna_OS.docx). The old name says nothing about who wrote it or what it is about, and \&#34;final\&#34; and \&#34;REAL\&#34; do not help anyone find it.&#34;}">
+  <p class="q-text">Anna Rossi&#39;s ICT homework about the operating system is called final_v2_REAL.docx. Rename it with the naming rule, and say what was wrong with the old name.</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 8</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-08-software-os-and-files-e8" data-kind="exercise" data-q="{&#34;type&#34;:&#34;open&#34;,&#34;obj&#34;:&#34;L8_OS&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;You switch on a laptop, open a browser and save a photo. Name four jobs the operating system did for you.&#34;,&#34;hint&#34;:&#34;Go through the six jobs in order: what happened first?&#34;,&#34;solution&#34;:&#34;It started the machine; it gave the browser space in memory (RAM); it shared the CPU between the browser and other programs; it talked to the hardware (screen, Wi-Fi); it saved the photo as a file in a folder; it gave me windows and a pointer.&#34;}">
+  <p class="q-text">You switch on a laptop, open a browser and save a photo. Name four jobs the operating system did for you.</p>
+</div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block one-sentence wrap" aria-labelledby="one-h">
+    <h2 id="one-h" class="block-h"><span class="block-n" aria-hidden="true">07</span>In one sentence</h2>
+    <p class="one-line">The OS runs the machine for every app; your files need a good name, a path and three copies.</p>
+  </section>
+
+  <section class="block words wrap" aria-labelledby="words-h">
+    <h2 id="words-h" class="block-h"><span class="block-n" aria-hidden="true">08</span>Words of the chapter</h2>
+    <dl class="gloss">
+      <div class="gloss-row">
+        <dt>operating system</dt>
+        <dd>the program that runs the machine for all the other programs <span class="it" lang="it">sistema operativo</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>application</dt>
+        <dd>software that works for you: a browser, Word, a game <span class="it" lang="it">applicazione</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>driver</dt>
+        <dd>a small program that tells the OS how to use one piece of hardware <span class="it" lang="it">driver</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>file</dt>
+        <dd>a set of bits with a name, kept in storage <span class="it" lang="it">file</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>folder</dt>
+        <dd>a list of files and other folders <span class="it" lang="it">cartella</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>path</dt>
+        <dd>the full address of a file: drive, folders, name <span class="it" lang="it">percorso</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>extension</dt>
+        <dd>the end of a file name (.jpg, .docx): a label the OS reads <span class="it" lang="it">estensione</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>sync</dt>
+        <dd>keeping the same files on several devices; it copies mistakes too <span class="it" lang="it">sincronizzazione</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav class="pager wrap" aria-label="Chapters">
+    <a class="pager-link pager-prev" href="../../unit-1/07-how-the-parts-talk/index.html" rel="prev"><span class="pager-dir">Previous</span><span class="pager-title">How the parts talk</span></a>
+    <a class="pager-link pager-next" href="../../unit-1/09-can-machines-think-today/index.html" rel="next"><span class="pager-dir">Next</span><span class="pager-title">Can machines think? Today</span></a>
+  </nav>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap-wide foot-grid">
+    <p class="foot-title">ICT · Liceo Vittoria<br><span>Prof. Claudio</span></p>
+    <p>No accounts, no tracking, no cookies. Your answers stay in this browser.<br>
+      Photos are free licences, credited under each photo and on the <a href="../../about/index.html">About</a> page.</p>
+  </div>
+</footer>
+</body>
+</html>

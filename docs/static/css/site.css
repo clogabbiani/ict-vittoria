@@ -201,27 +201,13 @@ html[data-read="1"] .tool-font { display: inline-flex; }
 .block-n { display: block; font-family: var(--mono); font-size: .8125rem; font-weight: 500; letter-spacing: .08em; color: var(--muted); margin-bottom: .6rem; }
 .block-n::after { content: ""; display: block; width: 28px; height: 3px; background: var(--mark); margin-top: 6px; }
 
-/* film box */
-.film-box { margin-top: 1rem; }
-.film-box > * { }
-.film-h { font-family: var(--mono); font-size: .8125rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; margin: 0; padding: 12px 18px; background: var(--navy); color: var(--paper); border-radius: var(--radius) var(--radius) 0 0; }
-.film-cols { display: grid; grid-template-columns: 1fr; border: 1px solid var(--line); border-top: 0; border-radius: 0 0 var(--radius) var(--radius); background: var(--surface); }
-@media (min-width: 640px) { .film-cols { grid-template-columns: 1fr 1fr; } .film-real { border-left: 1px solid var(--line); } }
-.film-col { padding: 16px 18px 6px; }
-.film-col + .film-col { border-top: 1px solid var(--line); }
-@media (min-width: 640px) { .film-col + .film-col { border-top: 0; } }
-.film-col-h { font-size: 1rem; display: flex; align-items: center; gap: 8px; }
-.film-real .film-col-h::before { content: ""; width: 10px; height: 10px; background: var(--yellow); border-radius: 2px; flex: none; }
-.film-col:not(.film-real) .film-col-h::before { content: ""; width: 10px; height: 10px; border: 2px solid var(--muted); border-radius: 2px; flex: none; }
-.film-col p { font-size: 1rem; }
-
 /* story */
 .story-p { font-size: clamp(1.0625rem, 1.6vw, 1.1875rem); line-height: 1.7; }
 .photo { margin: 2.25rem 0; }
 .photo img { width: 100%; background: var(--surface-2); border-radius: 2px; }
 .photo figcaption { margin-top: 10px; font-size: .9375rem; display: flex; flex-direction: column; gap: 2px; }
 .photo .cap { font-weight: 500; }
-.photo .credit { font-size: .8125rem; color: var(--muted); }
+.photo .credit { display: block; font-size: .8125rem; color: var(--muted); }
 .photo .credit a { color: var(--muted); }
 @media (min-width: 1140px) { .wrap-photo .photo figcaption { max-width: var(--col); } }
 
@@ -466,10 +452,9 @@ html[data-font="atkinson"][data-read="1"] .ix { font-family: "Atkinson Hyperlegi
   .hero .eyebrow, .hero-lede, .hero-question span { color: #000; }
   .wrap, .wrap-wide, .wrap-photo, .wrap-ix { max-width: none; padding: 0; }
   .ix-print, .ix:not(.ix-ready) .ix-print { display: block !important; }
-  .ix, .q, .ex, .concept, .film-box, .film-cols, figure, .gloss-row, .kitchen, .chapter-card, .unit-card, .tl-item, .gloss-table tr { break-inside: avoid; page-break-inside: avoid; }
+  .ix, .q, .ex, .concept, figure, .gloss-row, .kitchen, .chapter-card, .unit-card, .tl-item, .gloss-table tr { break-inside: avoid; page-break-inside: avoid; }
   .block-h, .concept-h, h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
   .block { margin-top: 18pt; }
-  .film-h { background: none; color: #000; border: 1px solid #000; border-bottom: 0; }
   .photo { margin: 10pt 0; }
   .photo img { max-height: 120mm; width: auto; max-width: 100%; }
   details.quiz > *:not(summary) { display: block; }
@@ -483,5 +468,30 @@ html[data-font="atkinson"][data-read="1"] .ix { font-family: "Atkinson Hyperlegi
   .q-solution[hidden], .q-hint[hidden] { display: none !important; }
 }
 
-/* v5 fix: long file paths (C:\Users\…) inside exercises must wrap at 390 px */
+/* v5 fix: long file paths inside exercises must wrap at 390 px */
 .exercises, .ex, .q, .q * { min-width: 0; overflow-wrap: anywhere; }
+
+/* ------------------------------------------------------------------ v6 */
+/* captions and credits: always below the image, never overlaid, never cut */
+figure figcaption, .photo figcaption, .photo .cap, .photo .credit, .credits td, .credits th, .gloss-table td, .gloss-table th,
+code, kbd, pre, .q-text, .q-opt-text, .q-feedback, .q-solution, .q-hint, .ix-print, .ix-intro {
+  overflow-wrap: anywhere; min-width: 0;
+}
+.photo figcaption { position: static; text-overflow: clip; white-space: normal; overflow: visible; }
+.photo .credit { white-space: normal; overflow: visible; text-overflow: clip; }
+.gloss-table tbody th { white-space: normal; overflow-wrap: break-word; }
+.table-scroll { max-width: 100%; }
+.credits .cred-title { max-width: 28rem; }
+
+/* unit page: the question first */
+.hero-unit .hero-ask { font-size: clamp(2.6rem, 8vw, 5.25rem); max-width: 14ch; }
+.hero-source { margin: 1.25rem 0 0; max-width: 52ch; font-size: 1rem; color: var(--blue-grey); border-left: 4px solid var(--yellow); padding-left: 14px; }
+.chapter-card.is-soon { border-style: dashed; background: transparent; }
+.chapter-card.is-soon .chapter-title { color: var(--muted); }
+.chapter-card .badge { margin-top: auto; }
+#ix-unit-timeline .ix-title::before { content: "Interactive timeline"; }
+
+/* chapter 1 -> extra page */
+.extra-link { margin: 0; }
+.extra-link a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+.extra-note { color: var(--muted); font-size: .9375rem; }

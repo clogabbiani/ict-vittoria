@@ -1,4 +1,4 @@
-/* timeline-game.js — component 13: put 12 inventions in order (oldest at the top).
+/* timeline-game.js — component 13: put the 11 milestones in order (oldest at the top).
    Drag a card, or select it and use Move up / Move down (or the arrow keys), or select it and click
    another card to move it there. "Check" marks each place and shows the year and one line.
    Config: items [{year, label, line}], seed (int, optional: deterministic shuffle). Contract: SITE_SPEC.md. */
@@ -6,19 +6,18 @@
   'use strict';
   if (!window.ICT) return;
 
-  var DEFAULT_ITEMS = [
-    { year: 1804, label: "Jacquard's punched-card loom", line: 'Cards tell the loom which threads to lift.' },
-    { year: 1843, label: "Ada Lovelace's Note G", line: 'A method for a machine that was never built.' },
-    { year: 1854, label: "Boole's logic", line: 'Thinking as TRUE and FALSE.' },
-    { year: 1936, label: "Turing's paper on computable numbers", line: 'A machine that can do any calculation.' },
-    { year: 1937, label: "Shannon's switches", line: 'Circuits can do logic.' },
-    { year: 1940, label: 'The Bombe', line: 'Machines against Enigma.' },
-    { year: 1945, label: 'ENIAC', line: 'The giant electronic calculator.' },
-    { year: 1947, label: 'The transistor', line: 'A switch with no moving parts.' },
-    { year: 1956, label: 'The RAMAC hard disk', line: 'The first hard disk.' },
-    { year: 1971, label: 'The Intel 4004', line: 'A CPU on one chip.' },
-    { year: 1984, label: 'The Macintosh', line: 'A computer for everyone, with a mouse.' },
-    { year: 2007, label: 'The iPhone', line: 'A computer in your pocket.' }
+  var DEFAULT_ITEMS = [   // the unit's 11 milestones (brief v6 section 3), by start year
+    { year: 1837, label: "Babbage's Analytical Engine", line: 'A store for numbers and a mill that calculates: the idea of memory and CPU.' },
+    { year: 1890, label: 'Punched cards count the US census', line: 'Holes in cards keep data: the first storage.' },
+    { year: 1936, label: "Turing's machine", line: 'A tape, a head and a list of rules can do any calculation.' },
+    { year: 1946, label: 'ENIAC and vacuum tubes', line: 'About 17,500 tubes, each one a switch: on is 1, off is 0.' },
+    { year: 1947, label: 'The transistor', line: 'A tiny switch with no moving parts replaces the tube.' },
+    { year: 1970, label: 'The RAM chip (Intel 1103)', line: 'Fast memory on a chip: the working desk of the computer.' },
+    { year: 1971, label: 'The Intel 4004', line: 'The whole CPU on one chip, with about 2,300 transistors.' },
+    { year: 1981, label: 'The IBM PC motherboard', line: 'One board connects CPU, memory and the other parts.' },
+    { year: 1984, label: 'Mouse and windows for everyone (Macintosh)', line: 'Point and click instead of typing commands.' },
+    { year: 1999, label: 'The GPU (GeForce 256)', line: 'Many small calculators working at the same time, for 3D games.' },
+    { year: 2007, label: 'The system on a chip (iPhone)', line: 'CPU, GPU and more on one chip, to save battery and space.' }
   ];
 
   function rng(seed) {   // mulberry32: same seed, same shuffle
