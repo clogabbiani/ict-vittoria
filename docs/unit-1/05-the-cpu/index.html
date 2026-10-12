@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>After the war: the CPU · Unit 1 · ICT · Liceo Vittoria</title>
+<meta name="description" content="ENIAC weighed about 27 tonnes. To give it a new job, people moved cables and switches by hand.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../../static/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var d=document.documentElement;function g(k){try{var v=localStorage.getItem(k);return v===null?null:JSON.parse(v);}catch(e){return null;}}
+var t=g('ict-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
+if(g('ict-read'))d.setAttribute('data-read','1');if(g('ict-font')==='atkinson')d.setAttribute('data-font','atkinson');
+d.className+=' js';})();
+</script>
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/ix-a.css">
+<link rel="stylesheet" href="../../static/css/ix-b.css">
+<script defer src="../../static/js/ict-core.js"></script>
+<script defer src="../../static/js/site.js"></script>
+<script defer src="../../static/js/ix/fde-stepper.js"></script>
+</head>
+<body data-root="../../" data-page="chapter" data-slug="05-the-cpu">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-row wrap-wide">
+    <a class="brand" href="../../index.html"><span class="brand-ict">ICT</span><span class="brand-dot" aria-hidden="true">·</span><span class="brand-school">Liceo Vittoria</span></a>
+    <div class="tools" role="group" aria-label="Display options">
+      <button type="button" class="tool" data-action="theme" aria-label="Theme: auto. Change theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <span class="tool-label">Auto</span>
+      </button>
+      <button type="button" class="tool" data-action="read" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M3 19 8.5 5h1L15 19M5 14.5h8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5c1-1 4-1.2 4 1.3V19m0-3.2c-3.2-.4-4.6.5-4.6 1.8 0 2 3.4 2 4.6-.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="tool-label">Readable</span>
+      </button>
+      <button type="button" class="tool tool-font" data-action="font" aria-pressed="false">
+        <span class="tool-glyph" aria-hidden="true">Ag</span>
+        <span class="tool-label">Easy font</span>
+      </button>
+      <button type="button" class="tool" data-action="print">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="tool-label">Print</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav wrap-wide" aria-label="Main">
+    <a href="../../index.html">Home</a>
+    <a href="../../unit-1/index.html" aria-current="page">Unit 1</a>
+    <a href="../../unit-1/review/index.html">Review</a>
+    <a href="../../about/index.html">About</a>
+  </nav>
+</header>
+<div class="progress" data-progress-slug="05-the-cpu">
+  <div class="progress-track" role="progressbar" aria-label="Chapter progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-fill"></span></div>
+  <span class="progress-text">0% done</span>
+</div>
+<main id="main" tabindex="-1">
+<article class="chapter">
+  <header class="ch-head wrap">
+    <p class="eyebrow"><a href="../../unit-1/index.html">Unit 1</a> · Lesson 5</p>
+    <h1 class="ch-title">After the war: the CPU</h1>
+    <p class="ch-hook">ENIAC weighed about 27 tonnes. To give it a new job, people moved cables and switches by hand.</p>
+  </header>
+
+  <aside class="film-box wrap" aria-labelledby="film-h">
+    <h2 id="film-h" class="film-h">Back to the film</h2>
+    <div class="film-cols">
+      <div class="film-col">
+        <h3 class="film-col-h">In the film</h3>
+        <p>Near the end of the film, Turing is at home in Manchester, alone with his machine. The film does not show what he built and designed after the war.</p>
+      </div>
+      <div class="film-col film-real">
+        <h3 class="film-col-h">In reality</h3>
+        <p>After the war Turing designed a real computer, the ACE. He wrote the report in 1945–46 and presented it on 19 February 1946. A smaller version, the Pilot ACE, worked in 1950. From 1948 he worked at Manchester University, where one of the first computers had just worked, and he wrote a manual for programming it. The war machines did one job; these computers could be given any program.</p>
+      </div>
+    </div>
+  </aside>
+
+  <section class="block story" aria-labelledby="story-h">
+    <h2 id="story-h" class="block-h wrap"><span class="block-n" aria-hidden="true">01</span>The story</h2>
+      <p class="wrap story-p">In 1945, in Philadelphia, a giant machine called ENIAC was finished. It filled a room, weighed about 27 tonnes and had about 17,500 valves: glass tubes that worked as electronic switches. It was built to calculate tables for the army&#39;s guns.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/L1_eniac_room.jpg"
+       srcset="../../img/L1_eniac_room-800.jpg 800w, ../../img/L1_eniac_room.jpg 1340w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1340" height="1024" alt="Glen Beck and Betty Snyder programming ENIAC. A program meant cables and switches." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">Glen Beck and Betty Snyder programming ENIAC. A program meant cables and switches.</span>    <span class="credit">Photo: Unknown author · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Glen_Beck_and_Betty_Snyder_program_the_ENIAC_in_building_328_at_the_Ballistic_Research_Laboratory.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">Six women programmed it: Kay McNulty, Betty Jennings, Betty Snyder, Marlyn Wescoff, Fran Bilas and Ruth Lichterman. There was no manual. They studied the wiring diagrams and set up each problem with cables and switches. A new problem could take days. To find mistakes, they stopped the machine and checked it step by step.</p>
+      <p class="wrap story-p">ENIAC was shown to the public in February 1946. The photos showed the six women, but they were not introduced, and history forgot them for about fifty years. In the 1980s a researcher, Kathy Kleiman, found their story again.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/L1_eniac_programmers.jpg"
+       srcset="../../img/L1_eniac_programmers-800.jpg 800w, ../../img/L1_eniac_programmers.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1098" alt="Programmers at ENIAC, 1946 (US Army photo)." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">Programmers at ENIAC, 1946 (US Army photo).</span>    <span class="credit">Photo: Unidentified U.S. Army photographer · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Two_women_operating_ENIAC_(full_resolution).jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">In June 1945 John von Neumann wrote a report with a big idea: keep the program in the memory, next to the data. Then a new program means new numbers in memory, not new wiring. The ENIAC team (Eckert and Mauchly) had helped to develop the idea, but only von Neumann&#39;s name was on the report.</p>
+      <p class="wrap story-p">On 9 September 1947, operators of another computer, the Harvard Mark II, found a moth stuck in a relay. They taped it into the logbook as the &#34;first actual case of bug being found&#34;. It was a joke: engineers already called faults &#34;bugs&#34;. Grace Hopper did not find the moth, but she told the story often and made it famous. She later built some of the first compilers, programs that translate words into machine instructions.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/h_moth_log.jpg"
+       srcset="../../img/h_moth_log-800.jpg 800w, ../../img/h_moth_log.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1265" alt="The logbook page with the moth, 9 September 1947." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">The logbook page with the moth, 9 September 1947.</span>    <span class="credit">Photo: Courtesy of the Naval Surface Warfare Center, Dahlgren, VA., 1988. · Public domain · <a href="https://commons.wikimedia.org/wiki/File:First_Computer_Bug,_1947.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+  </section>
+
+  <section class="block science wrap" aria-labelledby="sci-h">
+    <h2 id="sci-h" class="block-h"><span class="block-n" aria-hidden="true">02</span>The science</h2>
+    <div class="concept">
+      <h3 class="concept-h">The CPU: the cook</h3>
+      <p>The CPU (central processing unit) is the part of a computer that follows instructions. In our kitchen, the CPU core is the cook: it reads one line of the recipe, does it, and reads the next. The cook remembers almost nothing between lines.</p>
+<div class="kitchen" data-part="cook">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-1-t">
+    <title id="k-1-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The cook.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part is-on">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li class="is-on"><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li><span class="k-l">The workbench</span> = RAM</li>
+    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div>    </div>
+    <div class="concept">
+      <h3 class="concept-h">Fetch, decode, execute, next</h3>
+      <p>Every core repeats one loop. Fetch: get the next instruction from memory. Decode: understand what it means. Execute: do it. Then move on to the next line. A modern core does this billions of times a second.</p>
+<div class="kitchen" data-part="cook">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-2-t">
+    <title id="k-2-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The cook.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part is-on">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li class="is-on"><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li><span class="k-l">The workbench</span> = RAM</li>
+    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div>    </div>
+    <div class="concept">
+      <h3 class="concept-h">The stored program</h3>
+      <p>The program lives in memory, next to the data. Memory is like a row of numbered boxes. Some boxes hold instructions, some hold numbers. To change the program, you change what is in the boxes. No rewiring. In the kitchen, the recipe and the ingredients are both on the workbench (RAM).</p>
+<div class="kitchen" data-part="workbench">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-3-t">
+    <title id="k-3-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The workbench.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part is-on">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li class="is-on"><span class="k-l">The workbench</span> = RAM</li>
+    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div>    </div>
+    <div class="concept">
+      <h3 class="concept-h">Bugs and debugging</h3>
+      <p>A bug is a mistake in a program. Debugging means finding the bug and fixing it. A good way is to run the program one step at a time and check every box, like ENIAC&#39;s programmers did.</p>
+    </div>
+  </section>
+
+  <section class="block check-now wrap" aria-labelledby="check-h" data-section="check">
+    <h2 id="check-h" class="block-h"><span class="block-n" aria-hidden="true">03</span>Check now</h2>
+    <p class="block-lede">Quick questions. You see the answer at once.</p>
+    <ol class="q-list" role="list">
+<li><div class="q q-type-order" id="q-05-the-cpu-c1" data-kind="check" data-q="{&#34;type&#34;:&#34;order&#34;,&#34;obj&#34;:&#34;L5_FDE&#34;,&#34;q&#34;:&#34;Put the CPU&#39;s three steps in order.&#34;,&#34;items&#34;:[&#34;fetch&#34;,&#34;decode&#34;,&#34;execute&#34;],&#34;explain&#34;:&#34;Get the instruction, understand it, do it. Then the loop starts again with the next line.&#34;}">
+  <p class="q-text">Put the CPU&#39;s three steps in order.</p>
+  <ul class="q-fallback"><li>decode</li><li>execute</li><li>fetch</li></ul>
+</div></li><li><div class="q q-type-tf" id="q-05-the-cpu-c2" data-kind="check" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L5_STORED&#34;,&#34;q&#34;:&#34;In a stored-program computer, you must rewire the machine to change the program.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;No: the program is in memory, so you only change what is in the memory boxes.&#34;}">
+  <p class="q-text">In a stored-program computer, you must rewire the machine to change the program.</p>
+  <p class="q-fallback">True or false?</p>
+</div></li><li><div class="q q-type-mc" id="q-05-the-cpu-c3" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L5_HISTORY&#34;,&#34;q&#34;:&#34;Who found the moth in the Harvard Mark II in 1947?&#34;,&#34;options&#34;:[&#34;Grace Hopper, alone&#34;,&#34;the operators of the machine&#34;,&#34;John von Neumann&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;The operators found it and taped it into the log. Grace Hopper made the story famous.&#34;}">
+  <p class="q-text">Who found the moth in the Harvard Mark II in 1947?</p>
+  <ol class="q-fallback" type="a"><li>Grace Hopper, alone</li><li>the operators of the machine</li><li>John von Neumann</li></ol>
+</div></li>    </ol>
+  </section>
+
+  <section class="block try" aria-labelledby="try-h">
+    <h2 id="try-h" class="block-h wrap"><span class="block-n" aria-hidden="true">04</span>Try it</h2>
+    <div class="wrap-ix"><figure class="ix" data-ix="fde-stepper" data-config="{}" id="ix-05-1">
+  <figcaption class="ix-title">Fetch–decode–execute stepper</figcaption>
+<p class="ix-intro">Press Step phase and watch the CPU fetch, decode and execute each line of the program. Then change the INPUT numbers, and try the countdown and the program with a bug.</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>RAM has 8 boxes. Boxes 0–5 hold the program, boxes 6–7 hold data. The CPU has one &#39;hand&#39; (the accumulator).
+Program &#39;Add two numbers&#39;, INPUT numbers 7 and 5:
+line 0 INPUT → box 6: box 6 = 7
+line 1 INPUT → box 7: box 7 = 5
+line 2 LOAD box 6: hand = 7
+line 3 ADD box 7: hand = 7 + 5 = 12
+line 4 STORE → box 6: box 6 = 12
+line 5 OUTPUT box 6: the output is 12
+box 6 holds data, not an instruction, so the CPU stops.
+Each line goes through three phases: FETCH (get it), DECODE (understand it), EXECUTE (do it).</p>
+  </div>
+</figure></div>
+  </section>
+
+  <section class="block your-turn wrap" aria-labelledby="turn-h" data-section="turn">
+    <h2 id="turn-h" class="block-h"><span class="block-n" aria-hidden="true">05</span>Your turn</h2>
+    <label class="turn-prompt" for="turn-u1-05-the-cpu-turn">ENIAC&#39;s six programmers did the hardest work, but nobody introduced them at the launch. Whose work is invisible in your school or in your town? Write two or three sentences. Do not use real names.</label>
+    <textarea id="turn-u1-05-the-cpu-turn" class="turn-text" data-turn-id="u1-05-the-cpu-turn" rows="6" spellcheck="true"></textarea>
+    <div class="turn-bar">
+      <button type="button" class="btn btn-ghost" data-action="copy-turn" data-target="turn-u1-05-the-cpu-turn">Copy</button>
+      <p class="turn-note" aria-live="polite">Saved in this browser only. Nothing is sent anywhere.</p>
+    </div>
+  </section>
+
+  <section class="block exercises wrap" aria-labelledby="ex-h" data-section="exercises">
+    <h2 id="ex-h" class="block-h"><span class="block-n" aria-hidden="true">06</span>Exercises</h2>
+    <p class="block-lede">From ★☆☆ (easy) to ★★★ (hard). Use a hint if you are stuck.</p>
+    <ol class="ex-list" role="list">
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 1</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-mc" id="q-05-the-cpu-e1" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L5_FDE&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;What does the CPU do in the decode step?&#34;,&#34;options&#34;:[&#34;it gets the instruction from memory&#34;,&#34;it works out what the instruction means&#34;,&#34;it switches off&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;Decode = understand. Fetch = get. Execute = do.&#34;,&#34;hint&#34;:&#34;Fetch, decode, execute: which one means &#39;understand&#39;?&#34;,&#34;solution&#34;:&#34;It works out what the instruction means.&#34;}">
+  <p class="q-text">What does the CPU do in the decode step?</p>
+  <ol class="q-fallback" type="a"><li>it gets the instruction from memory</li><li>it works out what the instruction means</li><li>it switches off</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 2</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-match" id="q-05-the-cpu-e2" data-kind="exercise" data-q="{&#34;type&#34;:&#34;match&#34;,&#34;obj&#34;:&#34;L5_HISTORY&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Match each person to what they did.&#34;,&#34;pairs&#34;:[[&#34;Kay McNulty&#34;,&#34;one of ENIAC&#39;s six programmers&#34;],[&#34;John von Neumann&#34;,&#34;a 1945 report: keep the program in memory&#34;],[&#34;Grace Hopper&#34;,&#34;made the moth story famous and built early compilers&#34;],[&#34;Alan Turing&#34;,&#34;designed the ACE computer after the war&#34;]],&#34;explain&#34;:&#34;Six women programmed ENIAC; von Neumann wrote the report; Hopper told the moth story; Turing designed the ACE.&#34;,&#34;hint&#34;:&#34;Read the story and the &#39;Back to the film&#39; box again.&#34;,&#34;solution&#34;:&#34;McNulty: ENIAC programmer. Von Neumann: stored-program report. Hopper: moth story and compilers. Turing: the ACE.&#34;}">
+  <p class="q-text">Match each person to what they did.</p>
+  <ul class="q-fallback"><li>Kay McNulty — ?</li><li>John von Neumann — ?</li><li>Grace Hopper — ?</li><li>Alan Turing — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 3</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-num" id="q-05-the-cpu-e3" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L5_FDE&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;You run the &#39;Add two numbers&#39; program with the INPUT numbers 9 and 4. What is the output?&#34;,&#34;answer&#34;:13,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;&#34;,&#34;explain&#34;:&#34;Box 6 = 9, box 7 = 4, hand = 9, then 9 + 4 = 13; STORE and OUTPUT give 13.&#34;,&#34;hint&#34;:&#34;Follow the six lines. The hand picks up box 6, then adds box 7.&#34;,&#34;solution&#34;:&#34;13.&#34;}">
+  <p class="q-text">You run the &#39;Add two numbers&#39; program with the INPUT numbers 9 and 4. What is the output?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 4</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-num" id="q-05-the-cpu-e4" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L5_FDE&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;The countdown program starts with box 6 = 3 and box 7 = 1. Each time round, it outputs box 6 and takes 1 away. How many numbers does it output before it stops?&#34;,&#34;answer&#34;:3,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;numbers&#34;,&#34;explain&#34;:&#34;It outputs 3, then 2, then 1. When box 6 reaches 0, JUMPZERO sends the CPU to line 6, which holds data, so it stops.&#34;,&#34;hint&#34;:&#34;Try it in the stepper, or write the value of box 6 after each round.&#34;,&#34;solution&#34;:&#34;3 numbers: 3, 2, 1.&#34;}">
+  <p class="q-text">The countdown program starts with box 6 = 3 and box 7 = 1. Each time round, it outputs box 6 and takes 1 away. How many numbers does it output before it stops?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 5</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-05-the-cpu-e5" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L5_DEBUG&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;The program with a bug says: INPUT → box 6 · INPUT → box 7 · LOAD box 6 · ADD box 8 · STORE → box 6 · OUTPUT box 6. RAM has boxes 0 to 7. Where is the bug?&#34;,&#34;options&#34;:[&#34;INPUT → box 7&#34;,&#34;ADD box 8&#34;,&#34;OUTPUT box 6&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;There is no box 8. The line should be ADD box 7.&#34;,&#34;hint&#34;:&#34;Count the boxes in RAM.&#34;,&#34;solution&#34;:&#34;ADD box 8: box 8 does not exist. Fix: ADD box 7.&#34;}">
+  <p class="q-text">The program with a bug says: INPUT → box 6 · INPUT → box 7 · LOAD box 6 · ADD box 8 · STORE → box 6 · OUTPUT box 6. RAM has boxes 0 to 7. Where is the bug?</p>
+  <ol class="q-fallback" type="a"><li>INPUT → box 7</li><li>ADD box 8</li><li>OUTPUT box 6</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 6</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-tf" id="q-05-the-cpu-e6" data-kind="exercise" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L5_HISTORY&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Grace Hopper invented the word &#39;bug&#39;.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;Engineers already used &#39;bug&#39; for faults. The 1947 note was a joke because the bug was a real insect.&#34;,&#34;hint&#34;:&#34;Why is &#39;first actual case&#39; funny?&#34;,&#34;solution&#34;:&#34;False. The word was older; Hopper made the moth story famous.&#34;}">
+  <p class="q-text">Grace Hopper invented the word &#39;bug&#39;.</p>
+  <p class="q-fallback">True or false?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 7</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-order" id="q-05-the-cpu-e7" data-kind="exercise" data-q="{&#34;type&#34;:&#34;order&#34;,&#34;obj&#34;:&#34;L5_FDE&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;The hand holds 7 and box 7 holds 5. Put in order what happens to the instruction on line 3, &#39;ADD box 7&#39;.&#34;,&#34;items&#34;:[&#34;Fetch: the CPU gets &#39;ADD box 7&#39; from line 3.&#34;,&#34;Decode: it means &#39;add the number in box 7 to the hand&#39;.&#34;,&#34;Execute: the hand now holds 12.&#34;,&#34;Next: the CPU moves on to line 4.&#34;],&#34;explain&#34;:&#34;Every instruction goes through the same loop: fetch, decode, execute, next.&#34;,&#34;hint&#34;:&#34;You cannot do an instruction before you understand it.&#34;,&#34;solution&#34;:&#34;Fetch → decode → execute (hand = 12) → next line.&#34;}">
+  <p class="q-text">The hand holds 7 and box 7 holds 5. Put in order what happens to the instruction on line 3, &#39;ADD box 7&#39;.</p>
+  <ul class="q-fallback"><li>Decode: it means &#39;add the number in box 7 to the hand&#39;.</li><li>Execute: the hand now holds 12.</li><li>Fetch: the CPU gets &#39;ADD box 7&#39; from line 3.</li><li>Next: the CPU moves on to line 4.</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 8</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-05-the-cpu-e8" data-kind="exercise" data-q="{&#34;type&#34;:&#34;open&#34;,&#34;obj&#34;:&#34;L5_STORED&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;Why was it better to keep the program in memory than to wire it with cables, like on ENIAC?&#34;,&#34;hint&#34;:&#34;Think about how long it took to set up a new problem on ENIAC.&#34;,&#34;solution&#34;:&#34;With the program in memory, a new program is only new numbers in the memory boxes. It can be changed in minutes, saved and used again, with no rewiring. On ENIAC a new problem could take days of moving cables and switches.&#34;}">
+  <p class="q-text">Why was it better to keep the program in memory than to wire it with cables, like on ENIAC?</p>
+</div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block one-sentence wrap" aria-labelledby="one-h">
+    <h2 id="one-h" class="block-h"><span class="block-n" aria-hidden="true">07</span>In one sentence</h2>
+    <p class="one-line">The CPU fetches one instruction, does it, and fetches the next, billions of times a second.</p>
+  </section>
+
+  <section class="block words wrap" aria-labelledby="words-h">
+    <h2 id="words-h" class="block-h"><span class="block-n" aria-hidden="true">08</span>Words of the chapter</h2>
+    <dl class="gloss">
+      <div class="gloss-row">
+        <dt>CPU</dt>
+        <dd>the part of a computer that follows instructions: the cook <span class="it" lang="it">CPU (processore)</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>instruction</dt>
+        <dd>one small order, one line of a program <span class="it" lang="it">istruzione</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>fetch–decode–execute</dt>
+        <dd>get the instruction, understand it, do it: the loop of every core <span class="it" lang="it">prelievo–decodifica–esecuzione</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>stored program</dt>
+        <dd>instructions kept in memory, next to the data <span class="it" lang="it">programma memorizzato</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>memory box</dt>
+        <dd>one numbered place in memory that holds one number <span class="it" lang="it">cella di memoria</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>bug · debug</dt>
+        <dd>a mistake in a program · finding and fixing it <span class="it" lang="it">bug · debug</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>valve</dt>
+        <dd>a glass tube that worked as an electronic switch in early computers <span class="it" lang="it">valvola termoionica</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav class="pager wrap" aria-label="Chapters">
+    <a class="pager-link pager-prev" href="../../unit-1/04-switches-that-think/index.html" rel="prev"><span class="pager-dir">Previous</span><span class="pager-title">Switches that think</span></a>
+    <a class="pager-link pager-next" href="../../unit-1/06-the-switch-gets-small/index.html" rel="next"><span class="pager-dir">Next</span><span class="pager-title">The switch gets small</span></a>
+  </nav>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap-wide foot-grid">
+    <p class="foot-title">ICT · Liceo Vittoria<br><span>Prof. Claudio</span></p>
+    <p>No accounts, no tracking, no cookies. Your answers stay in this browser.<br>
+      Photos are free licences, credited under each photo and on the <a href="../../about/index.html">About</a> page.</p>
+  </div>
+</footer>
+</body>
+</html>

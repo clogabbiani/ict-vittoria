@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enigma: everything becomes numbers · Unit 1 · ICT · Liceo Vittoria</title>
+<meta name="description" content="The Germans thought their machine was unbreakable. Who broke it first? And how does a machine read letters at all?">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../../static/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var d=document.documentElement;function g(k){try{var v=localStorage.getItem(k);return v===null?null:JSON.parse(v);}catch(e){return null;}}
+var t=g('ict-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
+if(g('ict-read'))d.setAttribute('data-read','1');if(g('ict-font')==='atkinson')d.setAttribute('data-font','atkinson');
+d.className+=' js';})();
+</script>
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/ix-a.css">
+<link rel="stylesheet" href="../../static/css/ix-b.css">
+<script defer src="../../static/js/ict-core.js"></script>
+<script defer src="../../static/js/site.js"></script>
+<script defer src="../../static/js/ix/binary-lights.js"></script>
+<script defer src="../../static/js/ix/ascii-codec.js"></script>
+<script defer src="../../static/js/ix/mini-enigma.js"></script>
+</head>
+<body data-root="../../" data-page="chapter" data-slug="02-enigma">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-row wrap-wide">
+    <a class="brand" href="../../index.html"><span class="brand-ict">ICT</span><span class="brand-dot" aria-hidden="true">·</span><span class="brand-school">Liceo Vittoria</span></a>
+    <div class="tools" role="group" aria-label="Display options">
+      <button type="button" class="tool" data-action="theme" aria-label="Theme: auto. Change theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <span class="tool-label">Auto</span>
+      </button>
+      <button type="button" class="tool" data-action="read" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M3 19 8.5 5h1L15 19M5 14.5h8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5c1-1 4-1.2 4 1.3V19m0-3.2c-3.2-.4-4.6.5-4.6 1.8 0 2 3.4 2 4.6-.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="tool-label">Readable</span>
+      </button>
+      <button type="button" class="tool tool-font" data-action="font" aria-pressed="false">
+        <span class="tool-glyph" aria-hidden="true">Ag</span>
+        <span class="tool-label">Easy font</span>
+      </button>
+      <button type="button" class="tool" data-action="print">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="tool-label">Print</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav wrap-wide" aria-label="Main">
+    <a href="../../index.html">Home</a>
+    <a href="../../unit-1/index.html" aria-current="page">Unit 1</a>
+    <a href="../../unit-1/review/index.html">Review</a>
+    <a href="../../about/index.html">About</a>
+  </nav>
+</header>
+<div class="progress" data-progress-slug="02-enigma">
+  <div class="progress-track" role="progressbar" aria-label="Chapter progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-fill"></span></div>
+  <span class="progress-text">0% done</span>
+</div>
+<main id="main" tabindex="-1">
+<article class="chapter">
+  <header class="ch-head wrap">
+    <p class="eyebrow"><a href="../../unit-1/index.html">Unit 1</a> · Lesson 2</p>
+    <h1 class="ch-title">Enigma: everything becomes numbers</h1>
+    <p class="ch-hook">The Germans thought their machine was unbreakable. Who broke it first? And how does a machine read letters at all?</p>
+  </header>
+
+  <aside class="film-box wrap" aria-labelledby="film-h">
+    <h2 id="film-h" class="film-h">Back to the film</h2>
+    <div class="film-cols">
+      <div class="film-col">
+        <h3 class="film-col-h">In the film</h3>
+        <p>In the film, Turing&#39;s machine runs for weeks without finding the day&#39;s settings, and Denniston comes to shut it down until the team defends Turing.</p>
+      </div>
+      <div class="film-col film-real">
+        <h3 class="film-col-h">In reality</h3>
+        <p>Turing designed the Bombe, building on a Polish idea. Gordon Welchman improved it, and the British Tabulating Machine Company built it, with the engineer Harold &#39;Doc&#39; Keen. About 211 Bombes were used in the war. The first, in March 1940, was called &#39;Victory&#39;. None was called Christopher. Denniston did not try to destroy the machine: he supported Turing.</p>
+      </div>
+    </div>
+  </aside>
+
+  <section class="block story" aria-labelledby="story-h">
+    <h2 id="story-h" class="block-h wrap"><span class="block-n" aria-hidden="true">01</span>The story</h2>
+      <p class="wrap story-p">Enigma looked like a typewriter. When you pressed a key, an electric current went through three wheels, called rotors, and a lamp lit up a different letter. After every key press a rotor turned, so the same letter was scrambled differently each time. The German army sent its secret orders this way, by radio.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/h_enigma.jpg"
+       srcset="../../img/h_enigma-800.jpg 800w, ../../img/h_enigma.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1067" alt="An Enigma machine: a keyboard, a board of lamps, and the rotors under the lid." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">An Enigma machine: a keyboard, a board of lamps, and the rotors under the lid.</span>    <span class="credit">Photo: Scontrofrontale · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Enigma_(Chiffriermaschine).JPG" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">The Poles broke it first. In December 1932 a young mathematician, Marian Rejewski, worked out the wiring of the rotors with mathematics. With Jerzy Różycki and Henryk Zygalski he read German messages for years, and in 1938 they built a machine called the &#39;bomba&#39;. In July 1939, weeks before the war, at Pyry near Warsaw, they gave everything to Britain and France. The film hardly mentions them.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/h_rejewski.jpg"
+       srcset="../../img/h_rejewski-800.jpg 800w, ../../img/h_rejewski.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1103" alt="Polish codebreakers playing bridge at their secret base in France during the war. Marian Rejewski is on the right." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">Polish codebreakers playing bridge at their secret base in France during the war. Marian Rejewski is on the right.</span>    <span class="credit">Photo: Zdjęcie ze zb. Marii i Gerarda Bryschaków · CC0 · <a href="https://commons.wikimedia.org/wiki/File:Gra_w_bryd%C5%BCa_w_polsko-francuskim_o%C5%9Brodku_kryptologicznym_Cadix_we_Francji,_z_prawej_Marian_Rejewski,_Henryk_Zygalski_(w_%C5%9Brodku_u_do%C5%82u)_i_Jerzy_R%C3%B3%C5%BCycki_(po_lewej),_ok._1941_r.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">At Bletchley Park, Turing designed the British Bombe at the end of 1939. Gordon Welchman added the &#39;diagonal board&#39;, which made it much faster. The British Tabulating Machine Company built the Bombes in a factory, led by the engineer Harold &#39;Doc&#39; Keen. About 211 were used in the war, run mostly by Wrens, women of the Royal Navy.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/h_bombe.jpg"
+       srcset="../../img/h_bombe-800.jpg 800w, ../../img/h_bombe.jpg 1524w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1524" height="1115" alt="A working rebuild of the British Bombe at Bletchley Park. Each drum copies one Enigma rotor." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A working rebuild of the British Bombe at Bletchley Park. Each drum copies one Enigma rotor.</span>    <span class="credit">Photo: author: see source page · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Bombe-rebuild.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">Enigma had a flaw: a letter never turned into itself. So if the codebreakers guessed a word in the message, called a crib (for example a weather report), they knew where it could not be. The Bombe tested thousands of settings very fast to find the one that fitted the crib.</p>
+      <p class="wrap story-p">The Germans also used another cipher machine, called Lorenz. To attack it, Tommy Flowers, a Post Office engineer, built Colossus, an electronic machine with valves. It was working at Bletchley Park in early 1944. Colossus attacked Lorenz, not Enigma. After the war most machines were taken apart, and the secret was kept for about thirty years.</p>
+  </section>
+
+  <section class="block science wrap" aria-labelledby="sci-h">
+    <h2 id="sci-h" class="block-h"><span class="block-n" aria-hidden="true">02</span>The science</h2>
+    <div class="concept">
+      <h3 class="concept-h">Letters become numbers</h3>
+      <p>A computer only stores numbers, so we agree on a table that gives every letter a number. This table is called ASCII. A is 65, B is 66, C is 67, and so on. Small letters start at 97: a is 97. When you type HI, the computer stores 72 and 73.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Numbers become bits</h3>
+      <p>Inside the machine every number is written with only two symbols, 0 and 1: this is binary. Each 0 or 1 is a bit, like a switch that is off or on. Eight bits make a byte. The eight places are worth 128, 64, 32, 16, 8, 4, 2, 1. To write 65, switch on 64 and 1: 01000001. With 8 bits you can write 256 different values, from 0 to 255.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">A picture is a grid of numbers</h3>
+      <p>Zoom into a photo and you see small squares: pixels. Each pixel is three numbers, one for red, one for green and one for blue (RGB), each from 0 to 255. 255, 0, 0 is bright red; 0, 0, 0 is black; 255, 255, 255 is white.</p>
+<figure class="photo photo-inline">
+  <img src="../../img/L2_pixels_mid.jpg"
+       srcset="../../img/L2_pixels_mid-800.jpg 800w, ../../img/L2_pixels_mid.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1600" alt="A picture is a grid of numbers" loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A picture is a grid of numbers</span>    <span class="credit">Photo: LeonardoRamos · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Arara-vermelha_-_PARNA_da_Serra_da_Capivara_-_LeonardoRamos(001).jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure>    </div>
+    <div class="concept">
+      <h3 class="concept-h">Everything is counted in bytes</h3>
+      <p>We measure data in bytes. Each unit is about a thousand times the one before. Remember one example for each: a byte (B) is one letter; a kilobyte (KB) is a paragraph; a megabyte (MB) is a phone photo; a gigabyte (GB) is an hour of video; a terabyte (TB) is a laptop&#39;s storage, the pantry of the computer.</p>
+<div class="kitchen" data-part="pantry">
+  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-4-t">
+    <title id="k-4-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The pantry.</title>
+    <g class="k-part">
+      <rect x="300" y="14" width="172" height="78" rx="6"/>
+      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
+      <text x="358" y="48" class="k-name">metronome</text>
+      <text x="358" y="72" class="k-sub">clock (GHz)</text>
+    </g>
+    <path class="k-beat" d="M419 92 V130"/>
+    <text x="8" y="40" class="k-head">The kitchen</text>
+    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
+    <g class="k-part is-on">
+      <rect x="8" y="130" width="108" height="88" rx="6"/>
+      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
+      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
+    </g>
+    <g class="k-part">
+      <rect x="126" y="130" width="120" height="88" rx="6"/>
+      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
+      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
+    </g>
+    <g class="k-part">
+      <rect x="256" y="130" width="100" height="88" rx="6"/>
+      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
+      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
+    </g>
+    <g class="k-part">
+      <rect x="366" y="130" width="106" height="88" rx="6"/>
+      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
+      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
+    </g>
+    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
+    <text x="14" y="236" class="k-sub">big, slow</text>
+    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
+  </svg>
+  <ul class="kitchen-key" role="list">
+    <li><span class="k-l">The cook</span> = CPU core</li>
+    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
+    <li><span class="k-l">The countertop</span> = cache</li>
+    <li><span class="k-l">The workbench</span> = RAM</li>
+    <li class="is-on"><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
+  </ul>
+</div>    </div>
+  </section>
+
+  <section class="block check-now wrap" aria-labelledby="check-h" data-section="check">
+    <h2 id="check-h" class="block-h"><span class="block-n" aria-hidden="true">03</span>Check now</h2>
+    <p class="block-lede">Quick questions. You see the answer at once.</p>
+    <ol class="q-list" role="list">
+<li><div class="q q-type-mc" id="q-02-enigma-c1" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L2_BINARY&#34;,&#34;q&#34;:&#34;In ASCII, the letter A is the number…&#34;,&#34;options&#34;:[&#34;1&#34;,&#34;65&#34;,&#34;255&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;A is 65, B is 66, C is 67. Every computer uses the same table.&#34;}">
+  <p class="q-text">In ASCII, the letter A is the number…</p>
+  <ol class="q-fallback" type="a"><li>1</li><li>65</li><li>255</li></ol>
+</div></li><li><div class="q q-type-num" id="q-02-enigma-c2" data-kind="check" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L2_BINARY&#34;,&#34;q&#34;:&#34;How many different values can you write with 8 bits?&#34;,&#34;answer&#34;:256,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;values&#34;,&#34;explain&#34;:&#34;2 × 2 × 2 × 2 × 2 × 2 × 2 × 2 = 256, from 0 to 255.&#34;}">
+  <p class="q-text">How many different values can you write with 8 bits?</p>
+</div></li><li><div class="q q-type-tf" id="q-02-enigma-c3" data-kind="check" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L2_HISTORY&#34;,&#34;q&#34;:&#34;Polish mathematicians broke Enigma before the British.&#34;,&#34;answer&#34;:true,&#34;explain&#34;:&#34;Yes. Rejewski broke it in 1932, and the Poles shared their work in July 1939.&#34;}">
+  <p class="q-text">Polish mathematicians broke Enigma before the British.</p>
+  <p class="q-fallback">True or false?</p>
+</div></li><li><div class="q q-type-mc" id="q-02-enigma-c4" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L2_HISTORY&#34;,&#34;q&#34;:&#34;About how many Bombes were used in the war?&#34;,&#34;options&#34;:[&#34;one&#34;,&#34;about 20&#34;,&#34;about 200&#34;],&#34;answer&#34;:2,&#34;explain&#34;:&#34;About 211, built in a factory by the British Tabulating Machine Company. The film shows only one.&#34;}">
+  <p class="q-text">About how many Bombes were used in the war?</p>
+  <ol class="q-fallback" type="a"><li>one</li><li>about 20</li><li>about 200</li></ol>
+</div></li>    </ol>
+  </section>
+
+  <section class="block try" aria-labelledby="try-h">
+    <h2 id="try-h" class="block-h wrap"><span class="block-n" aria-hidden="true">04</span>Try it</h2>
+    <div class="wrap-ix"><figure class="ix" data-ix="binary-lights" data-config="{&#34;challenge&#34;:65}" id="ix-02-1">
+  <figcaption class="ix-title">Binary lights</figcaption>
+<p class="ix-intro">Click the bulbs to switch them on. Can you make 65, the letter A? Then make the letters of your initials.</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>Eight bulbs, worth 128 64 32 16 8 4 2 1. To make 65, switch on 64 and 1: 0 1 0 0 0 0 0 1. More examples: 5 = 00000101 (4 + 1) · 10 = 00001010 (8 + 2) · 84, the letter T = 01010100 (64 + 16 + 4) · 255 = 11111111 (all on).</p>
+  </div>
+</figure></div>
+    <div class="wrap-ix"><figure class="ix" data-ix="ascii-codec" data-config="{&#34;text&#34;:&#34;ENIGMA&#34;}" id="ix-02-2">
+  <figcaption class="ix-title">ASCII encoder and decoder</figcaption>
+<p class="ix-intro">Type a word to see its ASCII numbers and its bits. Switch mode and type numbers to read them as text.</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>ENIGMA in ASCII: E = 69 = 01000101 · N = 78 = 01001110 · I = 73 = 01001001 · G = 71 = 01000111 · M = 77 = 01001101 · A = 65 = 01000001. Capital letters start at A = 65; small letters start at a = 97.</p>
+  </div>
+</figure></div>
+    <div class="wrap-ix"><figure class="ix" data-ix="mini-enigma" data-config="{}" id="ix-02-3">
+  <figcaption class="ix-title">Mini-Enigma</figcaption>
+<p class="ix-intro">Three real rotors (I, II, III) and a reflector. Type a message and watch the rotors turn. Can any letter light up as itself?</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>Rotors I, II, III, start position AAA, reflector B, no plugboard. Type AAAAA: the lamps show BDZGO. Reset to AAA and type BDZGO: the lamps show AAAAA, so the same machine decodes. The same letter gives a different result each time, because a rotor turns at every key press. No letter ever lights up as itself: this was Enigma&#39;s flaw.</p>
+  </div>
+</figure></div>
+  </section>
+
+  <section class="block your-turn wrap" aria-labelledby="turn-h" data-section="turn">
+    <h2 id="turn-h" class="block-h"><span class="block-n" aria-hidden="true">05</span>Your turn</h2>
+    <label class="turn-prompt" for="turn-u1-02-enigma-turn">Enigma never turned a letter into itself. Why did this small rule help the codebreakers? Write two or three sentences.</label>
+    <textarea id="turn-u1-02-enigma-turn" class="turn-text" data-turn-id="u1-02-enigma-turn" rows="6" spellcheck="true"></textarea>
+    <div class="turn-bar">
+      <button type="button" class="btn btn-ghost" data-action="copy-turn" data-target="turn-u1-02-enigma-turn">Copy</button>
+      <p class="turn-note" aria-live="polite">Saved in this browser only. Nothing is sent anywhere.</p>
+    </div>
+  </section>
+
+  <section class="block exercises wrap" aria-labelledby="ex-h" data-section="exercises">
+    <h2 id="ex-h" class="block-h"><span class="block-n" aria-hidden="true">06</span>Exercises</h2>
+    <p class="block-lede">From ★☆☆ (easy) to ★★★ (hard). Use a hint if you are stuck.</p>
+    <ol class="ex-list" role="list">
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 1</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-num" id="q-02-enigma-e1" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L2_BINARY&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;What is the binary number 00000101 in decimal?&#34;,&#34;answer&#34;:5,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;&#34;,&#34;explain&#34;:&#34;The bulbs worth 4 and 1 are on: 4 + 1 = 5.&#34;,&#34;hint&#34;:&#34;The last four places are worth 8, 4, 2, 1. Which ones have a 1?&#34;,&#34;solution&#34;:&#34;4 + 1 = 5.&#34;}">
+  <p class="q-text">What is the binary number 00000101 in decimal?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 2</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-mc" id="q-02-enigma-e2" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L2_BINARY&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Which byte is the number 65, the letter A?&#34;,&#34;options&#34;:[&#34;01000001&#34;,&#34;01000010&#34;,&#34;10000001&#34;],&#34;answer&#34;:0,&#34;explain&#34;:&#34;64 + 1 = 65. 01000010 is 66 (B), and 10000001 is 129.&#34;,&#34;hint&#34;:&#34;65 = 64 + 1. Which places are worth 64 and 1?&#34;,&#34;solution&#34;:&#34;01000001 (64 + 1).&#34;}">
+  <p class="q-text">Which byte is the number 65, the letter A?</p>
+  <ol class="q-fallback" type="a"><li>01000001</li><li>01000010</li><li>10000001</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 3</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-num" id="q-02-enigma-e3" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L2_BINARY&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;What is 01010100 in decimal? (It is a letter in ASCII, too.)&#34;,&#34;answer&#34;:84,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;&#34;,&#34;explain&#34;:&#34;64 + 16 + 4 = 84. In ASCII, 84 is the letter T.&#34;,&#34;hint&#34;:&#34;The places are 128, 64, 32, 16, 8, 4, 2, 1. Add the ones with a 1.&#34;,&#34;solution&#34;:&#34;64 + 16 + 4 = 84, the letter T.&#34;}">
+  <p class="q-text">What is 01010100 in decimal? (It is a letter in ASCII, too.)</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 4</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-order" id="q-02-enigma-e4" data-kind="exercise" data-q="{&#34;type&#34;:&#34;order&#34;,&#34;obj&#34;:&#34;L2_UNITS&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Put the units in order, from the smallest to the largest.&#34;,&#34;items&#34;:[&#34;byte (B)&#34;,&#34;kilobyte (KB)&#34;,&#34;megabyte (MB)&#34;,&#34;gigabyte (GB)&#34;,&#34;terabyte (TB)&#34;],&#34;explain&#34;:&#34;Each step is about 1,000 times bigger.&#34;,&#34;hint&#34;:&#34;Kilo, mega, giga, tera: each about a thousand times the last.&#34;,&#34;solution&#34;:&#34;B &lt; KB &lt; MB &lt; GB &lt; TB.&#34;}">
+  <p class="q-text">Put the units in order, from the smallest to the largest.</p>
+  <ul class="q-fallback"><li>byte (B)</li><li>gigabyte (GB)</li><li>kilobyte (KB)</li><li>megabyte (MB)</li><li>terabyte (TB)</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 5</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-match" id="q-02-enigma-e5" data-kind="exercise" data-q="{&#34;type&#34;:&#34;match&#34;,&#34;obj&#34;:&#34;L2_UNITS&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Match each unit to an example of its size.&#34;,&#34;pairs&#34;:[[&#34;byte (B)&#34;,&#34;one letter&#34;],[&#34;kilobyte (KB)&#34;,&#34;a paragraph&#34;],[&#34;megabyte (MB)&#34;,&#34;a phone photo&#34;],[&#34;gigabyte (GB)&#34;,&#34;an hour of video&#34;],[&#34;terabyte (TB)&#34;,&#34;a laptop&#39;s storage&#34;]],&#34;explain&#34;:&#34;One letter is one byte. Each step up is about a thousand times more.&#34;,&#34;hint&#34;:&#34;Start from the smallest: one letter is one byte.&#34;,&#34;solution&#34;:&#34;B: one letter · KB: a paragraph · MB: a phone photo · GB: an hour of video · TB: a laptop&#39;s storage.&#34;}">
+  <p class="q-text">Match each unit to an example of its size.</p>
+  <ul class="q-fallback"><li>byte (B) — ?</li><li>kilobyte (KB) — ?</li><li>megabyte (MB) — ?</li><li>gigabyte (GB) — ?</li><li>terabyte (TB) — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 6</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-tf" id="q-02-enigma-e6" data-kind="exercise" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L2_PIXELS&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;A pixel with the numbers 255, 255, 255 (red, green, blue) is white.&#34;,&#34;answer&#34;:true,&#34;explain&#34;:&#34;All three colours at full light make white. 0, 0, 0 is black.&#34;,&#34;hint&#34;:&#34;What do you get when red, green and blue are all at full light?&#34;,&#34;solution&#34;:&#34;True: 255, 255, 255 is white.&#34;}">
+  <p class="q-text">A pixel with the numbers 255, 255, 255 (red, green, blue) is white.</p>
+  <p class="q-fallback">True or false?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 7</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-02-enigma-e7" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L2_HISTORY&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Tommy Flowers&#39; Colossus attacked which German cipher?&#34;,&#34;options&#34;:[&#34;Enigma&#34;,&#34;Lorenz&#34;,&#34;the Caesar cipher&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;Colossus attacked the Lorenz cipher. The Bombes worked on Enigma.&#34;,&#34;hint&#34;:&#34;Colossus did not work on Enigma.&#34;,&#34;solution&#34;:&#34;Lorenz. The Bombes attacked Enigma; Colossus attacked Lorenz.&#34;}">
+  <p class="q-text">Tommy Flowers&#39; Colossus attacked which German cipher?</p>
+  <ol class="q-fallback" type="a"><li>Enigma</li><li>Lorenz</li><li>the Caesar cipher</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 8</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-02-enigma-e8" data-kind="exercise" data-q="{&#34;type&#34;:&#34;open&#34;,&#34;obj&#34;:&#34;L2_BINARY&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;Your friend sends you the ASCII numbers 67 73 65 79. Decode them and explain how you did it.&#34;,&#34;hint&#34;:&#34;A = 65. Count forward for the other letters.&#34;,&#34;solution&#34;:&#34;CIAO. 65 = A, so 67 = C (two letters after A), 73 = I (eight after A), and 79 = O (fourteen after A).&#34;}">
+  <p class="q-text">Your friend sends you the ASCII numbers 67 73 65 79. Decode them and explain how you did it.</p>
+</div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block one-sentence wrap" aria-labelledby="one-h">
+    <h2 id="one-h" class="block-h"><span class="block-n" aria-hidden="true">07</span>In one sentence</h2>
+    <p class="one-line">Everything a computer holds is numbers: letters, pictures, secrets.</p>
+  </section>
+
+  <section class="block words wrap" aria-labelledby="words-h">
+    <h2 id="words-h" class="block-h"><span class="block-n" aria-hidden="true">08</span>Words of the chapter</h2>
+    <dl class="gloss">
+      <div class="gloss-row">
+        <dt>rotor</dt>
+        <dd>a wheel inside Enigma that changes the wiring at each key press <span class="it" lang="it">rotore</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>crib</dt>
+        <dd>a word you guess is inside a secret message <span class="it" lang="it">crib (parola probabile)</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>ASCII</dt>
+        <dd>the agreed table that gives every letter a number <span class="it" lang="it">codice ASCII</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>binary</dt>
+        <dd>a way to write numbers with only 0 and 1 <span class="it" lang="it">binario</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>bit</dt>
+        <dd>one switch: 0 or 1 <span class="it" lang="it">bit</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>byte</dt>
+        <dd>eight bits; it can hold one letter <span class="it" lang="it">byte</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>pixel</dt>
+        <dd>one square of a picture, stored as three numbers (RGB) <span class="it" lang="it">pixel</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>valve</dt>
+        <dd>an early electronic switch, a glass tube <span class="it" lang="it">valvola termoionica</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav class="pager wrap" aria-label="Chapters">
+    <a class="pager-link pager-prev" href="../../unit-1/01-what-was-true/index.html" rel="prev"><span class="pager-dir">Previous</span><span class="pager-title">What was true?</span></a>
+    <a class="pager-link pager-next" href="../../unit-1/03-the-prequel/index.html" rel="next"><span class="pager-dir">Next</span><span class="pager-title">The prequel: the idea of a program</span></a>
+  </nav>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap-wide foot-grid">
+    <p class="foot-title">ICT · Liceo Vittoria<br><span>Prof. Claudio</span></p>
+    <p>No accounts, no tracking, no cookies. Your answers stay in this browser.<br>
+      Photos are free licences, credited under each photo and on the <a href="../../about/index.html">About</a> page.</p>
+  </div>
+</footer>
+</body>
+</html>

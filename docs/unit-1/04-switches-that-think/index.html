@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Switches that think · Unit 1 · ICT · Liceo Vittoria</title>
+<meta name="description" content="A light switch is the most important invention in this course. By the end of this chapter you will know why.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../../static/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var d=document.documentElement;function g(k){try{var v=localStorage.getItem(k);return v===null?null:JSON.parse(v);}catch(e){return null;}}
+var t=g('ict-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
+if(g('ict-read'))d.setAttribute('data-read','1');if(g('ict-font')==='atkinson')d.setAttribute('data-font','atkinson');
+d.className+=' js';})();
+</script>
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/ix-a.css">
+<link rel="stylesheet" href="../../static/css/ix-b.css">
+<script defer src="../../static/js/ict-core.js"></script>
+<script defer src="../../static/js/site.js"></script>
+<script defer src="../../static/js/ix/circuit-bench.js"></script>
+</head>
+<body data-root="../../" data-page="chapter" data-slug="04-switches-that-think">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-row wrap-wide">
+    <a class="brand" href="../../index.html"><span class="brand-ict">ICT</span><span class="brand-dot" aria-hidden="true">·</span><span class="brand-school">Liceo Vittoria</span></a>
+    <div class="tools" role="group" aria-label="Display options">
+      <button type="button" class="tool" data-action="theme" aria-label="Theme: auto. Change theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <span class="tool-label">Auto</span>
+      </button>
+      <button type="button" class="tool" data-action="read" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M3 19 8.5 5h1L15 19M5 14.5h8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5c1-1 4-1.2 4 1.3V19m0-3.2c-3.2-.4-4.6.5-4.6 1.8 0 2 3.4 2 4.6-.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="tool-label">Readable</span>
+      </button>
+      <button type="button" class="tool tool-font" data-action="font" aria-pressed="false">
+        <span class="tool-glyph" aria-hidden="true">Ag</span>
+        <span class="tool-label">Easy font</span>
+      </button>
+      <button type="button" class="tool" data-action="print">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="tool-label">Print</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav wrap-wide" aria-label="Main">
+    <a href="../../index.html">Home</a>
+    <a href="../../unit-1/index.html" aria-current="page">Unit 1</a>
+    <a href="../../unit-1/review/index.html">Review</a>
+    <a href="../../about/index.html">About</a>
+  </nav>
+</header>
+<div class="progress" data-progress-slug="04-switches-that-think">
+  <div class="progress-track" role="progressbar" aria-label="Chapter progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-fill"></span></div>
+  <span class="progress-text">0% done</span>
+</div>
+<main id="main" tabindex="-1">
+<article class="chapter">
+  <header class="ch-head wrap">
+    <p class="eyebrow"><a href="../../unit-1/index.html">Unit 1</a> · Lesson 4</p>
+    <h1 class="ch-title">Switches that think</h1>
+    <p class="ch-hook">A light switch is the most important invention in this course. By the end of this chapter you will know why.</p>
+  </header>
+
+  <aside class="film-box wrap" aria-labelledby="film-h">
+    <h2 id="film-h" class="film-h">Back to the film</h2>
+    <div class="film-cols">
+      <div class="film-col">
+        <h3 class="film-col-h">In the film</h3>
+        <p>The film never shows this meeting. In the film, Turing works almost alone, wiring switches and drums in a hut.</p>
+      </div>
+      <div class="film-col film-real">
+        <h3 class="film-col-h">In reality</h3>
+        <p>In early 1943 Turing visited Bell Labs in New York. There he met Claude Shannon, and they talked about machines that could think. Shannon had shown in 1937 that switches can do logic. That is why a machine full of switches, like the Bombe, could do logic at all.</p>
+      </div>
+    </div>
+  </aside>
+
+  <section class="block story" aria-labelledby="story-h">
+    <h2 id="story-h" class="block-h wrap"><span class="block-n" aria-hidden="true">01</span>The story</h2>
+      <p class="wrap story-p">George Boole was the son of a shoemaker in Lincoln, England. His family was not rich, and he never went to university. He taught himself languages and mathematics while he helped to support his family.</p>
+      <div class="wrap-photo wrap-portrait"><figure class="photo is-portrait ">
+  <img src="../../img/h_boole.jpg"
+       srcset="../../img/h_boole-800.jpg 634w, ../../img/h_boole.jpg 1267w"
+       sizes="(min-width: 760px) 640px, 100vw"
+       width="1267" height="1600" alt="George Boole. He taught himself mathematics and became a professor in Cork, Ireland." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">George Boole. He taught himself mathematics and became a professor in Cork, Ireland.</span>    <span class="credit">Photo: Credit Line: AIP Emilio Segrè Visual Archives · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Portrait_of_Boole.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">In 1849 he became the first professor of mathematics at Queen&#39;s College, Cork, in Ireland. In 1854 he wrote a book, The Laws of Thought. In it he wrote thinking as algebra (maths with letters), with only two values, TRUE and FALSE, and three small words: AND, OR, NOT.</p>
+      <p class="wrap story-p">For about eighty years, engineers did not use Boole&#39;s idea. Then, in 1937, a 21-year-old student at MIT, Claude Shannon, looked at the switches in telephone exchanges. He saw that they behaved exactly like Boole&#39;s algebra. So switches could do logic, and logic could calculate.</p>
+      <div class="wrap-photo wrap-portrait"><figure class="photo is-portrait ">
+  <img src="../../img/L2_shannon.jpg"
+       srcset="../../img/L2_shannon-800.jpg 640w, ../../img/L2_shannon.jpg 1280w"
+       sizes="(min-width: 760px) 640px, 100vw"
+       width="1280" height="1600" alt="Claude Shannon. His 1937 student thesis showed that switches can do logic." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">Claude Shannon. His 1937 student thesis showed that switches can do logic.</span>    <span class="credit">Photo: Unknown author · CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:C.E._Shannon._Tekniska_museet_43069.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">Shannon&#39;s work has been called the most important master&#39;s thesis of the century. He grew up in Gaylord, a small town in Michigan. Boole had no degree; Shannon came from a small town. Talent is everywhere, but opportunity is not.</p>
+      <p class="wrap story-p">Today a phone chip holds tens of billions of tiny switches. Every one of them follows the same idea: on or off, 1 or 0, true or false.</p>
+  </section>
+
+  <section class="block science wrap" aria-labelledby="sci-h">
+    <h2 id="sci-h" class="block-h"><span class="block-n" aria-hidden="true">02</span>The science</h2>
+    <div class="concept">
+      <h3 class="concept-h">A circuit: battery, wire, switch, light</h3>
+      <p>A circuit is a closed loop. A battery pushes an electric current through a wire, through a switch and through a small light called an LED (light-emitting diode). An LED needs a resistor: a part that limits the current, so the LED does not burn out. When the switch is closed, the loop is complete: the current flows and the light is on. When the switch is open, there is a gap: the current stops and the light is off.</p>
+<figure class="photo photo-inline">
+  <img src="../../img/h_light_switch.jpg"
+       srcset="../../img/h_light_switch-800.jpg 800w, ../../img/h_light_switch.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1200" alt="A circuit: battery, wire, switch, light" loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A circuit: battery, wire, switch, light</span>    <span class="credit">Photo: Santeri Viinamäki · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:White_light_switch.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure>    </div>
+    <div class="concept">
+      <h3 class="concept-h">One switch is one bit</h3>
+      <p>A switch has only two states, so it can store one bit (the smallest piece of data). We agree: closed = 1, open = 0. Light on = 1, light off = 0. With two switches you have 4 combinations (00, 01, 10, 11). With three switches you have 8.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Two switches can decide: AND, OR, NOT</h3>
+      <p>Series means one after the other, in a row: the current must pass both switches, so the light is on only when A AND B are closed. Parallel means side by side: the current can take either path, so the light is on when A OR B (or both) is closed. NOT does the opposite: a switch wired across the light makes a shortcut, so the light is on when the switch is open. A truth table lists every combination of inputs and its output.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">A relay: a switch pressed by electricity</h3>
+      <p>In a relay, a current in circuit A makes an electromagnet (a coil that becomes a magnet). The magnet pulls a metal contact, and this closes circuit B. So one circuit switches another, with no finger. Chains of relays did logic in telephone exchanges, in the Bombe and in the first computers.</p>
+<figure class="photo photo-inline">
+  <img src="../../img/h_relay.jpg"
+       srcset="../../img/h_relay-800.jpg 800w, ../../img/h_relay.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1200" alt="A relay: a switch pressed by electricity" loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A relay: a switch pressed by electricity</span>    <span class="credit">Photo: redhat. Red hat at de.wikipedia · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Relais_offen.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure>    </div>
+  </section>
+
+  <section class="block check-now wrap" aria-labelledby="check-h" data-section="check">
+    <h2 id="check-h" class="block-h"><span class="block-n" aria-hidden="true">03</span>Check now</h2>
+    <p class="block-lede">Quick questions. You see the answer at once.</p>
+    <ol class="q-list" role="list">
+<li><div class="q q-type-tf" id="q-04-switches-that-think-c1" data-kind="check" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L4_BIT&#34;,&#34;q&#34;:&#34;A closed switch stands for 1.&#34;,&#34;answer&#34;:true,&#34;explain&#34;:&#34;Yes. Closed = 1 (the current flows), open = 0 (the current stops).&#34;}">
+  <p class="q-text">A closed switch stands for 1.</p>
+  <p class="q-fallback">True or false?</p>
+</div></li><li><div class="q q-type-mc" id="q-04-switches-that-think-c2" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L4_GATES&#34;,&#34;q&#34;:&#34;Two switches are in series (in a row). When is the light on?&#34;,&#34;options&#34;:[&#34;when either switch is closed&#34;,&#34;only when both switches are closed&#34;,&#34;only when both switches are open&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;In series the current must pass both switches. This is an AND gate.&#34;}">
+  <p class="q-text">Two switches are in series (in a row). When is the light on?</p>
+  <ol class="q-fallback" type="a"><li>when either switch is closed</li><li>only when both switches are closed</li><li>only when both switches are open</li></ol>
+</div></li><li><div class="q q-type-num" id="q-04-switches-that-think-c3" data-kind="check" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L4_GATES&#34;,&#34;q&#34;:&#34;Two switches are in parallel (side by side): an OR gate. The truth table has 4 rows. In how many rows is the light on?&#34;,&#34;answer&#34;:3,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;rows&#34;,&#34;explain&#34;:&#34;0 1, 1 0 and 1 1 all light it. Only 0 0 leaves it off.&#34;}">
+  <p class="q-text">Two switches are in parallel (side by side): an OR gate. The truth table has 4 rows. In how many rows is the light on?</p>
+</div></li>    </ol>
+  </section>
+
+  <section class="block try" aria-labelledby="try-h">
+    <h2 id="try-h" class="block-h wrap"><span class="block-n" aria-hidden="true">04</span>Try it</h2>
+    <div class="wrap-ix"><figure class="ix" data-ix="circuit-bench" data-config="{&#34;preset&#34;:&#34;series&#34;}" id="ix-04-1">
+  <figcaption class="ix-title">Circuit bench</figcaption>
+<p class="ix-intro">Click the switches to open and close them, and watch the truth table fill in. Start with switches in series, then try the other buttons: parallel, NOT and three switches.</p>  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>Truth tables (1 = closed / light on, 0 = open / light off).
+SERIES = AND: A B → light: 0 0 → 0 · 0 1 → 0 · 1 0 → 0 · 1 1 → 1.
+PARALLEL = OR: A B → light: 0 0 → 0 · 0 1 → 1 · 1 0 → 1 · 1 1 → 1.
+NOT: A → light: 0 → 1 · 1 → 0 (the closed switch is a shortcut, so the current skips the light).
+THREE SWITCHES = (A AND B) OR C: 000 → 0 · 001 → 1 · 010 → 0 · 011 → 1 · 100 → 0 · 101 → 1 · 110 → 1 · 111 → 1.</p>
+  </div>
+</figure></div>
+  </section>
+
+  <section class="block your-turn wrap" aria-labelledby="turn-h" data-section="turn">
+    <h2 id="turn-h" class="block-h"><span class="block-n" aria-hidden="true">05</span>Your turn</h2>
+    <label class="turn-prompt" for="turn-u1-04-switches-that-think-turn">Think of a machine at home or at school that should work only when two things are true (AND), and one that should work when either thing is true (OR). Describe both in two or three sentences.</label>
+    <textarea id="turn-u1-04-switches-that-think-turn" class="turn-text" data-turn-id="u1-04-switches-that-think-turn" rows="6" spellcheck="true"></textarea>
+    <div class="turn-bar">
+      <button type="button" class="btn btn-ghost" data-action="copy-turn" data-target="turn-u1-04-switches-that-think-turn">Copy</button>
+      <p class="turn-note" aria-live="polite">Saved in this browser only. Nothing is sent anywhere.</p>
+    </div>
+  </section>
+
+  <section class="block exercises wrap" aria-labelledby="ex-h" data-section="exercises">
+    <h2 id="ex-h" class="block-h"><span class="block-n" aria-hidden="true">06</span>Exercises</h2>
+    <p class="block-lede">From ★☆☆ (easy) to ★★★ (hard). Use a hint if you are stuck.</p>
+    <ol class="ex-list" role="list">
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 1</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-mc" id="q-04-switches-that-think-e1" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L4_CIRCUIT&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;In a simple circuit, which part pushes the current round the loop?&#34;,&#34;options&#34;:[&#34;the battery&#34;,&#34;the switch&#34;,&#34;the LED&#34;],&#34;answer&#34;:0,&#34;explain&#34;:&#34;The battery pushes the current. The switch opens or closes the loop; the LED turns the current into light.&#34;,&#34;hint&#34;:&#34;Which part would you take out of a torch when it stops working?&#34;,&#34;solution&#34;:&#34;The battery.&#34;}">
+  <p class="q-text">In a simple circuit, which part pushes the current round the loop?</p>
+  <ol class="q-fallback" type="a"><li>the battery</li><li>the switch</li><li>the LED</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 2</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-tf" id="q-04-switches-that-think-e2" data-kind="exercise" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L4_BIT&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;An open switch lets the current flow.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;An open switch makes a gap in the loop, so the current stops. Open = 0.&#34;,&#34;hint&#34;:&#34;Think of the gap in the loop.&#34;,&#34;solution&#34;:&#34;False. Open = gap = no current = 0.&#34;}">
+  <p class="q-text">An open switch lets the current flow.</p>
+  <p class="q-fallback">True or false?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 3</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-match" id="q-04-switches-that-think-e3" data-kind="exercise" data-q="{&#34;type&#34;:&#34;match&#34;,&#34;obj&#34;:&#34;L4_GATES&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Match each way of wiring the switches to its gate.&#34;,&#34;pairs&#34;:[[&#34;two switches in a row (series)&#34;,&#34;AND&#34;],[&#34;two switches side by side (parallel)&#34;,&#34;OR&#34;],[&#34;one switch that makes a shortcut across the light&#34;,&#34;NOT&#34;]],&#34;explain&#34;:&#34;Series = AND, parallel = OR, shortcut = NOT.&#34;,&#34;hint&#34;:&#34;In a row, the current must pass every switch. Side by side, it can choose a path.&#34;,&#34;solution&#34;:&#34;Series: AND. Parallel: OR. Shortcut: NOT.&#34;}">
+  <p class="q-text">Match each way of wiring the switches to its gate.</p>
+  <ul class="q-fallback"><li>two switches in a row (series) — ?</li><li>two switches side by side (parallel) — ?</li><li>one switch that makes a shortcut across the light — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 4</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-num" id="q-04-switches-that-think-e4" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L4_BIT&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Two switches give 4 combinations. How many combinations do three switches give?&#34;,&#34;answer&#34;:8,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;combinations&#34;,&#34;explain&#34;:&#34;Each new switch doubles the combinations: 2 × 2 × 2 = 8.&#34;,&#34;hint&#34;:&#34;Each switch can be 0 or 1. Multiply.&#34;,&#34;solution&#34;:&#34;8: 000, 001, 010, 011, 100, 101, 110, 111.&#34;}">
+  <p class="q-text">Two switches give 4 combinations. How many combinations do three switches give?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 5</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-04-switches-that-think-e5" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L4_GATES&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;A bell must ring when someone opens the front door OR the back door. How do you wire the two door switches?&#34;,&#34;options&#34;:[&#34;in series (in a row)&#34;,&#34;in parallel (side by side)&#34;,&#34;with only one switch&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;Either door is enough, so this is OR: switches in parallel.&#34;,&#34;hint&#34;:&#34;Is one door enough, or do you need both?&#34;,&#34;solution&#34;:&#34;In parallel: it is an OR gate.&#34;}">
+  <p class="q-text">A bell must ring when someone opens the front door OR the back door. How do you wire the two door switches?</p>
+  <ol class="q-fallback" type="a"><li>in series (in a row)</li><li>in parallel (side by side)</li><li>with only one switch</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 6</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-order" id="q-04-switches-that-think-e6" data-kind="exercise" data-q="{&#34;type&#34;:&#34;order&#34;,&#34;obj&#34;:&#34;L4_RELAY&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Put the steps of a relay in order.&#34;,&#34;items&#34;:[&#34;A current flows in circuit A.&#34;,&#34;The coil becomes a magnet.&#34;,&#34;The magnet pulls the metal contact.&#34;,&#34;Circuit B is closed.&#34;,&#34;The light in circuit B goes on.&#34;],&#34;explain&#34;:&#34;Circuit A controls circuit B through a magnet: a switch pressed by electricity.&#34;,&#34;hint&#34;:&#34;Start with the current, end with the light.&#34;,&#34;solution&#34;:&#34;Current in A → coil becomes a magnet → contact pulled → circuit B closed → light on.&#34;}">
+  <p class="q-text">Put the steps of a relay in order.</p>
+  <ul class="q-fallback"><li>A current flows in circuit A.</li><li>Circuit B is closed.</li><li>The coil becomes a magnet.</li><li>The light in circuit B goes on.</li><li>The magnet pulls the metal contact.</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 7</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-tf" id="q-04-switches-that-think-e7" data-kind="exercise" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L4_GATES&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;In the three-switch circuit (A AND B) OR C, switch A is closed, B is open and C is open. The light is on.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;A AND B = 1 AND 0 = 0. Then 0 OR C = 0 OR 0 = 0. The light is off.&#34;,&#34;hint&#34;:&#34;Work out A AND B first, then OR it with C.&#34;,&#34;solution&#34;:&#34;False: (1 AND 0) OR 0 = 0 OR 0 = 0.&#34;}">
+  <p class="q-text">In the three-switch circuit (A AND B) OR C, switch A is closed, B is open and C is open. The light is on.</p>
+  <p class="q-fallback">True or false?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 8</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-04-switches-that-think-e8" data-kind="exercise" data-q="{&#34;type&#34;:&#34;open&#34;,&#34;obj&#34;:&#34;L4_RELAY&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;Why is a switch that electricity can press more powerful than a switch that a finger presses?&#34;,&#34;hint&#34;:&#34;Think about who presses the next switch.&#34;,&#34;solution&#34;:&#34;Because one circuit can control another. Switches can then control other switches by themselves, very fast and with no person. Chains of these switches can do logic and calculate: that is the seed of every computer.&#34;}">
+  <p class="q-text">Why is a switch that electricity can press more powerful than a switch that a finger presses?</p>
+</div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block one-sentence wrap" aria-labelledby="one-h">
+    <h2 id="one-h" class="block-h"><span class="block-n" aria-hidden="true">07</span>In one sentence</h2>
+    <p class="one-line">A switch is a bit; switches in a row or side by side do logic.</p>
+  </section>
+
+  <section class="block words wrap" aria-labelledby="words-h">
+    <h2 id="words-h" class="block-h"><span class="block-n" aria-hidden="true">08</span>Words of the chapter</h2>
+    <dl class="gloss">
+      <div class="gloss-row">
+        <dt>circuit</dt>
+        <dd>a closed loop: battery, wires, a switch and something that uses the current <span class="it" lang="it">circuito</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>switch</dt>
+        <dd>a part that opens or closes a circuit <span class="it" lang="it">interruttore</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>bit</dt>
+        <dd>one switch: 1 (closed) or 0 (open) <span class="it" lang="it">bit</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>series / parallel</dt>
+        <dd>in a row / side by side <span class="it" lang="it">in serie / in parallelo</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>AND · OR · NOT</dt>
+        <dd>logic gates: both, at least one, the opposite <span class="it" lang="it">AND · OR · NOT (porte logiche)</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>truth table</dt>
+        <dd>a table with every input combination and its output <span class="it" lang="it">tabella di verità</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>relay</dt>
+        <dd>a switch pressed by electricity, through a magnet <span class="it" lang="it">relè</span></dd>
+      </div>
+      <div class="gloss-row">
+        <dt>LED</dt>
+        <dd>a small light that needs little energy <span class="it" lang="it">LED</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <nav class="pager wrap" aria-label="Chapters">
+    <a class="pager-link pager-prev" href="../../unit-1/03-the-prequel/index.html" rel="prev"><span class="pager-dir">Previous</span><span class="pager-title">The prequel: the idea of a program</span></a>
+    <a class="pager-link pager-next" href="../../unit-1/05-the-cpu/index.html" rel="next"><span class="pager-dir">Next</span><span class="pager-title">After the war: the CPU</span></a>
+  </nav>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap-wide foot-grid">
+    <p class="foot-title">ICT · Liceo Vittoria<br><span>Prof. Claudio</span></p>
+    <p>No accounts, no tracking, no cookies. Your answers stay in this browser.<br>
+      Photos are free licences, credited under each photo and on the <a href="../../about/index.html">About</a> page.</p>
+  </div>
+</footer>
+</body>
+</html>

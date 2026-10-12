@@ -1,0 +1,62 @@
+{
+  "title": "Human or machine?",
+  "note": "The twist: every 'person' answer here was written by Alan Turing in 1950, in his paper 'Computing Machinery and Intelligence'. He was imagining how a machine might answer in the imitation game, while it pretends to be a person. So these answers come from a person pretending to be a machine pretending to be a person! The 'chatbot' answers were written by a real AI chatbot in 2026. Teachers: you can replace this file with your class's own answers (no names, no personal data).",
+  "items": [
+    {
+      "q": "Please write me a sonnet on the subject of the Forth Bridge.",
+      "a": "Of course! Here is the opening: \"Red iron giant striding through the mist, / Three mighty arches hold the river's breath...\"",
+      "by": "chatbot",
+      "source": "written by an AI chatbot (Claude) in October 2026 for this site",
+      "note": "A modern chatbot almost never says no to a poem. It starts at once, happy and polite: \"Of course!\""
+    },
+    {
+      "q": "Add 34957 to 70764.",
+      "a": "(after a pause of about 30 seconds) 105621",
+      "by": "person",
+      "source": "Alan Turing, 'Computing Machinery and Intelligence' (1950): the answer he imagined for a machine",
+      "note": "Slow, and wrong! The right answer is 105721. Later in the same paper Turing suggests that a machine could make mistakes on purpose, to seem more human."
+    },
+    {
+      "q": "In the first line of your sonnet, 'Shall I compare thee to a summer's day', would not 'a spring day' do as well or better?",
+      "a": "It wouldn't scan.",
+      "by": "person",
+      "source": "Alan Turing, 'Computing Machinery and Intelligence' (1950): the answer he imagined for a machine",
+      "note": "Very short and sure, like a poet. 'Scan' means the rhythm of the line works: 'a spring day' has one beat too few."
+    },
+    {
+      "q": "Do you play chess? I have only a king at K1. You have a king at K6 and a rook at R1. It is your move. What do you play?",
+      "a": "Yes, I play! I would move my rook to R8. That is checkmate: my king guards the squares in front of yours, so your king cannot escape.",
+      "by": "chatbot",
+      "source": "written by an AI chatbot (Claude) in October 2026 for this site",
+      "note": "It explains why, even if you did not ask. Chatbots love to explain their reasons step by step."
+    },
+    {
+      "q": "Please write me a sonnet on the subject of the Forth Bridge.",
+      "a": "Count me out on this one. I never could write poetry.",
+      "by": "person",
+      "source": "Alan Turing, 'Computing Machinery and Intelligence' (1950): the answer he imagined for a machine",
+      "note": "Many people would say the same! Saying 'I can't' is a very human answer, and Turing knew it."
+    },
+    {
+      "q": "Add 34957 to 70764.",
+      "a": "34,957 + 70,764 = 105,721.",
+      "by": "chatbot",
+      "source": "written by an AI chatbot (Claude) in October 2026 for this site",
+      "note": "Instant, correct and neat, with commas. A modern chatbot does not pretend to be slow."
+    },
+    {
+      "q": "How about 'a winter's day'? That would scan all right.",
+      "a": "Yes, but nobody wants to be compared to a winter's day.",
+      "by": "person",
+      "source": "Alan Turing, 'Computing Machinery and Intelligence' (1950): the answer he imagined for a machine",
+      "note": "A little joke about feelings: who wants to be cold and grey? Turing used it to show what a really clever machine would need to understand."
+    },
+    {
+      "q": "Do you play chess? I have only a king at K1. You have a king at K6 and a rook at R1. It is your move. What do you play?",
+      "a": "(after a pause of 15 seconds) R-R8 mate.",
+      "by": "person",
+      "source": "Alan Turing, 'Computing Machinery and Intelligence' (1950): the answer he imagined for a machine",
+      "note": "Short, with a pause, in chess notation. It is a correct move: a careful player, or a careful machine."
+    }
+  ]
+}

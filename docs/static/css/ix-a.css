@@ -1,0 +1,550 @@
+/* ix-a.css — styles for interactive components 1–7 (binary-lights, ascii-codec, caesar-wheel, mini-enigma,
+   circuit-bench, turing-machine, fde-stepper). Contract: SITE_SPEC.md.
+   Every selector starts with .ix-<name>. Colours come only from the site tokens (with local fallbacks);
+   html[data-theme="dark"] swaps --paper and --ink, so everything here follows the theme automatically.
+   Lines and tints use color-mix() on --ink where supported, and fall back to --line. */
+
+/* ---------- shared: local helpers derived from the tokens ---------- */
+.ix-binary-lights,
+.ix-ascii-codec,
+.ix-caesar-wheel,
+.ix-mini-enigma,
+.ix-circuit-bench,
+.ix-turing-machine,
+.ix-fde-stepper {
+  --ixa-line: var(--line, rgba(18, 33, 63, .18));
+  --ixa-strong: var(--ink, #12213F);
+  --ixa-tint: transparent;
+  --ixa-muted: var(--muted, #5A6378);
+  color: var(--ink, #12213F);
+  line-height: 1.45;
+  max-width: 100%;
+  min-width: 0;
+}
+@supports (color: color-mix(in srgb, red 50%, blue)) {
+  .ix-binary-lights,
+  .ix-ascii-codec,
+  .ix-caesar-wheel,
+  .ix-mini-enigma,
+  .ix-circuit-bench,
+  .ix-turing-machine,
+  .ix-fde-stepper {
+    --ixa-line: color-mix(in srgb, var(--ink, #12213F) 24%, transparent);
+    --ixa-tint: color-mix(in srgb, var(--ink, #12213F) 6%, transparent);
+    --ixa-muted: color-mix(in srgb, var(--ink, #12213F) 74%, var(--paper, #F4F1E8));
+  }
+}
+.ix-binary-lights *,
+.ix-ascii-codec *,
+.ix-caesar-wheel *,
+.ix-mini-enigma *,
+.ix-circuit-bench *,
+.ix-turing-machine *,
+.ix-fde-stepper *,
+.ix-binary-lights *::before,
+.ix-ascii-codec *::before,
+.ix-caesar-wheel *::before,
+.ix-mini-enigma *::before,
+.ix-circuit-bench *::before,
+.ix-turing-machine *::before,
+.ix-fde-stepper *::before,
+.ix-binary-lights *::after,
+.ix-ascii-codec *::after,
+.ix-caesar-wheel *::after,
+.ix-mini-enigma *::after,
+.ix-circuit-bench *::after,
+.ix-turing-machine *::after,
+.ix-fde-stepper *::after { box-sizing: border-box; }
+.ix-binary-lights p,
+.ix-ascii-codec p,
+.ix-caesar-wheel p,
+.ix-mini-enigma p,
+.ix-circuit-bench p,
+.ix-turing-machine p,
+.ix-fde-stepper p { margin: 0 0 .6rem; }
+.ix-binary-lights .ixa-instr,
+.ix-ascii-codec .ixa-instr,
+.ix-caesar-wheel .ixa-instr,
+.ix-mini-enigma .ixa-instr,
+.ix-circuit-bench .ixa-instr,
+.ix-turing-machine .ixa-instr,
+.ix-fde-stepper .ixa-instr { font-weight: 600; margin: 0 0 .8rem; }
+.ix-binary-lights .ixa-note,
+.ix-ascii-codec .ixa-note,
+.ix-caesar-wheel .ixa-note,
+.ix-mini-enigma .ixa-note,
+.ix-circuit-bench .ixa-note,
+.ix-turing-machine .ixa-note,
+.ix-fde-stepper .ixa-note { color: var(--ixa-muted); font-size: .92em; }
+.ix-binary-lights .ixa-sub,
+.ix-ascii-codec .ixa-sub,
+.ix-caesar-wheel .ixa-sub,
+.ix-mini-enigma .ixa-sub,
+.ix-circuit-bench .ixa-sub,
+.ix-turing-machine .ixa-sub,
+.ix-fde-stepper .ixa-sub { font-weight: 700; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; margin: .8rem 0 .4rem; }
+.ix-binary-lights .ixa-mono,
+.ix-ascii-codec .ixa-mono,
+.ix-caesar-wheel .ixa-mono,
+.ix-mini-enigma .ixa-mono,
+.ix-circuit-bench .ixa-mono,
+.ix-turing-machine .ixa-mono,
+.ix-fde-stepper .ixa-mono { font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; }
+.ix-binary-lights .ixa-k,
+.ix-ascii-codec .ixa-k,
+.ix-caesar-wheel .ixa-k,
+.ix-mini-enigma .ixa-k,
+.ix-circuit-bench .ixa-k,
+.ix-turing-machine .ixa-k,
+.ix-fde-stepper .ixa-k { color: var(--ixa-muted); font-size: .85em; margin-right: .5em; }
+.ix-binary-lights .ixa-bar,
+.ix-ascii-codec .ixa-bar,
+.ix-caesar-wheel .ixa-bar,
+.ix-mini-enigma .ixa-bar,
+.ix-circuit-bench .ixa-bar,
+.ix-turing-machine .ixa-bar,
+.ix-fde-stepper .ixa-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .6rem 0; }
+.ix-binary-lights .ixa-center,
+.ix-ascii-codec .ixa-center,
+.ix-caesar-wheel .ixa-center,
+.ix-mini-enigma .ixa-center,
+.ix-circuit-bench .ixa-center,
+.ix-turing-machine .ixa-center,
+.ix-fde-stepper .ixa-center { justify-content: center; }
+.ix-binary-lights .ixa-panel,
+.ix-ascii-codec .ixa-panel,
+.ix-caesar-wheel .ixa-panel,
+.ix-mini-enigma .ixa-panel,
+.ix-circuit-bench .ixa-panel,
+.ix-turing-machine .ixa-panel,
+.ix-fde-stepper .ixa-panel { border: 1px solid var(--ixa-line); border-radius: 6px; padding: .8rem; margin: .9rem 0; background: var(--ixa-tint); }
+.ix-binary-lights .ixa-scroll,
+.ix-ascii-codec .ixa-scroll,
+.ix-caesar-wheel .ixa-scroll,
+.ix-mini-enigma .ixa-scroll,
+.ix-circuit-bench .ixa-scroll,
+.ix-turing-machine .ixa-scroll,
+.ix-fde-stepper .ixa-scroll { max-width: 100%; overflow-x: auto; }
+.ix-binary-lights :focus-visible,
+.ix-ascii-codec :focus-visible,
+.ix-caesar-wheel :focus-visible,
+.ix-mini-enigma :focus-visible,
+.ix-circuit-bench :focus-visible,
+.ix-turing-machine :focus-visible,
+.ix-fde-stepper :focus-visible { outline: 3px solid var(--yellow, #FFC247); outline-offset: 2px; }
+
+/* buttons */
+.ix-binary-lights .ixa-btn,
+.ix-ascii-codec .ixa-btn,
+.ix-caesar-wheel .ixa-btn,
+.ix-mini-enigma .ixa-btn,
+.ix-circuit-bench .ixa-btn,
+.ix-turing-machine .ixa-btn,
+.ix-fde-stepper .ixa-btn {
+  font: inherit; font-weight: 600; min-height: 44px; min-width: 44px; padding: .45rem .9rem;
+  border: 1.5px solid var(--ink, #12213F); border-radius: 6px; cursor: pointer;
+  background: var(--paper, #F4F1E8); color: var(--ink, #12213F);
+}
+.ix-binary-lights .ixa-btn:hover,
+.ix-ascii-codec .ixa-btn:hover,
+.ix-caesar-wheel .ixa-btn:hover,
+.ix-mini-enigma .ixa-btn:hover,
+.ix-circuit-bench .ixa-btn:hover,
+.ix-turing-machine .ixa-btn:hover,
+.ix-fde-stepper .ixa-btn:hover { background: var(--ixa-tint); }
+.ix-binary-lights .ixa-btn.ixa-primary,
+.ix-ascii-codec .ixa-btn.ixa-primary,
+.ix-caesar-wheel .ixa-btn.ixa-primary,
+.ix-mini-enigma .ixa-btn.ixa-primary,
+.ix-circuit-bench .ixa-btn.ixa-primary,
+.ix-turing-machine .ixa-btn.ixa-primary,
+.ix-fde-stepper .ixa-btn.ixa-primary { background: var(--ink, #12213F); color: var(--paper, #F4F1E8); }
+.ix-binary-lights .ixa-btn[aria-pressed="true"],
+.ix-ascii-codec .ixa-btn[aria-pressed="true"],
+.ix-caesar-wheel .ixa-btn[aria-pressed="true"],
+.ix-mini-enigma .ixa-btn[aria-pressed="true"],
+.ix-circuit-bench .ixa-btn[aria-pressed="true"],
+.ix-turing-machine .ixa-btn[aria-pressed="true"],
+.ix-fde-stepper .ixa-btn[aria-pressed="true"] { background: var(--yellow, #FFC247); color: var(--navy, #12213F); border-color: var(--yellow, #FFC247); }
+.ix-binary-lights .ixa-btn:disabled,
+.ix-ascii-codec .ixa-btn:disabled,
+.ix-caesar-wheel .ixa-btn:disabled,
+.ix-mini-enigma .ixa-btn:disabled,
+.ix-circuit-bench .ixa-btn:disabled,
+.ix-turing-machine .ixa-btn:disabled,
+.ix-fde-stepper .ixa-btn:disabled { opacity: .45; cursor: not-allowed; }
+.ix-binary-lights .ixa-btn.ixa-sm,
+.ix-ascii-codec .ixa-btn.ixa-sm,
+.ix-caesar-wheel .ixa-btn.ixa-sm,
+.ix-mini-enigma .ixa-btn.ixa-sm,
+.ix-circuit-bench .ixa-btn.ixa-sm,
+.ix-turing-machine .ixa-btn.ixa-sm,
+.ix-fde-stepper .ixa-btn.ixa-sm { min-height: 44px; min-width: 44px; padding: .2rem .5rem; }
+
+/* inputs */
+.ix-binary-lights .ixa-field,
+.ix-ascii-codec .ixa-field,
+.ix-caesar-wheel .ixa-field,
+.ix-mini-enigma .ixa-field,
+.ix-circuit-bench .ixa-field,
+.ix-turing-machine .ixa-field,
+.ix-fde-stepper .ixa-field { display: flex; flex-direction: column; gap: .25rem; margin: .6rem 0; min-width: 0; }
+.ix-binary-lights .ixa-field.ixa-inline,
+.ix-ascii-codec .ixa-field.ixa-inline,
+.ix-caesar-wheel .ixa-field.ixa-inline,
+.ix-mini-enigma .ixa-field.ixa-inline,
+.ix-circuit-bench .ixa-field.ixa-inline,
+.ix-turing-machine .ixa-field.ixa-inline,
+.ix-fde-stepper .ixa-field.ixa-inline { flex-direction: row; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.ix-binary-lights .ixa-label,
+.ix-ascii-codec .ixa-label,
+.ix-caesar-wheel .ixa-label,
+.ix-mini-enigma .ixa-label,
+.ix-circuit-bench .ixa-label,
+.ix-turing-machine .ixa-label,
+.ix-fde-stepper .ixa-label { font-size: .9em; font-weight: 600; }
+.ix-binary-lights .ixa-input,
+.ix-ascii-codec .ixa-input,
+.ix-caesar-wheel .ixa-input,
+.ix-mini-enigma .ixa-input,
+.ix-circuit-bench .ixa-input,
+.ix-turing-machine .ixa-input,
+.ix-fde-stepper .ixa-input,
+.ix-binary-lights .ixa-select,
+.ix-ascii-codec .ixa-select,
+.ix-caesar-wheel .ixa-select,
+.ix-mini-enigma .ixa-select,
+.ix-circuit-bench .ixa-select,
+.ix-turing-machine .ixa-select,
+.ix-fde-stepper .ixa-select {
+  font: inherit; min-height: 44px; padding: .4rem .6rem; max-width: 100%; min-width: 0;
+  border: 1.5px solid var(--ink, #12213F); border-radius: 6px; background: var(--paper, #F4F1E8); color: var(--ink, #12213F);
+}
+.ix-binary-lights .ixa-input.ixa-mono,
+.ix-ascii-codec .ixa-input.ixa-mono,
+.ix-caesar-wheel .ixa-input.ixa-mono,
+.ix-mini-enigma .ixa-input.ixa-mono,
+.ix-circuit-bench .ixa-input.ixa-mono,
+.ix-turing-machine .ixa-input.ixa-mono,
+.ix-fde-stepper .ixa-input.ixa-mono { font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; font-size: 1.05em; }
+
+/* read-outs (label above value) */
+.ix-binary-lights .ixa-readout,
+.ix-ascii-codec .ixa-readout,
+.ix-caesar-wheel .ixa-readout,
+.ix-mini-enigma .ixa-readout,
+.ix-circuit-bench .ixa-readout,
+.ix-turing-machine .ixa-readout,
+.ix-fde-stepper .ixa-readout { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; margin: .7rem 0; }
+.ix-binary-lights .ixa-readout > div,
+.ix-ascii-codec .ixa-readout > div,
+.ix-caesar-wheel .ixa-readout > div,
+.ix-mini-enigma .ixa-readout > div,
+.ix-circuit-bench .ixa-readout > div,
+.ix-turing-machine .ixa-readout > div,
+.ix-fde-stepper .ixa-readout > div { min-width: 0; }
+.ix-binary-lights .ixa-readout dt,
+.ix-ascii-codec .ixa-readout dt,
+.ix-caesar-wheel .ixa-readout dt,
+.ix-mini-enigma .ixa-readout dt,
+.ix-circuit-bench .ixa-readout dt,
+.ix-turing-machine .ixa-readout dt,
+.ix-fde-stepper .ixa-readout dt { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ixa-muted); }
+.ix-binary-lights .ixa-readout dd,
+.ix-ascii-codec .ixa-readout dd,
+.ix-caesar-wheel .ixa-readout dd,
+.ix-mini-enigma .ixa-readout dd,
+.ix-circuit-bench .ixa-readout dd,
+.ix-turing-machine .ixa-readout dd,
+.ix-fde-stepper .ixa-readout dd { margin: 0; font-size: 1.15em; font-weight: 600; overflow-wrap: anywhere; }
+.ix-binary-lights .ixa-readout.ixa-col,
+.ix-ascii-codec .ixa-readout.ixa-col,
+.ix-caesar-wheel .ixa-readout.ixa-col,
+.ix-mini-enigma .ixa-readout.ixa-col,
+.ix-circuit-bench .ixa-readout.ixa-col,
+.ix-turing-machine .ixa-readout.ixa-col,
+.ix-fde-stepper .ixa-readout.ixa-col { flex-direction: column; gap: .4rem; }
+.ix-binary-lights .ixa-result,
+.ix-ascii-codec .ixa-result,
+.ix-caesar-wheel .ixa-result,
+.ix-mini-enigma .ixa-result,
+.ix-circuit-bench .ixa-result,
+.ix-turing-machine .ixa-result,
+.ix-fde-stepper .ixa-result { font-weight: 600; overflow-wrap: anywhere; }
+
+/* tables */
+.ix-binary-lights .ixa-table,
+.ix-ascii-codec .ixa-table,
+.ix-caesar-wheel .ixa-table,
+.ix-mini-enigma .ixa-table,
+.ix-circuit-bench .ixa-table,
+.ix-turing-machine .ixa-table,
+.ix-fde-stepper .ixa-table { border-collapse: collapse; width: 100%; font-size: .95em; }
+.ix-binary-lights .ixa-table caption,
+.ix-ascii-codec .ixa-table caption,
+.ix-caesar-wheel .ixa-table caption,
+.ix-mini-enigma .ixa-table caption,
+.ix-circuit-bench .ixa-table caption,
+.ix-turing-machine .ixa-table caption,
+.ix-fde-stepper .ixa-table caption { text-align: left; font-size: .85em; color: var(--ixa-muted); padding-bottom: .3rem; caption-side: top; }
+.ix-binary-lights .ixa-table th,
+.ix-ascii-codec .ixa-table th,
+.ix-caesar-wheel .ixa-table th,
+.ix-mini-enigma .ixa-table th,
+.ix-circuit-bench .ixa-table th,
+.ix-turing-machine .ixa-table th,
+.ix-fde-stepper .ixa-table th,
+.ix-binary-lights .ixa-table td,
+.ix-ascii-codec .ixa-table td,
+.ix-caesar-wheel .ixa-table td,
+.ix-mini-enigma .ixa-table td,
+.ix-circuit-bench .ixa-table td,
+.ix-turing-machine .ixa-table td,
+.ix-fde-stepper .ixa-table td { border: 1px solid var(--ixa-line); padding: .3rem .5rem; text-align: left; }
+.ix-binary-lights .ixa-table th,
+.ix-ascii-codec .ixa-table th,
+.ix-caesar-wheel .ixa-table th,
+.ix-mini-enigma .ixa-table th,
+.ix-circuit-bench .ixa-table th,
+.ix-turing-machine .ixa-table th,
+.ix-fde-stepper .ixa-table th { font-weight: 700; background: var(--ixa-tint); }
+.ix-binary-lights .ixa-table tr.is-cur td,
+.ix-ascii-codec .ixa-table tr.is-cur td,
+.ix-caesar-wheel .ixa-table tr.is-cur td,
+.ix-mini-enigma .ixa-table tr.is-cur td,
+.ix-circuit-bench .ixa-table tr.is-cur td,
+.ix-turing-machine .ixa-table tr.is-cur td,
+.ix-fde-stepper .ixa-table tr.is-cur td { background: var(--yellow, #FFC247); color: var(--navy, #12213F); font-weight: 700; }
+.ix-binary-lights .ixa-table tr.is-bad td,
+.ix-ascii-codec .ixa-table tr.is-bad td,
+.ix-caesar-wheel .ixa-table tr.is-bad td,
+.ix-mini-enigma .ixa-table tr.is-bad td,
+.ix-circuit-bench .ixa-table tr.is-bad td,
+.ix-turing-machine .ixa-table tr.is-bad td,
+.ix-fde-stepper .ixa-table tr.is-bad td { color: var(--bad, #B3412F); font-weight: 600; }
+
+/* feedback line (api.live) */
+.ix-binary-lights .ix-live,
+.ix-ascii-codec .ix-live,
+.ix-caesar-wheel .ix-live,
+.ix-mini-enigma .ix-live,
+.ix-circuit-bench .ix-live,
+.ix-turing-machine .ix-live,
+.ix-fde-stepper .ix-live { min-height: 1.5em; margin: .8rem 0 0; padding: .45rem .7rem; border-left: 4px solid var(--ixa-line); }
+.ix-binary-lights .ix-live.is-ok,
+.ix-ascii-codec .ix-live.is-ok,
+.ix-caesar-wheel .ix-live.is-ok,
+.ix-mini-enigma .ix-live.is-ok,
+.ix-circuit-bench .ix-live.is-ok,
+.ix-turing-machine .ix-live.is-ok,
+.ix-fde-stepper .ix-live.is-ok { border-left-color: var(--ok, #2E7D5B); }
+.ix-binary-lights .ix-live.is-ok::before,
+.ix-ascii-codec .ix-live.is-ok::before,
+.ix-caesar-wheel .ix-live.is-ok::before,
+.ix-mini-enigma .ix-live.is-ok::before,
+.ix-circuit-bench .ix-live.is-ok::before,
+.ix-turing-machine .ix-live.is-ok::before,
+.ix-fde-stepper .ix-live.is-ok::before { content: "Correct \2014  "; font-weight: 700; color: var(--ok, #2E7D5B); }
+.ix-binary-lights .ix-live.is-bad,
+.ix-ascii-codec .ix-live.is-bad,
+.ix-caesar-wheel .ix-live.is-bad,
+.ix-mini-enigma .ix-live.is-bad,
+.ix-circuit-bench .ix-live.is-bad,
+.ix-turing-machine .ix-live.is-bad,
+.ix-fde-stepper .ix-live.is-bad { border-left-color: var(--bad, #B3412F); }
+.ix-binary-lights .ix-live.is-bad::before,
+.ix-ascii-codec .ix-live.is-bad::before,
+.ix-caesar-wheel .ix-live.is-bad::before,
+.ix-mini-enigma .ix-live.is-bad::before,
+.ix-circuit-bench .ix-live.is-bad::before,
+.ix-turing-machine .ix-live.is-bad::before,
+.ix-fde-stepper .ix-live.is-bad::before { content: "Not yet \2014  "; font-weight: 700; color: var(--bad, #B3412F); }
+
+/* ===================== 1. binary-lights ===================== */
+.ix-binary-lights .ixa-bulbs { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: .35rem; max-width: 560px; }
+.ix-binary-lights .ixa-bulb {
+  font: inherit; display: flex; flex-direction: column; align-items: center; gap: .15rem; min-height: 44px; min-width: 0;
+  padding: .35rem .1rem; border: 1.5px solid var(--ixa-line); border-radius: 6px; background: var(--paper, #F4F1E8); color: var(--ink, #12213F); cursor: pointer;
+}
+.ix-binary-lights .ixa-bulb-pic { width: 100%; max-width: 40px; height: auto; }
+.ix-binary-lights .ixa-glass { fill: var(--paper, #F4F1E8); stroke: var(--ink, #12213F); stroke-width: 2; }
+.ix-binary-lights .ixa-filament { fill: none; stroke: var(--ink, #12213F); stroke-width: 1.5; }
+.ix-binary-lights .ixa-base { fill: var(--blue-grey, #A8B1C7); stroke: var(--ink, #12213F); stroke-width: 1.5; }
+.ix-binary-lights .ixa-thread { stroke: var(--ink, #12213F); stroke-width: 1; }
+.ix-binary-lights .ixa-val { font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; font-weight: 700; font-size: .9em; }
+.ix-binary-lights .ixa-bulb[aria-pressed="true"] { border-color: var(--yellow, #FFC247); }
+.ix-binary-lights .ixa-bulb[aria-pressed="true"] .ixa-glass { fill: var(--yellow, #FFC247); stroke: var(--navy, #12213F); }
+.ix-binary-lights .ixa-bulb[aria-pressed="true"] .ixa-filament { stroke: var(--navy, #12213F); }
+.ix-binary-lights .ixa-big { font-size: 1.3em; letter-spacing: .12em; }
+.ix-binary-lights .ixa-target { display: inline-block; font-weight: 700; padding: .3rem .7rem; border: 2px solid var(--yellow, #FFC247); border-radius: 6px; }
+.ix-binary-lights .ixa-target[hidden] { display: none; }
+
+/* ===================== 2. ascii-codec ===================== */
+.ix-ascii-codec .ixa-input { width: 100%; max-width: 32rem; }
+.ix-ascii-codec .ixa-table { max-width: 32rem; }
+.ix-ascii-codec .ixa-table td:last-child { letter-spacing: .08em; }
+
+/* ===================== 3. caesar-wheel ===================== */
+.ix-caesar-wheel .ixa-wheel-box { display: flex; flex-direction: column; align-items: center; }
+.ix-caesar-wheel .ixa-wheel { width: 100%; max-width: 300px; height: auto; display: block; border-radius: 50%; }
+.ix-caesar-wheel .ixa-ring-out { fill: var(--paper, #F4F1E8); stroke: var(--ink, #12213F); stroke-width: 2; }
+.ix-caesar-wheel .ixa-ring-in { fill: var(--blue-grey, #A8B1C7); stroke: var(--ink, #12213F); stroke-width: 2; }
+.ix-caesar-wheel .ixa-hole { fill: var(--paper, #F4F1E8); stroke: var(--ink, #12213F); stroke-width: 2; }
+.ix-caesar-wheel .ixa-tick { stroke: var(--ink, #12213F); stroke-width: .8; opacity: .45; }
+.ix-caesar-wheel .ixa-l-out, .ix-caesar-wheel .ixa-l-in { text-anchor: middle; dominant-baseline: central; font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; font-weight: 700; }
+.ix-caesar-wheel .ixa-l-out { fill: var(--ink, #12213F); font-size: 16px; }
+.ix-caesar-wheel .ixa-l-in { fill: var(--navy, #12213F); font-size: 15px; }
+.ix-caesar-wheel .ixa-window { fill: none; stroke: var(--yellow, #FFC247); stroke-width: 4; stroke-linejoin: round; }
+.ix-caesar-wheel .ixa-inner { transform-box: view-box; transform-origin: 150px 150px; transition: transform .35s ease; }
+.ix-caesar-wheel .ixa-centre { text-anchor: middle; font-size: 34px; font-weight: 700; fill: var(--ink, #12213F); }
+.ix-caesar-wheel .ixa-centre-s { text-anchor: middle; font-size: 13px; fill: var(--ink, #12213F); }
+.ix-caesar-wheel .ixa-shift { margin: 0 .4rem; font-weight: 700; min-width: 9.5em; text-align: center; }
+.ix-caesar-wheel .ixa-input { width: 100%; max-width: 28rem; }
+.ix-caesar-wheel .ixa-cipher { font-size: 1.15em; font-weight: 700; letter-spacing: .08em; overflow-wrap: anywhere; }
+.ix-caesar-wheel .ixa-brute { list-style: none; padding: 0; margin: .7rem 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: .3rem; }
+.ix-caesar-wheel .ixa-brute[hidden] { display: none; }
+.ix-caesar-wheel .ixa-pick {
+  font: inherit; width: 100%; min-height: 44px; text-align: left; padding: .3rem .5rem; cursor: pointer; overflow-wrap: anywhere;
+  border: 1px solid var(--ixa-line); border-radius: 6px; background: var(--paper, #F4F1E8); color: var(--ink, #12213F);
+}
+.ix-caesar-wheel .ixa-pick.is-ok { border: 2px solid var(--ok, #2E7D5B); }
+.ix-caesar-wheel .ixa-pick.is-ok::after { content: "  \2713 readable"; font-weight: 700; color: var(--ok, #2E7D5B); }
+.ix-caesar-wheel .ixa-pick.is-bad { border: 2px solid var(--bad, #B3412F); }
+.ix-caesar-wheel .ixa-pick.is-bad::after { content: "  \2717 nonsense"; font-weight: 700; color: var(--bad, #B3412F); }
+
+/* ===================== 4. mini-enigma ===================== */
+.ix-mini-enigma .ixa-rotors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; max-width: 420px; }
+.ix-mini-enigma .ixa-rotor { display: flex; flex-direction: column; align-items: center; gap: .3rem; padding: .5rem .3rem; border: 1px solid var(--ixa-line); border-radius: 6px; min-width: 0; }
+.ix-mini-enigma .ixa-rname { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ixa-muted); }
+.ix-mini-enigma .ixa-select { width: 100%; }
+.ix-mini-enigma .ixa-window {
+  display: flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; font-size: 1.5rem; font-weight: 700;
+  background: var(--paper, #F4F1E8); color: var(--ink, #12213F); border: 2px solid var(--ink, #12213F); border-radius: 6px;
+}
+.ix-mini-enigma .ixa-lampboard, .ix-mini-enigma .ixa-keyboard { display: flex; flex-direction: column; gap: .3rem; align-items: center; }
+.ix-mini-enigma .ixa-krow { display: flex; gap: .3rem; justify-content: center; width: 100%; max-width: 30rem; }
+.ix-mini-enigma .ixa-lamp {
+  display: flex; align-items: center; justify-content: center; flex: 1 1 0; max-width: 2.3rem; aspect-ratio: 1; min-width: 0;
+  border-radius: 50%; border: 1.5px solid var(--ixa-line); color: var(--ixa-muted); font-weight: 700;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+}
+.ix-mini-enigma .ixa-lamp.is-lit { background: var(--yellow, #FFC247); color: var(--navy, #12213F); border-color: var(--yellow, #FFC247); }
+.ix-mini-enigma .ixa-key {
+  font: inherit; font-weight: 700; flex: 1 1 0; max-width: 2.75rem; height: 2.75rem; min-width: 0; padding: 0; cursor: pointer;
+  border-radius: 50%; border: 1.5px solid var(--ink, #12213F); background: var(--ink, #12213F); color: var(--paper, #F4F1E8);
+  font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+}
+.ix-mini-enigma .ixa-key:active { background: var(--yellow, #FFC247); color: var(--navy, #12213F); }
+.ix-mini-enigma .ixa-tapes { margin: .9rem 0 .3rem; padding: .6rem .7rem; border: 1px dashed var(--ixa-line); border-radius: 6px; }
+.ix-mini-enigma .ixa-tapes > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem; margin: .15rem 0; }
+.ix-mini-enigma .ixa-tape { font-size: 1.1em; letter-spacing: .1em; overflow-wrap: anywhere; min-width: 0; }
+.ix-mini-enigma .ixa-tape-out { font-weight: 700; }
+.ix-mini-enigma .ixa-flaw { border-left: 4px solid var(--yellow, #FFC247); }
+.ix-mini-enigma .ixa-flaw-count { font-weight: 600; margin: 0; }
+.ix-mini-enigma .ixa-rotors + .ixa-note { margin-top: .5rem; }
+
+/* ===================== 5. circuit-bench ===================== */
+.ix-circuit-bench .ixa-layout { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 1rem; align-items: start; }
+.ix-circuit-bench .ixa-svg { width: 100%; height: auto; display: block; max-width: 520px; }
+.ix-circuit-bench .ixa-wire { fill: none; stroke: var(--ink, #12213F); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.ix-circuit-bench .ixa-plate { stroke: var(--ink, #12213F); stroke-width: 3; }
+.ix-circuit-bench .ixa-plate-s { stroke-width: 7; }
+.ix-circuit-bench .ixa-svg-l { fill: var(--ink, #12213F); font-size: 20px; font-weight: 700; }
+.ix-circuit-bench .ixa-svg-s { fill: var(--ink, #12213F); font-size: 13px; }
+.ix-circuit-bench .ixa-glass { fill: var(--paper, #F4F1E8); stroke: var(--ink, #12213F); stroke-width: 3; }
+.ix-circuit-bench .ixa-fil { stroke: var(--ink, #12213F); stroke-width: 2; }
+.ix-circuit-bench .ixa-bulb.is-on .ixa-glass { fill: var(--yellow, #FFC247); }
+.ix-circuit-bench .ixa-bulb.is-on .ixa-fil { stroke: var(--navy, #12213F); }
+.ix-circuit-bench .ixa-ray { stroke: var(--yellow, #FFC247); stroke-width: 4; stroke-linecap: round; }
+.ix-circuit-bench .ixa-sw { cursor: pointer; }
+.ix-circuit-bench .ixa-hit { fill: transparent; }
+.ix-circuit-bench .ixa-lever { stroke: var(--ink, #12213F); stroke-width: 4; stroke-linecap: round; transition: all .2s ease; }
+.ix-circuit-bench .ixa-dot { fill: var(--paper, #F4F1E8); stroke: var(--ink, #12213F); stroke-width: 2.5; }
+.ix-circuit-bench .ixa-swbtn { min-width: 8.5rem; }
+.ix-circuit-bench .ixa-table td, .ix-circuit-bench .ixa-table th { text-align: center; }
+.ix-circuit-bench .ixa-table tr.is-tried td:last-child { color: var(--ok, #2E7D5B); font-weight: 700; }
+.ix-circuit-bench .ixa-table tr.is-cur td:last-child { color: var(--navy, #12213F); }
+.ix-circuit-bench .ixa-gate { margin-top: .7rem; padding: .5rem .7rem; border: 1px dashed var(--ixa-line); border-radius: 6px; }
+.ix-circuit-bench .ixa-gate.is-done { border: 2px solid var(--yellow, #FFC247); font-weight: 600; }
+
+/* ===================== 6. turing-machine ===================== */
+.ix-turing-machine .ixa-tape-view { position: relative; overflow-x: auto; padding: 1.4rem .4rem .5rem; border: 1px solid var(--ixa-line); border-radius: 6px; background: var(--ixa-tint); }
+.ix-turing-machine .ixa-cells { display: flex; width: max-content; }
+.ix-turing-machine .ixa-cell {
+  position: relative; display: flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.8rem; flex: 0 0 auto;
+  border: 2px solid var(--ink, #12213F); margin-left: -2px; background: var(--paper, #F4F1E8); color: var(--ink, #12213F);
+  font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; font-size: 1.3rem; font-weight: 700;
+}
+.ix-turing-machine .ixa-cell.is-head { background: var(--yellow, #FFC247); color: var(--navy, #12213F); }
+.ix-turing-machine .ixa-cell.is-head::before {
+  content: ""; position: absolute; top: -1.2rem; left: 50%; transform: translateX(-50%);
+  border-left: .55rem solid transparent; border-right: .55rem solid transparent; border-top: .8rem solid var(--ink, #12213F);
+}
+.ix-turing-machine .ixa-state { padding: 0 .3rem; }
+.ix-turing-machine .ixa-state.is-halt { background: var(--yellow, #FFC247); color: var(--navy, #12213F); border-radius: 4px; }
+.ix-turing-machine .ixa-speed { display: inline-flex; align-items: center; gap: .4rem; font-weight: 600; }
+.ix-turing-machine .ixa-range { width: 7rem; accent-color: var(--yellow, #FFC247); }
+.ix-turing-machine .ixa-input { width: 11rem; }
+
+/* ===================== 7. fde-stepper ===================== */
+.ix-fde-stepper .ixa-settings { display: flex; flex-wrap: wrap; gap: 0 1rem; }
+.ix-fde-stepper .ixa-num { width: 6rem; }
+.ix-fde-stepper .ixa-machine { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr) minmax(0, 1fr); gap: .8rem; align-items: start; }
+.ix-fde-stepper .ixa-cpu { border: 2px solid var(--ink, #12213F); border-radius: 6px; padding: .3rem .7rem .7rem; }
+.ix-fde-stepper .ixa-phases { display: flex; flex-wrap: wrap; gap: .3rem; }
+.ix-fde-stepper .ixa-phase {
+  flex: 1 1 auto; text-align: center; font-size: .78rem; font-weight: 700; letter-spacing: .05em; padding: .35rem .3rem;
+  border: 1.5px solid var(--ixa-line); border-radius: 6px; color: var(--ixa-muted);
+}
+.ix-fde-stepper .ixa-phase.is-on { background: var(--yellow, #FFC247); color: var(--navy, #12213F); border-color: var(--yellow, #FFC247); }
+.ix-fde-stepper .ixa-acc { font-size: 1.4em; }
+.ix-fde-stepper .ixa-ram { display: grid; grid-template-columns: repeat(auto-fill, minmax(8.2rem, 1fr)); gap: .35rem; }
+.ix-fde-stepper .ixa-card { display: flex; flex-direction: column; padding: .35rem .5rem; border: 1.5px solid var(--ixa-line); border-radius: 6px; min-width: 0; }
+.ix-fde-stepper .ixa-card.is-data { border-style: dashed; background: var(--ixa-tint); }
+.ix-fde-stepper .ixa-card.is-pc { border: 2.5px solid var(--yellow, #FFC247); }
+.ix-fde-stepper .ixa-card.is-touch { border: 2.5px solid var(--ink, #12213F); }
+.ix-fde-stepper .ixa-card.is-pc .ixa-box-n::after { content: "  \2190  PC"; color: var(--ink, #12213F); font-weight: 700; }
+.ix-fde-stepper .ixa-box-n { font-size: .75rem; color: var(--ixa-muted); }
+.ix-fde-stepper .ixa-box-v { font-weight: 700; overflow-wrap: anywhere; }
+.ix-fde-stepper .ixa-chips { display: flex; flex-wrap: wrap; gap: .3rem; min-height: 2.2rem; }
+.ix-fde-stepper .ixa-chip { padding: .2rem .6rem; border: 1.5px solid var(--ink, #12213F); border-radius: 6px; font-weight: 700; }
+.ix-fde-stepper .ixa-out .ixa-chip { background: var(--yellow, #FFC247); color: var(--navy, #12213F); border-color: var(--yellow, #FFC247); }
+.ix-fde-stepper .ixa-empty { color: var(--ixa-muted); font-size: .9em; }
+.ix-fde-stepper .ixa-io .ixa-sub:first-child { margin-top: 0; }
+
+/* ---------- narrow screens ---------- */
+@media (max-width: 720px) {
+  .ix-circuit-bench .ixa-layout { grid-template-columns: minmax(0, 1fr); }
+  .ix-fde-stepper .ixa-machine { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 460px) {
+  .ix-binary-lights .ixa-bulbs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .ix-mini-enigma .ixa-key { border-radius: 6px; }
+    .ix-mini-enigma .ixa-krow { gap: .2rem; }
+  .ix-fde-stepper .ixa-ram { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ix-binary-lights *,
+  .ix-ascii-codec *,
+  .ix-caesar-wheel *,
+  .ix-mini-enigma *,
+  .ix-circuit-bench *,
+  .ix-turing-machine *,
+  .ix-fde-stepper *,
+  .ix-binary-lights *::before,
+  .ix-ascii-codec *::before,
+  .ix-caesar-wheel *::before,
+  .ix-mini-enigma *::before,
+  .ix-circuit-bench *::before,
+  .ix-turing-machine *::before,
+  .ix-fde-stepper *::before,
+  .ix-binary-lights *::after,
+  .ix-ascii-codec *::after,
+  .ix-caesar-wheel *::after,
+  .ix-mini-enigma *::after,
+  .ix-circuit-bench *::after,
+  .ix-turing-machine *::after,
+  .ix-fde-stepper *::after { transition: none !important; animation: none !important; }
+}
