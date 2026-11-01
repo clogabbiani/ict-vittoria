@@ -495,3 +495,18 @@ code, kbd, pre, .q-text, .q-opt-text, .q-feedback, .q-solution, .q-hint, .ix-pri
 .extra-link { margin: 0; }
 .extra-link a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
 .extra-note { color: var(--muted); font-size: .9375rem; }
+
+/* ---- build_site additions ---- */
+.objectives { display: grid; gap: 8px; margin: .5rem 0 0; }
+.objectives li { padding-left: 1.6em; position: relative; }
+.objectives li::before { content: "☐"; position: absolute; left: 0; top: 0; }
+.in-test .block-lede { margin-bottom: .25rem; }
+.notes-list { display: grid; gap: 6px; margin: .75rem 0; }
+.notes-list li { padding-left: 1.1em; position: relative; }
+.notes-list li::before { content: "–"; position: absolute; left: 0; }
+.notes-table { font-size: .9375rem; margin: .75rem 0 1rem; }
+.notes-table th[scope="row"] { white-space: normal; }
+.concept .one-line { margin: 1rem 0 .5rem; font-size: clamp(1.125rem, 2vw, 1.375rem); }
+.sub-h { margin: 1.5rem 0 .25rem; font-size: 1.0625rem; }
+.gloss-row .it { font-weight: 400; color: var(--muted); font-size: .9em; margin-left: .35em; }
+.timeline .tl-year { font-family: var(--mono); font-weight: 700; }

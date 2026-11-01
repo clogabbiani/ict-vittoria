@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inside the box · Unit 1 · ICT · Liceo Vittoria</title>
+<meta name="description" content="The main components of a computer, how they talk to each other, and how to read a laptop advert like an engineer.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../../static/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var d=document.documentElement;function g(k){try{var v=localStorage.getItem(k);return v===null?null:JSON.parse(v);}catch(e){return null;}}
+var t=g('ict-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
+if(g('ict-read'))d.setAttribute('data-read','1');if(g('ict-font')==='atkinson')d.setAttribute('data-font','atkinson');
+d.className+=' js';})();
+</script>
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/ix-a.css">
+<link rel="stylesheet" href="../../static/css/ix-b.css">
+<link rel="stylesheet" href="../../static/css/ix-c.css">
+<script defer src="../../static/js/ict-core.js"></script>
+<script defer src="../../static/js/site.js"></script>
+<script defer src="../../static/js/ix/fde-stepper.js"></script>
+<script defer src="../../static/js/ix/label-machine.js"></script>
+<script defer src="../../static/js/ix/memory-kitchen.js"></script>
+<script defer src="../../static/js/ix/spec-decoder.js"></script>
+<script defer src="../../static/js/ix/be-the-gpu.js"></script>
+</head>
+<body data-root="../../" data-page="chapter" data-slug="02-inside-the-box">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-row wrap-wide">
+    <a class="brand" href="../../index.html"><span class="brand-ict">ICT</span><span class="brand-dot" aria-hidden="true">·</span><span class="brand-school">Liceo Vittoria</span></a>
+    <div class="tools" role="group" aria-label="Display options">
+      <button type="button" class="tool" data-action="theme" aria-label="Theme: auto. Change theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <span class="tool-label">Auto</span>
+      </button>
+      <button type="button" class="tool" data-action="read" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M3 19 8.5 5h1L15 19M5 14.5h8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5c1-1 4-1.2 4 1.3V19m0-3.2c-3.2-.4-4.6.5-4.6 1.8 0 2 3.4 2 4.6-.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="tool-label">Readable</span>
+      </button>
+      <button type="button" class="tool tool-font" data-action="font" aria-pressed="false">
+        <span class="tool-glyph" aria-hidden="true">Ag</span>
+        <span class="tool-label">Easy font</span>
+      </button>
+      <button type="button" class="tool" data-action="print">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="tool-label">Print</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav wrap-wide" aria-label="Main">
+    <a href="../../index.html">Home</a>
+    <a href="../../unit-1/index.html" aria-current="page">Unit 1</a>
+    <a href="../../unit-1/review/index.html">Review</a>
+    <a href="../../about/index.html">About</a>
+  </nav>
+</header>
+<div class="progress" data-progress-slug="02-inside-the-box">
+  <div class="progress-track" role="progressbar" aria-label="Chapter progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-fill"></span></div>
+  <span class="progress-text">0% done</span>
+</div>
+<main id="main" tabindex="-1">
+<article class="chapter">
+  <header class="ch-head wrap">
+    <p class="eyebrow"><a href="../../unit-1/index.html">Unit 1</a> · Lesson 2</p>
+    <h1 class="ch-title">Inside the box</h1>
+    <p class="ch-hook">The main components of a computer, how they talk to each other, and how to read a laptop advert like an engineer.</p>
+    <nav class="toc" aria-label="On this page">
+      <a href="#test-h">In the test</a><a href="#story-h">The story</a><a href="#notes-h">The notes</a><a href="#check-h">Check now</a><a href="#try-h">Try it</a><a href="#ex-h">Exercises</a>
+    </nav>
+  </header>
+
+  <section class="block in-test wrap" aria-labelledby="test-h">
+    <h2 id="test-h" class="block-h"><span class="block-n" aria-hidden="true">01</span>What the test will ask</h2>
+    <p class="block-lede">After this lesson you should be able to:</p>
+    <ul class="plain-list objectives"><li>Draw and explain the <strong>von Neumann architecture</strong>: CPU (control unit + ALU + registers), memory, input, output, <strong>buses</strong>, and the <strong>stored-program</strong> idea.</li><li>Name what plugs into the <strong>motherboard</strong>: CPU socket, RAM slots, chipset, expansion slots (PCIe), storage connectors (M.2, SATA), ports, power.</li><li>Describe the <strong>fetch–decode–execute</strong> cycle and explain <strong>cores</strong>, <strong>clock speed (GHz)</strong> and <strong>cache</strong>.</li><li>Explain why <strong>GHz alone</strong> does not tell you which CPU is faster (cores, IPC, cache, benchmarks).</li><li>State <strong>Moore&#x27;s law</strong> and read the transistor chart (2,300 in 1971 → 28 billion in 2024).</li><li>Compare <strong>RAM</strong> and <strong>ROM</strong> (volatile / non-volatile, read-write / read-only, what they hold) and know what capacity, DDR generation and dual channel mean.</li><li>Compare <strong>magnetic, optical and solid-state storage</strong> and know the units bit → byte → KB → MB → GB → TB.</li><li>Explain why an <strong>SSD</strong> feels so much faster than an HDD (random access, IOPS) and what <strong>NVMe</strong> is.</li><li>Say what a <strong>GPU</strong> is, why it has thousands of cores, and why the same chips train AI; know <strong>VRAM</strong> and integrated vs dedicated graphics.</li><li>Find the <strong>bottleneck</strong> of a computer for a given task.</li></ul>
+  </section>
+
+  <section class="block story" aria-labelledby="story-h">
+    <h2 id="story-h" class="block-h wrap"><span class="block-n" aria-hidden="true">02</span>The story</h2>
+      <p class="wrap story-p">In June 1945 the mathematician John von Neumann wrote down a drawing that every computer since has followed: a <strong>processor</strong> with a part that reads instructions and a part that does arithmetic, a <strong>memory</strong> that holds both the instructions and the data, <strong>input</strong> and <strong>output</strong>, and wires called <strong>buses</strong> connecting them. The most important idea is the simplest: the program lives in the memory with the data. That is Turing&#x27;s tape built out of electronics.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/v6_motherboard.jpg"
+       srcset="../../img/v6_motherboard-800.jpg 800w, ../../img/v6_motherboard.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1469" height="1600" alt="A motherboard: the CPU socket (centre), the RAM slots (right of it), the expansion slots (bottom), the ports (left edge). Everything meets here." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A motherboard: the CPU socket (centre), the RAM slots (right of it), the expansion slots (bottom), the ports (left edge). Everything meets here.</span>    <span class="credit">Photo: Jacek Halicki, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:2023_P%C5%82yta_g%C5%82%C3%B3wna_ASRock_A320M-DVS.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">Open a PC and you see the drawing in metal. The <strong>motherboard</strong> is the board everything plugs into: the <strong>CPU</strong> sits in its socket under a fan; the <strong>RAM</strong> sticks are next to it; the long slots take the <strong>graphics card</strong>; the <strong>SSD</strong> clips onto a small connector; the <strong>power supply</strong> feeds the lot.</p>
+      <p class="wrap story-p">The CPU does one thing, forever: <strong>fetch</strong> the next instruction from memory, <strong>decode</strong> it, <strong>execute</strong> it, and go back for the next one, billions of times a second. In 1971 the whole CPU fitted on one chip for the first time: the Intel 4004, 2,300 transistors, designed by Federico Faggin from Vicenza for a Japanese calculator. Gordon Moore had predicted in 1965 that the number of transistors on a chip would double every year or two; fifty years later the Apple M4 has 28 billion.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/L3_4004.jpg"
+       srcset="../../img/L3_4004-800.jpg 800w, ../../img/L3_4004.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1389" alt="The Intel 4004 (1971) on a calculator board: the first microprocessor, 2,300 transistors." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">The Intel 4004 (1971) on a calculator board: the first microprocessor, 2,300 transistors.</span>    <span class="credit">Photo: MaltaGC, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Intel_4004_on_Busicom_calculator_circuit_board.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">Memory comes in two flavours. <strong>RAM</strong> is the desk: what you are working on now, fast, and cleared when the power goes. <strong>ROM</strong> is the card taped to the desk with the start-up instructions: tiny, permanent. The bookshelf, where everything you own lives when the power is off, is <strong>storage</strong>: a spinning hard disk, a CD, or the flash chips of an <strong>SSD</strong>.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/L4_cold_hdd.jpg"
+       srcset="../../img/L4_cold_hdd-800.jpg 800w, ../../img/L4_cold_hdd.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1067" alt="A hard disk opened: a spinning platter and a moving arm. An SSD has no moving parts, which is why it is so much faster at reading small files." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A hard disk opened: a spinning platter and a moving arm. An SSD has no moving parts, which is why it is so much faster at reading small files.</span>    <span class="credit">Photo: Mk2010, CC BY 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Hard_disk_drive_platter,_Samsung_MP0402H.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">The newest star is the <strong>GPU</strong>. Invented to draw pixels, thousands of small cores doing the same simple sums at once, it turned out to be exactly what neural networks need. In 2012 three researchers in Toronto trained a network on two gaming cards in a bedroom and started the AI boom; by 2025 the company that makes the chips, NVIDIA, was worth four trillion dollars.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/L5_gpu_card2.jpg"
+       srcset="../../img/L5_gpu_card2-800.jpg 800w, ../../img/L5_gpu_card2.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1067" alt="A graphics card. The same kind of chip, in a data centre, trains chatbots." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A graphics card. The same kind of chip, in a data centre, trains chatbots.</span>    <span class="credit">Photo: PantheraLeo1359531, CC BY 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Gigabyte_GeForce_RTX_3090_Eagle_OC_24G,_24576_MiB_GDDR6X_Front_20201114_DSC5880.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">And one rule to carry into the next activity: a computer is only as fast as its slowest part for the job you are doing. Balance beats the biggest number.</p>
+  </section>
+
+  <section class="block science wrap" aria-labelledby="notes-h">
+    <h2 id="notes-h" class="block-h"><span class="block-n" aria-hidden="true">03</span>The notes</h2>
+    <p class="block-lede">Everything from the lesson, in order. This is the part to study.</p>
+    <div class="concept">
+      <h3 class="concept-h">Von Neumann architecture (1945)</h3>
+      <p><strong>Stored program</strong>: instructions and data share the same memory; the CPU fetches instructions from memory one by one. Almost every computer follows this blueprint.</p>
+      <ul class="plain-list notes-list"><li><strong>CPU</strong> (central processing unit) = <strong>Control Unit</strong> (fetches and decodes, sends control signals) + <strong>ALU</strong> (arithmetic and logic: add, compare, AND/OR) + <strong>registers</strong> (a handful of ultra-fast storage cells inside the CPU, e.g. the Program Counter holding the address of the next instruction).</li><li><strong>Memory (RAM)</strong>: holds the program and the data in use.</li><li><strong>Input</strong> and <strong>output</strong> devices.</li><li><strong>Buses</strong>: shared wires. <strong>Address bus</strong>: where? <strong>Data bus</strong>: what? <strong>Control bus</strong>: read or write, when?</li><li>Also on the CPU: <strong>cache</strong>, a small, very fast memory next to the cores.</li></ul>
+<figure class="photo photo-inline">
+  <img src="../../img/v6_ibm_pc.jpg"
+       srcset="../../img/v6_ibm_pc-800.jpg 800w, ../../img/v6_ibm_pc.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1200" alt="The IBM PC (1981). Inside, one main board connected all the parts: the drawing of 1945 in a box." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">The IBM PC (1981). Inside, one main board connected all the parts: the drawing of 1945 in a box.</span>    <span class="credit">Photo: Federigo Federighi, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:IBM_Personal_Computer_(1981).jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">The motherboard: what plugs in where</h3>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col">Part</th><th scope="col">What it is for</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">CPU socket</th><td>the processor sits here, under a heatsink and fan</td></tr>
+        <tr><th scope="row">RAM slots (DIMM)</th><td>2–4 sticks of working memory</td></tr>
+        <tr><th scope="row">Chipset</th><td>the traffic controller between CPU, memory, storage and ports</td></tr>
+        <tr><th scope="row">Expansion slots (PCIe)</th><td>graphics card, sound card, Wi-Fi card</td></tr>
+        <tr><th scope="row">Storage connectors</th><td>M.2 for NVMe SSDs, SATA for hard disks and older SSDs</td></tr>
+        <tr><th scope="row">Ports</th><td>USB, HDMI, Ethernet, audio</td></tr>
+        <tr><th scope="row">Power connector</th><td>from the power supply (PSU)</td></tr>
+        <tr><th scope="row">CMOS battery</th><td>a coin cell that keeps the clock and settings when unplugged</td></tr>
+        <tr><th scope="row">Firmware chip</th><td>the BIOS/UEFI (ROM)</td></tr>
+        </tbody></table></div>
+      <p>In a laptop or phone most of this is <strong>soldered</strong> onto one board: thinner and lighter, but nothing can be upgraded.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">The CPU: fetch, decode, execute</h3>
+      <ol class="flow"><li>Fetch</li><li>Decode</li><li>Execute</li></ol>
+      <ul class="plain-list notes-list"><li><strong>Fetch</strong>: get the next instruction from memory (the Program Counter says where).</li><li><strong>Decode</strong>: the Control Unit works out what it means.</li><li><strong>Execute</strong>: the ALU calculates, data moves to a register or to memory. Then the next one, billions of times a second.</li></ul>
+      <p>The CPU does not know it is playing Minecraft: it sees numbers and does what the next number says. We call it &#x27;the brain&#x27;, but it only follows rules.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">CPU performance: the numbers on the box</h3>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col">Parameter</th><th scope="col">What it measures</th><th scope="col">Typical values</th><th scope="col">Why it matters</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Cores / threads</th><td>independent processors on the chip; with SMT one core runs 2 threads</td><td>4–8 (laptop), 8–16 (desktop)</td><td>many tasks at once; video and 3D love cores</td></tr>
+        <tr><th scope="row">Clock speed</th><td>cycles (ticks) per second; base and boost</td><td>2–3.5 GHz base, 4.5–5.8 GHz boost</td><td>single-task speed; boost lasts only while the chip is cool</td></tr>
+        <tr><th scope="row">IPC</th><td>instructions completed per cycle: how good the design is</td><td>rises every generation</td><td>a 2024 core beats a 2014 core at the same GHz</td></tr>
+        <tr><th scope="row">Cache</th><td>small, very fast memory on the chip (L1, L2, L3)</td><td>L3: 16–96 MB</td><td>fewer slow trips to RAM</td></tr>
+        <tr><th scope="row">Process node</th><td>manufacturing generation (&#x27;3 nm&#x27; is a name, not a size)</td><td>3–7 nm</td><td>more transistors, less power</td></tr>
+        <tr><th scope="row">TDP</th><td>heat the cooler must remove (watts)</td><td>15 W laptop, 65–125 W desktop</td><td>battery, noise, sustained speed</td></tr>
+        </tbody></table></div>
+      <p><strong>Performance ≈ cores × clock × IPC.</strong> GHz alone compares nothing across brands or generations: a 2024 chip at 3.8 GHz beats a 2016 chip at 4.6 GHz, because of IPC, cores and cache. The honest comparison is a <strong>benchmark</strong>: the same job, timed (Cinebench, Geekbench).</p>
+      <p>Phones and new laptops mix <strong>performance cores</strong> (fast, for the hard moments) and <strong>efficiency cores</strong> (sip the battery): that is why a phone lasts a day.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Moore&#x27;s law</h3>
+      <p>Gordon Moore (1965): the number of transistors on a chip <strong>doubles about every two years</strong>. Intel 4004 (1971): 2,300 transistors. Apple M4 (2024): about 28 billion: twelve million times more.</p>
+      <p>On a <strong>log scale</strong> (each gridline ×100) the growth is a straight line: steady doubling. Transistors are now a few nanometres wide, close to the limits of physics; chips are made by TSMC (Taiwan) with machines from ASML (Netherlands), and have become politics.</p>
+<figure class="photo photo-inline">
+  <img src="../../img/h_die_shot2.jpg"
+       srcset="../../img/h_die_shot2-800.jpg 800w, ../../img/h_die_shot2.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="1085" alt="A photo of a modern CPU die: billions of transistors, several cores." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A photo of a modern CPU die: billions of transistors, several cores.</span>    <span class="credit">Photo: Fritzchens Fritz from Berlin, CC0 · <a href="https://commons.wikimedia.org/wiki/File:Zen2_Matisse_Ryzen_7nm_Core_Die_shot.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">RAM and ROM</h3>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col"></th><th scope="col">RAM</th><th scope="col">ROM</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Stands for</th><td>Random Access Memory</td><td>Read Only Memory</td></tr>
+        <tr><th scope="row">Holds</th><td>the programs and data in use right now</td><td>the start-up instructions (BIOS/UEFI firmware)</td></tr>
+        <tr><th scope="row">When power goes off</th><td>contents are lost: <strong>volatile</strong></td><td>contents stay: <strong>non-volatile</strong></td></tr>
+        <tr><th scope="row">Can be changed?</th><td>yes, constantly (read/write)</td><td>no, normally (read only)</td></tr>
+        <tr><th scope="row">Typical size</th><td>8–32 GB</td><td>a few MB</td></tr>
+        <tr><th scope="row">More of it means</th><td>more apps open without slowing down</td><td>— (it only needs to boot the computer)</td></tr>
+        </tbody></table></div>
+<figure class="photo photo-inline">
+  <img src="../../img/L4_ram_stick.jpg"
+       srcset="../../img/L4_ram_stick-800.jpg 800w, ../../img/L4_ram_stick.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1600" height="613" alt="A RAM stick (DDR4). The notch sits in a different place for each DDR generation, so the wrong stick cannot fit." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A RAM stick (DDR4). The notch sits in a different place for each DDR generation, so the wrong stick cannot fit.</span>    <span class="credit">Photo: ElooKoN, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:RAM_Module_(SDRAM-DDR4).jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure>
+      <p>Analogy: RAM is the <strong>desk</strong> (cleared when you leave), the SSD is the <strong>bookshelf</strong>, ROM is the <strong>start-up card</strong> taped to the desk. Restarting a phone &#x27;forgets&#x27; the open apps because RAM is volatile.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">RAM performance: capacity, type, speed, channels</h3>
+      <ul class="plain-list notes-list"><li><strong>Capacity (GB)</strong>: 8 GB is the floor, 16 GB standard, 32 GB for video, 3D, virtual machines. When RAM runs out, the OS <strong>swaps</strong> to the SSD, a thousand times slower, and everything crawls.</li><li><strong>Type</strong>: DDR4 → DDR5 (desktop/laptop), LPDDR5 (low power: phones, thin laptops, soldered). Generations are not interchangeable.</li><li><strong>Transfer rate</strong> in MT/s (DDR4-3200, DDR5-5600). Often mislabelled &#x27;MHz&#x27;.</li><li><strong>Channels</strong>: two sticks in <strong>dual channel</strong> give double the bandwidth of one stick of the same total size. Always buy sticks in pairs.</li><li><strong>Latency (CL)</strong>: how many ticks before the memory answers; matters less than capacity and channels.</li></ul>
+      <p class="one-line">Two sticks of 8 GB beat one stick of 16 GB.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Storage: magnetic, optical, solid state</h3>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col"></th><th scope="col">Magnetic (HDD)</th><th scope="col">Optical (CD/DVD/Blu-ray)</th><th scope="col">Solid state (SSD, flash)</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">How it works</th><td>spinning platters, a moving read/write head</td><td>a laser reads tiny pits</td><td>flash memory chips, no moving parts</td></tr>
+        <tr><th scope="row">Speed</th><td>slow (≈100–200 MB/s)</td><td>very slow</td><td>very fast (NVMe ≈3,000–7,000 MB/s)</td></tr>
+        <tr><th scope="row">Capacity</th><td>1–20 TB</td><td>0.7–50 GB</td><td>256 GB–4 TB</td></tr>
+        <tr><th scope="row">Cost per GB</th><td>lowest</td><td>low, but obsolete</td><td>higher, falling</td></tr>
+        <tr><th scope="row">Weak point</th><td>fragile if dropped, noisy</td><td>scratches, slow</td><td>limited write cycles, price</td></tr>
+        <tr><th scope="row">Used today for</th><td>archives, data centres, backups</td><td>films, old games</td><td>laptops, phones, consoles, PCs</td></tr>
+        </tbody></table></div>
+      <p><strong>Units</strong>: 8 bits = 1 byte · 1,000 bytes = 1 KB · 1,000 KB = 1 MB · 1,000 MB = 1 GB · 1,000 GB = 1 TB. (Windows counts in 1,024s, which is why a &#x27;1 TB&#x27; drive shows 931 GB.)</p>
+      <p>All storage is <strong>non-volatile</strong>: it keeps data when the power is off. &#x27;The cloud&#x27; is someone else&#x27;s SSD in a data centre.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Storage performance: not just the gigabytes</h3>
+      <ul class="plain-list notes-list"><li><strong>Sequential speed (MB/s)</strong>: reading one big file in a line (copying a film).</li><li><strong>Random access (IOPS)</strong>: thousands of tiny scattered reads, which is what booting and opening apps need. HDD ≈ 100 IOPS (the head physically moves, ~10 ms each); NVMe SSD ≈ 500,000+. This is why an SSD makes an old laptop feel new.</li><li><strong>Interface</strong>: SATA tops out at about 550 MB/s; <strong>NVMe</strong> over PCIe 3/4/5 reaches about 3.5 / 7 / 14 GB/s.</li><li><strong>Endurance</strong>: SSD cells wear with writes (TBW rating); not a problem for normal use.</li></ul>
+      <p class="one-line">Random access is where HDDs die: the arm has to move for every tiny file.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">The GPU: from games to AI</h3>
+      <p>A <strong>GPU</strong> (graphics processing unit) has thousands of small simple cores that do the same operation on millions of pixels at once (<strong>parallel</strong>). A CPU has a few powerful cores for one complicated job at a time.</p>
+      <p>Training a <strong>neural network</strong> is the same kind of maths (huge matrix multiplications), so since about 2012 GPUs are the engine of AI. One H100 data-centre chip costs about €30,000 and uses 700 W; AI data centres use huge amounts of electricity and water, and chip exports are now a political issue.</p>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col">Parameter</th><th scope="col">Why it matters</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Shader (CUDA) cores</th><td>how many small workers</td></tr>
+        <tr><th scope="row">VRAM (GB)</th><td>the GPU&#x27;s own memory: textures and AI models must fit, or performance collapses</td></tr>
+        <tr><th scope="row">Memory bandwidth (GB/s)</th><td>how fast the workers are fed</td></tr>
+        <tr><th scope="row">TFLOPS</th><td>trillions of calculations per second</td></tr>
+        <tr><th scope="row">Integrated vs dedicated</th><td><strong>integrated</strong> = inside the CPU, borrows system RAM (office, video, light games); <strong>dedicated</strong> = its own card and VRAM (serious games, 3D, video editing, AI)</td></tr>
+        </tbody></table></div>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Bottlenecks: the weakest link</h3>
+      <p>A computer is only as fast as its slowest component <strong>for the task at hand</strong>. Data flows storage → RAM → CPU/GPU → screen; the narrowest pipe sets the pace. <strong>Task Manager → Performance</strong> shows which part sits at 100 %.</p>
+      <ul class="plain-list notes-list"><li>An HDD in a modern PC: the CPU waits for data. An SSD gives ~10× felt speed.</li><li>8 GB of RAM with 40 tabs: constant swapping to disk. More RAM, not a faster CPU.</li><li>A €1,500 GPU with a 2014 CPU: the CPU cannot feed the frames (CPU-bound).</li><li><strong>Thermal throttling</strong>: a thin laptop at 100 °C slows itself from 4.5 to 2.5 GHz. Cooling is a performance part.</li><li>The network: cloud apps and streaming do not care about your CPU.</li></ul>
+      <p class="one-line">Balance, not the biggest number. Spend where your task waits.</p>
+    </div>
+  </section>
+
+  <section class="block check-now wrap" aria-labelledby="check-h" data-section="check">
+    <h2 id="check-h" class="block-h"><span class="block-n" aria-hidden="true">04</span>Check now</h2>
+    <p class="block-lede">Quick questions. You see the answer at once.</p>
+    <ol class="q-list" role="list">
+<li><div class="q q-type-order" id="q-02-inside-the-box-c1" data-kind="check" data-q="{&quot;type&quot;: &quot;order&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Put the CPU&#x27;s three steps in order.&quot;, &quot;items&quot;: [&quot;fetch&quot;, &quot;decode&quot;, &quot;execute&quot;], &quot;explain&quot;: &quot;Get the instruction, understand it, do it. Then the next one.&quot;}">
+  <p class="q-text">Put the CPU&#x27;s three steps in order.</p>
+  <ul class="q-fallback"><li>decode</li><li>execute</li><li>fetch</li></ul>
+</div></li>
+<li><div class="q q-type-mc" id="q-02-inside-the-box-c2" data-kind="check" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Which one forgets everything when the power goes off?&quot;, &quot;options&quot;: [&quot;RAM&quot;, &quot;ROM&quot;, &quot;an SSD&quot;], &quot;answer&quot;: 0, &quot;explain&quot;: &quot;RAM is volatile. ROM and storage are non-volatile.&quot;}">
+  <p class="q-text">Which one forgets everything when the power goes off?</p>
+  <ol class="q-fallback" type="a"><li>RAM</li><li>ROM</li><li>an SSD</li></ol>
+</div></li>
+<li><div class="q q-type-mc" id="q-02-inside-the-box-c3" data-kind="check" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;A 2016 CPU with 4 cores at 4.6 GHz, or a 2024 CPU with 8 cores at 3.8 GHz: which is faster?&quot;, &quot;options&quot;: [&quot;the 2016 one, because 4.6 is more than 3.8&quot;, &quot;the 2024 one: more cores, higher IPC, bigger cache&quot;, &quot;they are the same&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;GHz alone compares nothing across generations. Performance ≈ cores × clock × IPC.&quot;}">
+  <p class="q-text">A 2016 CPU with 4 cores at 4.6 GHz, or a 2024 CPU with 8 cores at 3.8 GHz: which is faster?</p>
+  <ol class="q-fallback" type="a"><li>the 2016 one, because 4.6 is more than 3.8</li><li>the 2024 one: more cores, higher IPC, bigger cache</li><li>they are the same</li></ol>
+</div></li>
+    </ol>
+  </section>
+
+  <section class="block try" aria-labelledby="try-h">
+    <h2 id="try-h" class="block-h wrap"><span class="block-n" aria-hidden="true">05</span>Try it</h2>
+<p class="wrap">Watch a tiny CPU run a tiny program, one phase at a time.</p>
+    <div class="wrap-ix"><figure class="ix" data-ix="fde-stepper" data-config="{}" id="ix-02-1">
+  <figcaption class="ix-title">Fetch–decode–execute stepper</figcaption>
+<p class="ix-intro">Press Step phase and watch the CPU fetch, decode and execute each line of the program. Then change the INPUT numbers, and try the countdown and the program with a bug.</p>
+  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>RAM has 8 boxes. Boxes 0–5 hold the program, boxes 6–7 hold data. The CPU has one &#x27;hand&#x27; (the accumulator). Program &#x27;Add two numbers&#x27;, INPUT 7 and 5: line 0 INPUT → box 6 = 7 · line 1 INPUT → box 7 = 5 · line 2 LOAD box 6: hand = 7 · line 3 ADD box 7: hand = 12 · line 4 STORE → box 6 = 12 · line 5 OUTPUT box 6: 12. Each line goes through FETCH, DECODE, EXECUTE.</p>
+  </div>
+</figure></div>
+<p class="wrap">An old desktop PC with the side off: find the parts from the notes.</p>
+    <div class="wrap-ix"><figure class="ix" data-ix="label-machine" data-config="{&quot;machine&quot;: &quot;pc&quot;, &quot;image&quot;: &quot;img/L5_desktop_open.jpg&quot;, &quot;labels&quot;: [{&quot;text&quot;: &quot;power supply&quot;, &quot;x&quot;: 26, &quot;y&quot;: 12}, {&quot;text&quot;: &quot;power cables&quot;, &quot;x&quot;: 42, &quot;y&quot;: 24}, {&quot;text&quot;: &quot;motherboard&quot;, &quot;x&quot;: 28, &quot;y&quot;: 50}, {&quot;text&quot;: &quot;ribbon cables (data)&quot;, &quot;x&quot;: 34, &quot;y&quot;: 62}, {&quot;text&quot;: &quot;expansion card&quot;, &quot;x&quot;: 40, &quot;y&quot;: 86}, {&quot;text&quot;: &quot;drive bays (storage)&quot;, &quot;x&quot;: 64, &quot;y&quot;: 15}, {&quot;text&quot;: &quot;the CPU (taken out, on the bench)&quot;, &quot;x&quot;: 88, &quot;y&quot;: 88}]}" id="ix-02-2">
+  <figcaption class="ix-title">Label the PC</figcaption>
+<p class="ix-intro">Drag each label to its number, or click a label and then a number. In a gaming PC the graphics card plugs into the motherboard like the expansion card here.</p>
+  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>An old desktop PC, opened. Find and name: 1 power supply (top left, the grey box with vents) · 2 power cables (red, yellow and black wires) · 3 motherboard (the green board on the back wall) · 4 ribbon cables (grey and flat: they carry data to the drives) · 5 expansion card (a board plugged into the motherboard) · 6 drive bays (storage, top right) · 7 the CPU, taken out and lying on the bench.</p>
+  </div>
+</figure></div>
+<p class="wrap">Cache, RAM, SSD, HDD: put each on the map by speed and size.</p>
+    <div class="wrap-ix"><figure class="ix" data-ix="memory-kitchen" data-config="{}" id="ix-02-3">
+  <figcaption class="ix-title">Memory map: how fast, how big</figcaption>
+<p class="ix-intro">Put each kind of memory on the map: how fast is it, and how much does it hold? Drag a chip, or click a chip and then a square. Then press Check.</p>
+  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>From fastest to slowest, with a typical size: cache, fastest, tiny (a few MB) · RAM, very fast, 8–32 GB, forgets when the power goes · SSD, fast, 0.5–4 TB, keeps everything · HDD, slow (spinning disk, moving arm), very big and cheap.</p>
+  </div>
+</figure></div>
+<p class="wrap">Spec detective: every line of an advert is one component.</p>
+    <div class="wrap-ix"><figure class="ix" data-ix="spec-decoder" data-config="{&quot;device&quot;: &quot;laptop&quot;}" id="ix-02-4">
+  <figcaption class="ix-title">Decode the laptop listing</figcaption>
+<p class="ix-intro">A laptop listing is a list of parts. Click each line to see which part it is and what the number means. Then choose a device for each person.</p>
+  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>A laptop listing, line by line. Intel Core i5, 10 cores, up to 4.6 GHz: the CPU, 10 cores, boost clock 4.6 billion ticks a second. · 16 GB RAM: the working memory; many programs can stay open at once. · 512 GB SSD: solid-state storage, nothing moves, so it is fast. · 15.6-inch 1920 × 1080: the screen, an output device. · Integrated graphics: the GPU lives inside the CPU and borrows the RAM.</p>
+  </div>
+</figure></div>
+<p class="wrap">Why a GPU has thousands of small cores: colour a picture with one worker, then with a hundred.</p>
+    <div class="wrap-ix"><figure class="ix" data-ix="be-the-gpu" data-config="{}" id="ix-02-5">
+  <figcaption class="ix-title">Be the GPU</figcaption>
+<p class="ix-intro">Colour the 10 × 10 picture with one cook, then with 100 cooks working at the same time. Compare the two times.</p>
+  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>A 10 × 10 picture has 100 squares. One worker (a CPU core) colours one square per tick: 100 ticks. 100 workers (a GPU): 1 tick to hand out the squares, 1 tick to colour them all at once, 1 tick to put the picture together: 3 ticks. The same simple job on millions of things at once: that is what a GPU is for, in games and in AI.</p>
+  </div>
+</figure></div>
+  </section>
+
+  <section class="block your-turn wrap" aria-labelledby="turn-h" data-section="turn">
+    <h2 id="turn-h" class="block-h"><span class="block-n" aria-hidden="true">06</span>Your turn</h2>
+    <label class="turn-prompt" for="turn-u1-02-inside-the-box-turn">Find the specs of a computer or phone you use (Windows: Settings → System → About, and Task Manager → Performance). Write its CPU (cores and GHz), RAM (GB), storage (GB and type) and graphics (integrated or dedicated). Then say which part would be the bottleneck for video editing, and why.</label>
+    <textarea id="turn-u1-02-inside-the-box-turn" class="turn-text" data-turn-id="u1-02-inside-the-box-turn" rows="6" spellcheck="true"></textarea>
+    <div class="turn-bar">
+      <button type="button" class="btn btn-ghost" data-action="copy-turn" data-target="turn-u1-02-inside-the-box-turn">Copy</button>
+      <p class="turn-note" aria-live="polite">Saved in this browser only. Nothing is sent anywhere.</p>
+    </div>
+  </section>
+
+  <section class="block exercises wrap" aria-labelledby="ex-h" data-section="exercises">
+    <h2 id="ex-h" class="block-h"><span class="block-n" aria-hidden="true">07</span>Exercises</h2>
+    <p class="block-lede">From ★☆☆ (easy) to ★★★ (hard). Use a hint if you are stuck.</p>
+    <ol class="ex-list" role="list">
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 1</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-mc" id="q-02-inside-the-box-e1" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;What does the CPU do in the decode step?&quot;, &quot;options&quot;: [&quot;it gets the instruction from memory&quot;, &quot;it works out what the instruction means&quot;, &quot;it switches off&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;Fetch gets it, decode understands it, execute does it.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">What does the CPU do in the decode step?</p>
+  <ol class="q-fallback" type="a"><li>it gets the instruction from memory</li><li>it works out what the instruction means</li><li>it switches off</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 2</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-match" id="q-02-inside-the-box-e2" data-kind="exercise" data-q="{&quot;type&quot;: &quot;match&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Match each part of the CPU to its job.&quot;, &quot;pairs&quot;: [[&quot;Control Unit&quot;, &quot;fetches and decodes instructions&quot;], [&quot;ALU&quot;, &quot;does arithmetic and logic&quot;], [&quot;registers&quot;, &quot;ultra-fast storage cells inside the CPU&quot;], [&quot;cache&quot;, &quot;small fast memory next to the cores&quot;]], &quot;explain&quot;: &quot;Control Unit, ALU, registers and cache: the four things inside the CPU box of the diagram.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">Match each part of the CPU to its job.</p>
+  <ul class="q-fallback"><li>Control Unit — ?</li><li>ALU — ?</li><li>registers — ?</li><li>cache — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 3</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-match" id="q-02-inside-the-box-e3" data-kind="exercise" data-q="{&quot;type&quot;: &quot;match&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;RAM or ROM?&quot;, &quot;pairs&quot;: [[&quot;volatile&quot;, &quot;RAM&quot;], [&quot;holds the start-up instructions&quot;, &quot;ROM&quot;], [&quot;read-write&quot;, &quot;RAM&quot;], [&quot;a few MB&quot;, &quot;ROM&quot;], [&quot;8–32 GB&quot;, &quot;RAM&quot;]], &quot;explain&quot;: &quot;RAM: volatile, read-write, big, holds programs in use. ROM: non-volatile, read only, small, holds the boot instructions.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">RAM or ROM?</p>
+  <ul class="q-fallback"><li>volatile — ?</li><li>holds the start-up instructions — ?</li><li>read-write — ?</li><li>a few MB — ?</li><li>8–32 GB — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 4</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-num" id="q-02-inside-the-box-e4" data-kind="exercise" data-q="{&quot;type&quot;: &quot;num&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;A clock runs at 3.5 GHz. How many ticks does it make in 2 seconds? Answer in billions.&quot;, &quot;answer&quot;: 7, &quot;tolerance&quot;: 0, &quot;unit&quot;: &quot;billion&quot;, &quot;explain&quot;: &quot;3.5 billion per second × 2 = 7 billion.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">A clock runs at 3.5 GHz. How many ticks does it make in 2 seconds? Answer in billions.</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 5</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-order" id="q-02-inside-the-box-e5" data-kind="exercise" data-q="{&quot;type&quot;: &quot;order&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Put these storage media from slowest to fastest for opening many small files.&quot;, &quot;items&quot;: [&quot;DVD&quot;, &quot;hard disk (HDD)&quot;, &quot;SATA SSD&quot;, &quot;NVMe SSD&quot;], &quot;explain&quot;: &quot;Optical is slowest; the HDD&#x27;s arm must move for every file; a SATA SSD has no moving parts; NVMe talks straight to the CPU&#x27;s fast lanes.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">Put these storage media from slowest to fastest for opening many small files.</p>
+  <ul class="q-fallback"><li>DVD</li><li>NVMe SSD</li><li>SATA SSD</li><li>hard disk (HDD)</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 6</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-02-inside-the-box-e6" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Which motherboard connector takes a modern NVMe SSD?&quot;, &quot;options&quot;: [&quot;SATA&quot;, &quot;M.2&quot;, &quot;DIMM slot&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;M.2 is the small slot for NVMe SSDs; SATA is the older cable; DIMM slots are for RAM.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">Which motherboard connector takes a modern NVMe SSD?</p>
+  <ol class="q-fallback" type="a"><li>SATA</li><li>M.2</li><li>DIMM slot</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 7</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-num" id="q-02-inside-the-box-e7" data-kind="exercise" data-q="{&quot;type&quot;: &quot;num&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;A file is 4,000 MB. How many GB is that?&quot;, &quot;answer&quot;: 4, &quot;tolerance&quot;: 0, &quot;unit&quot;: &quot;GB&quot;, &quot;explain&quot;: &quot;1,000 MB = 1 GB, so 4,000 MB = 4 GB.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">A file is 4,000 MB. How many GB is that?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 8</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-tf" id="q-02-inside-the-box-e8" data-kind="exercise" data-q="{&quot;type&quot;: &quot;tf&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;A phone with 8 cores is 8 times faster than the same phone with 1 core.&quot;, &quot;answer&quot;: false, &quot;explain&quot;: &quot;More cores help when the work can be split, but many steps must wait for the one before. More cores = faster, not 8× faster.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">A phone with 8 cores is 8 times faster than the same phone with 1 core.</p>
+  <p class="q-fallback">True or false?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 9</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-02-inside-the-box-e9" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;A laptop advert says &#x27;16 GB DDR5 (1 × 16 GB)&#x27;. What is the catch?&quot;, &quot;options&quot;: [&quot;DDR5 is obsolete&quot;, &quot;one stick means single channel: half the memory bandwidth of 2 × 8 GB&quot;, &quot;16 GB is too little for anything&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;Two sticks in dual channel double the bandwidth for the same money. Shops save a few euros by fitting one.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">A laptop advert says &#x27;16 GB DDR5 (1 × 16 GB)&#x27;. What is the catch?</p>
+  <ol class="q-fallback" type="a"><li>DDR5 is obsolete</li><li>one stick means single channel: half the memory bandwidth of 2 × 8 GB</li><li>16 GB is too little for anything</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 10</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-02-inside-the-box-e10" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Why does an AI company buy a €30,000 GPU instead of a €300 gaming card?&quot;, &quot;options&quot;: [&quot;the expensive one has a faster clock&quot;, &quot;far more VRAM and bandwidth, and much higher throughput at low precision&quot;, &quot;gaming cards cannot do maths&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;AI models must fit in VRAM (80 GB vs 8 GB); data-centre chips also have enormous bandwidth and special tensor cores.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">Why does an AI company buy a €30,000 GPU instead of a €300 gaming card?</p>
+  <ol class="q-fallback" type="a"><li>the expensive one has a faster clock</li><li>far more VRAM and bandwidth, and much higher throughput at low precision</li><li>gaming cards cannot do maths</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 11</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-02-inside-the-box-e11" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Your cousin&#x27;s 2014 PC has a hard disk and 8 GB of RAM. He wants to spend €1,200 on a graphics card. What should he do first?&quot;, &quot;options&quot;: [&quot;buy the card: the GPU is the most important part&quot;, &quot;replace the HDD with an SSD and add RAM: those are the bottlenecks&quot;, &quot;buy a bigger monitor&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;The old CPU, the HDD and the RAM will all throttle the card. Balance, not the biggest number.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">Your cousin&#x27;s 2014 PC has a hard disk and 8 GB of RAM. He wants to spend €1,200 on a graphics card. What should he do first?</p>
+  <ol class="q-fallback" type="a"><li>buy the card: the GPU is the most important part</li><li>replace the HDD with an SSD and add RAM: those are the bottlenecks</li><li>buy a bigger monitor</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 12</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-02-inside-the-box-e12" data-kind="exercise" data-q="{&quot;type&quot;: &quot;open&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Explain in three sentences why swapping an old laptop&#x27;s hard disk for an SSD makes it feel like a new machine. Use the words &#x27;random access&#x27; and &#x27;moving parts&#x27;.&quot;, &quot;solution&quot;: &quot;Booting and opening programs means thousands of tiny scattered reads (random access). A hard disk has moving parts: the arm must move for every read, so it manages only about 100 reads a second. An SSD has no moving parts and serves hundreds of thousands of reads a second, so the CPU stops waiting and everything feels instant.&quot;, &quot;hint&quot;: &quot;What happens inside a hard disk every time it has to read one small file?&quot;, &quot;stars&quot;: 3}">
+  <p class="q-text">Explain in three sentences why swapping an old laptop&#x27;s hard disk for an SSD makes it feel like a new machine. Use the words &#x27;random access&#x27; and &#x27;moving parts&#x27;.</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 13</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-02-inside-the-box-e13" data-kind="exercise" data-q="{&quot;type&quot;: &quot;open&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Describe the stored-program idea in one sentence and say why it matters.&quot;, &quot;solution&quot;: &quot;Program instructions are stored in the same memory as data, so the CPU fetches them one by one; because of this the same hardware can run any program, and installing an app is just loading a new program into memory.&quot;, &quot;hint&quot;: &quot;Where does the program live while it runs, and what does that let the same computer do?&quot;, &quot;stars&quot;: 3}">
+  <p class="q-text">Describe the stored-program idea in one sentence and say why it matters.</p>
+</div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block wrap" aria-labelledby="words-h">
+    <h2 id="words-h" class="block-h"><span class="block-n" aria-hidden="true">08</span>Words of this lesson</h2>
+    <dl class="gloss">
+      <div class="gloss-row"><dt>von Neumann architecture <span class="it" lang="it">architettura di von Neumann</span></dt><dd>the 1945 blueprint: CPU, memory holding program and data, input, output, buses</dd></div>
+      <div class="gloss-row"><dt>stored program <span class="it" lang="it">programma memorizzato</span></dt><dd>the program&#x27;s instructions are kept in memory with the data, so the same hardware runs any program</dd></div>
+      <div class="gloss-row"><dt>CPU <span class="it" lang="it">CPU / processore</span></dt><dd>central processing unit: fetches, decodes and executes instructions</dd></div>
+      <div class="gloss-row"><dt>control unit <span class="it" lang="it">unità di controllo</span></dt><dd>the part of the CPU that fetches and decodes instructions and sends control signals</dd></div>
+      <div class="gloss-row"><dt>ALU <span class="it" lang="it">ALU</span></dt><dd>arithmetic logic unit: the part of the CPU that calculates and compares</dd></div>
+      <div class="gloss-row"><dt>register <span class="it" lang="it">registro</span></dt><dd>a tiny ultra-fast storage cell inside the CPU</dd></div>
+      <div class="gloss-row"><dt>bus <span class="it" lang="it">bus</span></dt><dd>shared wires carrying addresses, data and control signals between the parts</dd></div>
+      <div class="gloss-row"><dt>motherboard <span class="it" lang="it">scheda madre</span></dt><dd>the main circuit board every component plugs into</dd></div>
+      <div class="gloss-row"><dt>chipset <span class="it" lang="it">chipset</span></dt><dd>the chip that directs traffic between CPU, memory, storage and ports</dd></div>
+      <div class="gloss-row"><dt>port <span class="it" lang="it">porta</span></dt><dd>a socket for an external device: USB, HDMI, Ethernet</dd></div>
+      <div class="gloss-row"><dt>fetch–decode–execute <span class="it" lang="it">ciclo fetch–decode–execute</span></dt><dd>the CPU&#x27;s endless loop: get the instruction, understand it, do it</dd></div>
+      <div class="gloss-row"><dt>core <span class="it" lang="it">core / nucleo</span></dt><dd>one independent processor inside the CPU chip</dd></div>
+      <div class="gloss-row"><dt>clock speed <span class="it" lang="it">frequenza di clock</span></dt><dd>ticks per second, in GHz (billions); only comparable between chips of the same design</dd></div>
+      <div class="gloss-row"><dt>cache <span class="it" lang="it">cache</span></dt><dd>small, very fast memory on the CPU chip (L1, L2, L3)</dd></div>
+      <div class="gloss-row"><dt>benchmark <span class="it" lang="it">benchmark</span></dt><dd>a standard job, timed, to compare computers fairly</dd></div>
+      <div class="gloss-row"><dt>Moore&#x27;s law <span class="it" lang="it">legge di Moore</span></dt><dd>the number of transistors on a chip doubles about every two years</dd></div>
+      <div class="gloss-row"><dt>RAM <span class="it" lang="it">RAM</span></dt><dd>random access memory: volatile, read-write, holds the programs and data in use</dd></div>
+      <div class="gloss-row"><dt>ROM <span class="it" lang="it">ROM</span></dt><dd>read only memory: non-volatile, holds the start-up instructions</dd></div>
+      <div class="gloss-row"><dt>volatile <span class="it" lang="it">volatile</span></dt><dd>loses its contents when the power goes off</dd></div>
+      <div class="gloss-row"><dt>non-volatile <span class="it" lang="it">non volatile</span></dt><dd>keeps its contents without power</dd></div>
+      <div class="gloss-row"><dt>dual channel <span class="it" lang="it">dual channel</span></dt><dd>two RAM sticks used together for double the bandwidth</dd></div>
+      <div class="gloss-row"><dt>storage <span class="it" lang="it">memoria di massa</span></dt><dd>non-volatile memory for files: HDD, SSD, optical</dd></div>
+      <div class="gloss-row"><dt>HDD <span class="it" lang="it">disco rigido</span></dt><dd>hard disk drive: magnetic storage with spinning platters and a moving head</dd></div>
+      <div class="gloss-row"><dt>SSD <span class="it" lang="it">SSD</span></dt><dd>solid-state drive: flash memory, no moving parts</dd></div>
+      <div class="gloss-row"><dt>optical storage <span class="it" lang="it">memoria ottica</span></dt><dd>CD, DVD, Blu-ray: a laser reads pits in a disc</dd></div>
+      <div class="gloss-row"><dt>NVMe <span class="it" lang="it">NVMe</span></dt><dd>the modern fast connection of an SSD to the CPU&#x27;s PCIe lanes</dd></div>
+      <div class="gloss-row"><dt>byte <span class="it" lang="it">byte</span></dt><dd>8 bits; 1,000 bytes = 1 KB, 1,000 KB = 1 MB, 1,000 MB = 1 GB, 1,000 GB = 1 TB</dd></div>
+      <div class="gloss-row"><dt>GPU <span class="it" lang="it">GPU / scheda grafica</span></dt><dd>graphics processing unit: thousands of small cores for parallel work, in games and AI</dd></div>
+      <div class="gloss-row"><dt>VRAM <span class="it" lang="it">VRAM</span></dt><dd>the GPU&#x27;s own memory</dd></div>
+      <div class="gloss-row"><dt>integrated graphics <span class="it" lang="it">grafica integrata</span></dt><dd>a GPU built into the CPU, sharing the system RAM</dd></div>
+      <div class="gloss-row"><dt>dedicated graphics <span class="it" lang="it">scheda grafica dedicata</span></dt><dd>a separate graphics card with its own VRAM</dd></div>
+      <div class="gloss-row"><dt>bottleneck <span class="it" lang="it">collo di bottiglia</span></dt><dd>the slowest component for the task, which sets the speed of the whole computer</dd></div>
+      <div class="gloss-row"><dt>thermal throttling <span class="it" lang="it">throttling termico</span></dt><dd>a chip slowing itself down to avoid overheating</dd></div>
+    </dl>
+  </section>
+
+  <nav class="pager wrap" aria-label="Chapters">
+    <a class="pager-link pager-prev" href="../../unit-1/01-can-machines-think/index.html" rel="prev"><span class="pager-dir">Previous</span><span class="pager-title">Can machines think?</span></a>
+    <a class="pager-link pager-next" href="../../unit-1/03-input-output-and-software/index.html" rel="next"><span class="pager-dir">Next</span><span class="pager-title">Input, output and software</span></a>
+  </nav>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap-wide foot-grid">
+    <p class="foot-title">ICT · Liceo Vittoria<br><span>Prof. Claudio</span></p>
+    <p>No accounts, no tracking, no cookies. Your answers stay in this browser.<br>
+      Photos are free licences, credited under each photo and on the <a href="../../about/index.html">About</a> page.</p>
+  </div>
+</footer>
+</body>
+</html>

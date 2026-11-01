@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Can machines think? · Unit 1 · ICT · Liceo Vittoria</title>
-<meta name="description" content="You have seen a film about Alan Turing. Now his question is yours: can a machine think?">
+<meta name="description" content="You have seen the film. Now the question is yours, and to answer it we first have to know what a computer is.">
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="no-referrer">
 <link rel="icon" href="../../static/favicon.svg" type="image/svg+xml">
@@ -21,6 +21,7 @@ d.className+=' js';})();
 <script defer src="../../static/js/ict-core.js"></script>
 <script defer src="../../static/js/site.js"></script>
 <script defer src="../../static/js/ix/human-or-machine.js"></script>
+<script defer src="../../static/js/ix/turing-machine.js"></script>
 </head>
 <body data-root="../../" data-page="chapter" data-slug="01-can-machines-think">
 <a class="skip" href="#main">Skip to content</a>
@@ -62,131 +63,166 @@ d.className+=' js';})();
   <header class="ch-head wrap">
     <p class="eyebrow"><a href="../../unit-1/index.html">Unit 1</a> · Lesson 1</p>
     <h1 class="ch-title">Can machines think?</h1>
-    <p class="ch-hook">You have seen a film about Alan Turing. Now his question is yours: can a machine think?</p>
-    <p class="extra-link"><a href="../../unit-1/extra/index.html">Extra: codes and Enigma →</a></p>
+    <p class="ch-hook">You have seen the film. Now the question is yours, and to answer it we first have to know what a computer is.</p>
+    <nav class="toc" aria-label="On this page">
+      <a href="#test-h">In the test</a><a href="#story-h">The story</a><a href="#notes-h">The notes</a><a href="#check-h">Check now</a><a href="#try-h">Try it</a><a href="#ex-h">Exercises</a>
+    </nav>
   </header>
 
+  <section class="block in-test wrap" aria-labelledby="test-h">
+    <h2 id="test-h" class="block-h"><span class="block-n" aria-hidden="true">01</span>What the test will ask</h2>
+    <p class="block-lede">After this lesson you should be able to:</p>
+    <ul class="plain-list objectives"><li>Say what Turing&#x27;s <strong>imitation game</strong> (the Turing test) is and why he invented it instead of defining &#x27;think&#x27;.</li><li>Tell the difference between the <strong>Bombe</strong> (electromechanical, one job) and <strong>Colossus</strong> (electronic, programmable).</li><li>Explain Turing&#x27;s 1936 idea of a <strong>universal machine</strong>: one machine that runs any program.</li><li>Define a <strong>computer system</strong> with the four stages: <strong>input, process, output, storage</strong>, and tell <strong>data</strong> from <strong>information</strong>.</li><li>Tell <strong>hardware</strong> from <strong>software</strong>, and put <strong>firmware</strong> and <strong>data</strong> in the right place.</li><li>Put the key dates in order: 1936, 1941, 1943, 1945, 1947, 1958, 1971, 1981, 2007, 2022.</li><li>Give three facts about <strong>ENIAC</strong> (1946) and say who programmed it.</li></ul>
+  </section>
 
   <section class="block story" aria-labelledby="story-h">
-    <h2 id="story-h" class="block-h wrap"><span class="block-n" aria-hidden="true">01</span>The story</h2>
-      <p class="wrap story-p">In 1950 Alan Turing wrote a paper called &#39;Computing Machinery and Intelligence&#39;. Its first sentence is: &#34;I propose to consider the question, &#39;Can machines think?&#39;&#34;</p>
-      <p class="wrap story-p">The word &#39;think&#39; is hard to define, so Turing changed the question into a game. He called it the imitation game. A judge sits in another room and types questions. Two players answer: one is a person, one is a machine. The judge only sees the typed answers.</p>
-      <div class="wrap-photo"><figure class="photo ">
-  <img src="../../img/v6_teleprinter_real.jpg"
-       srcset="../../img/v6_teleprinter_real-800.jpg 800w, ../../img/v6_teleprinter_real.jpg 1600w"
-       sizes="(min-width: 1140px) 1100px, 100vw"
-       width="1600" height="1067" alt="A teleprinter from the 1960s: you type, and the words travel along a wire. Turing imagined the judge typing questions on a machine like this." loading="lazy" decoding="async">
-  <figcaption>
-<span class="cap">A teleprinter from the 1960s: you type, and the words travel along a wire. Turing imagined the judge typing questions on a machine like this.</span>    <span class="credit">Photo: stiefkind, CC0 · <a href="https://commons.wikimedia.org/wiki/File:Teletype_Model_33_-_48930224272.jpg" rel="noopener noreferrer">source</a></span>
-  </figcaption>
-</figure></div>
-      <p class="wrap story-p">If the judge cannot tell which player is the machine, Turing asked, should we say that the machine thinks? In 1950 there were only a few computers in the world, for example in Manchester, where Turing worked. He guessed that in about fifty years machines would fool many judges for five minutes.</p>
+    <h2 id="story-h" class="block-h wrap"><span class="block-n" aria-hidden="true">02</span>The story</h2>
+      <p class="wrap story-p">In 1950 Alan Turing wrote an article that begins with the question <em>Can machines think?</em> and then, in the very next sentence, says the question is useless: nobody agrees on what &#x27;think&#x27; means. So he replaced it with a game. You chat by typing with two hidden players, a person and a machine. If you cannot tell which is which, Turing says, stop arguing about the word: the machine has earned it. That game is the <strong>imitation game</strong>, and the film took its title from it.</p>
+      <p class="wrap story-p">The machines in the film were real, but the film shows only one of them. The <strong>Bombe</strong> (1940) attacked Enigma, the cipher machine of the German army, navy and air force. It was <strong>electromechanical</strong>: spinning drums and electrical switches with moving parts, built for one job only: testing Enigma settings fast. It could not be told to do anything else. Three years later a telephone engineer, Tommy Flowers, built <strong>Colossus</strong> (1943) to attack a harder cipher used by Hitler&#x27;s headquarters. Colossus was <strong>electronic</strong>: 1,500 glowing valves instead of moving parts, and it could be set up for different tasks. That is why Colossus, not the Bombe, is called the first programmable electronic computer.</p>
       <div class="wrap-photo"><figure class="photo ">
   <img src="../../img/v5_manchester_baby.jpg"
        srcset="../../img/v5_manchester_baby-800.jpg 800w, ../../img/v5_manchester_baby.jpg 1600w"
        sizes="(min-width: 1140px) 1100px, 100vw"
-       width="1600" height="864" alt="A replica of the Manchester &#39;Baby&#39; (1948), one of the first computers. Turing worked in Manchester when he wrote his 1950 paper." loading="lazy" decoding="async">
+       width="1600" height="864" alt="A replica of the Manchester &#x27;Baby&#x27; (1948): the first machine to run a program stored in its memory. Turing worked in Manchester." loading="lazy" decoding="async">
   <figcaption>
-<span class="cap">A replica of the Manchester &#39;Baby&#39; (1948), one of the first computers. Turing worked in Manchester when he wrote his 1950 paper.</span>    <span class="credit">Photo: Geni, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Manchester_baby_head_on.JPG" rel="noopener noreferrer">source</a></span>
+<span class="cap">A replica of the Manchester &#x27;Baby&#x27; (1948): the first machine to run a program stored in its memory. Turing worked in Manchester.</span>    <span class="credit">Photo: Geni, CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Manchester_baby_head_on.JPG" rel="noopener noreferrer">source</a></span>
   </figcaption>
 </figure></div>
-      <p class="wrap story-p">Turing did not build a thinking machine. He asked a question and proposed a test. Today the question is not imaginary any more: you can type to a chatbot on your phone.</p>
-      <p class="wrap story-p">Inside your computer today: the same game. When you type a question to a chatbot, your words go in, a program works on them, an answer comes out, and the conversation is saved. Is that thinking? That is the question of this unit. We vote now, and we vote again in chapter 9.</p>
+      <p class="wrap story-p">Both machines were secret for thirty years. The Bombes were run by young women of the Women&#x27;s Royal Naval Service on eight-hour shifts; Flowers paid for part of Colossus with his own money and was then ordered to burn the drawings. The first computers were born in a war and in silence.</p>
+      <p class="wrap story-p">Turing&#x27;s bigger idea came earlier, in 1936, when he was 23. He imagined a machine made of a paper <strong>tape</strong>, a <strong>head</strong> that reads one square at a time, and a <strong>table of rules</strong>. Different tables, different machines. Then the master stroke: one special machine could read another machine&#x27;s table from the tape and imitate it. One machine that can become any machine, just by being given instructions. That is a computer: the metal stays the same and the instructions change. It is why your phone can be a camera, a map and a chessboard in the same minute.</p>
+      <p class="wrap story-p">Nine years later the idea became metal. <strong>ENIAC</strong> (1945–46), in Philadelphia, was the first general-purpose electronic computer: about 18,000 valves, 27 tonnes, a room the size of a tennis court, as much electricity as a hundred kettles, and 5,000 additions per second. It was programmed by six women, by plugging cables and setting switches by hand. At the press day in 1946 they were not even introduced.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/L1_eniac_room.jpg"
+       srcset="../../img/L1_eniac_room-800.jpg 800w, ../../img/L1_eniac_room.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1340" height="1024" alt="Programming ENIAC (1946) meant plugging cables and setting switches. Betty Snyder, one of the six programmers, is on the right." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">Programming ENIAC (1946) meant plugging cables and setting switches. Betty Snyder, one of the six programmers, is on the right.</span>    <span class="credit">Photo: Unknown author, Public domain · <a href="https://commons.wikimedia.org/wiki/File:Glen_Beck_and_Betty_Snyder_program_the_ENIAC_in_building_328_at_the_Ballistic_Research_Laboratory.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">From there the story is the story of the <strong>switch</strong> getting smaller: the transistor (1947), the integrated circuit (1958), the first microprocessor, the Intel 4004 (1971), designed by Federico Faggin from Vicenza. Then the IBM PC (1981), the iPhone (2007) and ChatGPT (2022): Turing&#x27;s game, played by a hundred million people.</p>
   </section>
 
-  <section class="block science wrap" aria-labelledby="sci-h">
-    <h2 id="sci-h" class="block-h"><span class="block-n" aria-hidden="true">02</span>The science</h2>
+  <section class="block science wrap" aria-labelledby="notes-h">
+    <h2 id="notes-h" class="block-h"><span class="block-n" aria-hidden="true">03</span>The notes</h2>
+    <p class="block-lede">Everything from the lesson, in order. This is the part to study.</p>
     <div class="concept">
-      <h3 class="concept-h">What is a computer? Four things</h3>
-      <p>A computer is a machine that takes in data, works on it by following a program, and gives out a result. Every computer does four things. Input: data comes in (a key press, a photo from the camera, your voice). Process: the chip follows a program (a list of instructions) and works on the data. Output: the result goes out to the world (the screen, a sound, a printed page). Storage: the result is saved to use later (a file). Example, the phone camera: light comes in, the chip works, the photo appears on the screen, the photo is saved.</p>
-      <ol class="flow" role="list" aria-label="Input, process, output, storage">
-        <li>Input</li><li>Process</li><li>Output</li><li class="flow-store">Storage</li>
-      </ol>
+      <h3 class="concept-h">The Turing test (imitation game), 1950</h3>
+      <p>In <em>Computing Machinery and Intelligence</em> (1950) Turing proposed a test instead of a definition. An <strong>interrogator</strong> chats by text with two hidden players, a human and a machine, and must say which is which. If the machine is not identified reliably, it <strong>passes</strong> the test.</p>
+      <p>Why text? So that the voice, the face and the handwriting give nothing away: only the answers count.</p>
+      <p>The test is <strong>behavioural</strong>: it looks at what the machine says, not at what is inside it. That is exactly why this unit opens the box.</p>
+      <p class="one-line">If you cannot tell the machine from the person, Turing says: stop arguing about the word &#x27;think&#x27;.</p>
     </div>
     <div class="concept">
-      <h3 class="concept-h">A computer follows instructions</h3>
-      <p>A program is a list of precise instructions. The computer follows them exactly, billions of times a second. It does not know what they mean. Think of a kitchen: the ingredients come in (input), the cook follows the recipe (process), the dish goes out (output), and the leftovers go into the pantry (storage). In a computer, the cook is the processor and the recipe is the program.</p>
-<div class="kitchen" data-part="cook">
-  <svg class="kitchen-svg" viewBox="0 0 480 270" role="img" aria-labelledby="k-2-t">
-    <title id="k-2-t">The kitchen: the cook is the CPU core, the metronome is the clock, the countertop is the cache, the workbench is the RAM, the pantry is the storage. Highlighted: The cook.</title>
-    <g class="k-part">
-      <rect x="300" y="14" width="172" height="78" rx="6"/>
-      <path class="k-ico" d="M318 78 l13 -50 l13 50 z M331 70 l11 -30"/>
-      <text x="358" y="48" class="k-name">metronome</text>
-      <text x="358" y="72" class="k-sub">clock (GHz)</text>
-    </g>
-    <path class="k-beat" d="M419 92 V130"/>
-    <text x="8" y="40" class="k-head">The kitchen</text>
-    <text x="8" y="66" class="k-sub">the computer as a kitchen</text>
-    <g class="k-part">
-      <rect x="8" y="130" width="108" height="88" rx="6"/>
-      <text x="62.0" y="168" text-anchor="middle" class="k-name">pantry</text>
-      <text x="62.0" y="192" text-anchor="middle" class="k-sub">storage</text>
-    </g>
-    <g class="k-part">
-      <rect x="126" y="130" width="120" height="88" rx="6"/>
-      <text x="186.0" y="168" text-anchor="middle" class="k-name">workbench</text>
-      <text x="186.0" y="192" text-anchor="middle" class="k-sub">RAM</text>
-    </g>
-    <g class="k-part">
-      <rect x="256" y="130" width="100" height="88" rx="6"/>
-      <text x="306.0" y="168" text-anchor="middle" class="k-name">countertop</text>
-      <text x="306.0" y="192" text-anchor="middle" class="k-sub">cache</text>
-    </g>
-    <g class="k-part is-on">
-      <rect x="366" y="130" width="106" height="88" rx="6"/>
-      <text x="419.0" y="168" text-anchor="middle" class="k-name">cook</text>
-      <text x="419.0" y="192" text-anchor="middle" class="k-sub">CPU core</text>
-    </g>
-    <path class="k-axis" d="M14 248 H466 M14 248 l10 -6 M14 248 l10 6 M466 248 l-10 -6 M466 248 l-10 6"/>
-    <text x="14" y="236" class="k-sub">big, slow</text>
-    <text x="466" y="236" text-anchor="end" class="k-sub">small, fast</text>
-  </svg>
-  <ul class="kitchen-key" role="list">
-    <li class="is-on"><span class="k-l">The cook</span> = CPU core</li>
-    <li><span class="k-l">The metronome</span> = clock (GHz)</li>
-    <li><span class="k-l">The countertop</span> = cache</li>
-    <li><span class="k-l">The workbench</span> = RAM</li>
-    <li><span class="k-l">The pantry</span> = storage (SSD / HDD)</li>
-  </ul>
-</div>    </div>
+      <h3 class="concept-h">Bombe vs Colossus</h3>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col"></th><th scope="col">The Bombe (1940)</th><th scope="col">Colossus (1943)</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Cipher attacked</th><td>Enigma (army, navy, air force)</td><td>Lorenz (Hitler&#x27;s headquarters)</td></tr>
+        <tr><th scope="row">Technology</th><td><strong>electromechanical</strong>: rotating drums and relays (moving parts)</td><td><strong>electronic</strong>: about 1,500 valves (vacuum tubes), no moving parts for the logic</td></tr>
+        <tr><th scope="row">Programmable?</th><td>no: one job only</td><td>yes: set up with switches and plugs</td></tr>
+        <tr><th scope="row">Who</th><td>Alan Turing and Gordon Welchman, from the Polish &#x27;bomba&#x27;</td><td>Tommy Flowers, Post Office engineer</td></tr>
+        <tr><th scope="row">Why it matters</th><td>a clever machine, but not a computer</td><td>the first programmable electronic digital computer</td></tr>
+        </tbody></table></div>
+      <p>The whole history of computing is the history of the <strong>switch</strong>: relay (mechanical) → valve (electronic) → transistor → integrated circuit. Same logic, smaller, faster, cheaper.</p>
+    </div>
     <div class="concept">
-      <h3 class="concept-h">Is following instructions the same as thinking?</h3>
-      <p>Some people say no: the machine only follows its program, so it understands nothing. Other people say: if its answers are as good as a person&#39;s, why not call it thinking? Turing&#39;s game tests behaviour (what the machine does), not what happens inside. There is no single right answer. A good argument uses what a computer does: it follows a program.</p>
+      <h3 class="concept-h">Turing&#x27;s universal machine, 1936</h3>
+      <p>An imaginary machine: an infinitely long <strong>tape</strong> of squares, a <strong>head</strong> that reads one square, writes a symbol and moves left or right, and a <strong>table of rules</strong>.</p>
+      <p>A <strong>universal</strong> machine can read any other machine&#x27;s table from the tape and imitate it. One machine, any program: the idea of the <strong>general-purpose computer</strong>, nine years before one was built.</p>
+      <p>This is where <strong>hardware</strong> and <strong>software</strong> separate: the machine is fixed, the instructions on the tape change. The tape is memory; the table is the program.</p>
+      <p class="one-line">Same metal, different instructions: that is what makes a computer a computer.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">What is a computer system?</h3>
+      <p>A <strong>computer</strong> is an electronic device that accepts <strong>input</strong> (data), <strong>processes</strong> it following a set of instructions (a <strong>program</strong>), <strong>stores</strong> data and instructions, and produces <strong>output</strong> (information).</p>
+      <ol class="flow"><li>Input</li><li>Process</li><li>Output</li></ol>
+      <ul class="plain-list notes-list"><li><strong>Input</strong>: data goes in (keyboard, mouse, camera, sensor).</li><li><strong>Process</strong>: the CPU follows the instructions of the program.</li><li><strong>Output</strong>: information comes out (screen, printer, speaker, motor).</li><li><strong>Storage</strong>: data and programs are kept for later (RAM while working, SSD or cloud for keeps).</li></ul>
+      <p><strong>Data</strong> is raw: 37.2. <strong>Information</strong> is data with a meaning: &#x27;your temperature is 37.2 °C, slightly high&#x27;.</p>
+      <p>A <strong>computer system</strong> = hardware + software + data + people. Example: a washing machine. Input: the dial, a water sensor, a weight sensor. Process: the programme. Output: motor, pump, heater, beeper. Storage: the chosen settings and where it is in the cycle.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Hardware, software, firmware, data</h3>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col"></th><th scope="col">What it is</th><th scope="col">Examples</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Hardware</th><td>the physical parts: you can touch them (or drop them)</td><td>CPU, RAM, motherboard, SSD, keyboard, monitor, printer, cables, router</td></tr>
+        <tr><th scope="row">Software</th><td>the programs: sets of instructions that tell the hardware what to do; you can copy them, not touch them</td><td>Windows, Chrome, Minecraft, a Python script, a printer driver</td></tr>
+        <tr><th scope="row">Firmware</th><td>software stored permanently on a chip inside a device</td><td>the BIOS/UEFI of a PC, the program inside a printer or an Arduino</td></tr>
+        <tr><th scope="row">Data</th><td>the stuff the software works on; not hardware, not software</td><td>a Word document, a photo, a Wi-Fi password</td></tr>
+        </tbody></table></div>
+      <p>Analogy: the hardware is the <strong>piano</strong>, the software is the <strong>sheet music</strong>. Change the music and the same piano plays a different song.</p>
+      <p>Tricky cases: the Internet is a network (hardware + software + agreed rules, the protocols). A disc or cartridge is hardware; the game on it is software.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">The timeline you must know</h3>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col">Year</th><th scope="col">What happened</th><th scope="col">Why it matters</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">1936</th><td>Turing&#x27;s universal machine (On Computable Numbers)</td><td>the idea of a general-purpose computer: hardware + software</td></tr>
+        <tr><th scope="row">1941</th><td>Zuse&#x27;s Z3, Berlin (2,600 relays)</td><td>the first programmable, automatic computer, electromechanical</td></tr>
+        <tr><th scope="row">1943</th><td>Colossus, Bletchley Park (1,500 valves)</td><td>the first programmable electronic computer</td></tr>
+        <tr><th scope="row">1945–46</th><td>ENIAC, Philadelphia (≈18,000 valves)</td><td>the first general-purpose electronic computer</td></tr>
+        <tr><th scope="row">1947</th><td>the transistor, Bell Labs</td><td>a switch with no moving parts and no glass: the valve replaced</td></tr>
+        <tr><th scope="row">1958</th><td>the integrated circuit (Kilby, then Noyce)</td><td>many transistors on one chip</td></tr>
+        <tr><th scope="row">1971</th><td>the Intel 4004 (Federico Faggin, from Vicenza)</td><td>the first microprocessor: a whole CPU on one chip, 2,300 transistors</td></tr>
+        <tr><th scope="row">1981</th><td>the IBM PC</td><td>the desktop standard; Microsoft sells it the operating system</td></tr>
+        <tr><th scope="row">2007</th><td>the iPhone</td><td>a computer in every pocket, with a touchscreen</td></tr>
+        <tr><th scope="row">2022</th><td>ChatGPT</td><td>the imitation game, played by 100 million people in two months</td></tr>
+        </tbody></table></div>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">ENIAC, 1946: the facts</h3>
+      <ul class="plain-list notes-list"><li>Built at the University of Pennsylvania (Mauchly and Eckert) to compute artillery tables; announced on 14 February 1946.</li><li>About 18,000 valves (vacuum tubes), 27 tonnes, 167 m² of floor, 150 kW of power (about 100 kettles), 5,000 additions per second.</li><li><strong>No stored program</strong>: it was programmed by re-plugging cables and setting switches, which took days.</li><li>Programmed by six women: Kay McNulty, Betty Jennings, Betty Snyder, Marlyn Wescoff, Fran Bilas, Ruth Lichterman. Not credited for decades; honoured in 1997.</li><li>Your phone is hundreds of millions of times faster, on a battery, in your pocket.</li></ul>
     </div>
   </section>
 
   <section class="block check-now wrap" aria-labelledby="check-h" data-section="check">
-    <h2 id="check-h" class="block-h"><span class="block-n" aria-hidden="true">03</span>Check now</h2>
+    <h2 id="check-h" class="block-h"><span class="block-n" aria-hidden="true">04</span>Check now</h2>
     <p class="block-lede">Quick questions. You see the answer at once.</p>
     <ol class="q-list" role="list">
-<li><div class="q q-type-mc" id="q-01-can-machines-think-c1" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L1_IPOS&#34;,&#34;q&#34;:&#34;You take a photo with your phone. Which part is the INPUT?&#34;,&#34;options&#34;:[&#34;the photo saved in the gallery&#34;,&#34;the light that enters the camera&#34;,&#34;the photo on the screen&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;Input is what comes in: the light on the camera sensor. The photo on the screen is output; the saved photo is storage.&#34;}">
-  <p class="q-text">You take a photo with your phone. Which part is the INPUT?</p>
-  <ol class="q-fallback" type="a"><li>the photo saved in the gallery</li><li>the light that enters the camera</li><li>the photo on the screen</li></ol>
-</div></li><li><div class="q q-type-tf" id="q-01-can-machines-think-c2" data-kind="check" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L1_IPOS&#34;,&#34;q&#34;:&#34;A file saved on your phone is OUTPUT.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;Output is what reaches the world (the screen, a sound). A saved file is storage.&#34;}">
-  <p class="q-text">A file saved on your phone is OUTPUT.</p>
-  <p class="q-fallback">True or false?</p>
-</div></li><li><div class="q q-type-mc" id="q-01-can-machines-think-c3" data-kind="check" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L1_THINK&#34;,&#34;q&#34;:&#34;In Turing&#39;s imitation game, how does the judge decide?&#34;,&#34;options&#34;:[&#34;by looking at the players&#34;,&#34;only from the typed answers&#34;,&#34;by opening the machine&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;The judge sees only typed answers. The game tests what the machine does, not what it looks like.&#34;}">
-  <p class="q-text">In Turing&#39;s imitation game, how does the judge decide?</p>
-  <ol class="q-fallback" type="a"><li>by looking at the players</li><li>only from the typed answers</li><li>by opening the machine</li></ol>
-</div></li>    </ol>
+<li><div class="q q-type-order" id="q-01-can-machines-think-c1" data-kind="check" data-q="{&quot;type&quot;: &quot;order&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Put the four things every computer does in the usual order.&quot;, &quot;items&quot;: [&quot;input&quot;, &quot;process&quot;, &quot;output&quot;, &quot;storage&quot;], &quot;explain&quot;: &quot;Input → process → output, with storage keeping data and programs for later. (In the test, writing storage as the fourth stage is fine.)&quot;}">
+  <p class="q-text">Put the four things every computer does in the usual order.</p>
+  <ul class="q-fallback"><li>input</li><li>output</li><li>process</li><li>storage</li></ul>
+</div></li>
+<li><div class="q q-type-mc" id="q-01-can-machines-think-c2" data-kind="check" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;What is new about Colossus compared with the Bombe?&quot;, &quot;options&quot;: [&quot;it attacked Enigma&quot;, &quot;it was electronic and programmable&quot;, &quot;it was built by Turing alone&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;Colossus used valves (electronic) and could be set up for different tasks; the Bombe was electromechanical and did one job.&quot;}">
+  <p class="q-text">What is new about Colossus compared with the Bombe?</p>
+  <ol class="q-fallback" type="a"><li>it attacked Enigma</li><li>it was electronic and programmable</li><li>it was built by Turing alone</li></ol>
+</div></li>
+<li><div class="q q-type-match" id="q-01-can-machines-think-c3" data-kind="check" data-q="{&quot;type&quot;: &quot;match&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Hardware, software, firmware or data?&quot;, &quot;pairs&quot;: [[&quot;a mouse&quot;, &quot;hardware&quot;], [&quot;Chrome&quot;, &quot;software&quot;], [&quot;the BIOS&quot;, &quot;firmware&quot;], [&quot;a Word document&quot;, &quot;data&quot;]], &quot;explain&quot;: &quot;If you can touch it, hardware. Instructions, software. Instructions on a chip inside a device, firmware. The stuff programs work on, data.&quot;}">
+  <p class="q-text">Hardware, software, firmware or data?</p>
+  <ul class="q-fallback"><li>a mouse — ?</li><li>Chrome — ?</li><li>the BIOS — ?</li><li>a Word document — ?</li></ul>
+</div></li>
+    </ol>
   </section>
 
   <section class="block try" aria-labelledby="try-h">
-    <h2 id="try-h" class="block-h wrap"><span class="block-n" aria-hidden="true">04</span>Try it</h2>
+    <h2 id="try-h" class="block-h wrap"><span class="block-n" aria-hidden="true">05</span>Try it</h2>
+<p class="wrap">Turing&#x27;s game, for real. Each answer below was written by a person or by a chatbot.</p>
     <div class="wrap-ix"><figure class="ix" data-ix="human-or-machine" data-config="{}" id="ix-01-1">
   <figcaption class="ix-title">Human or machine?</figcaption>
-<p class="ix-intro">Play Turing&#39;s game. Read each answer and guess: was it written by a person or by a chatbot? Then read the clue.</p>  <div class="ix-body"></div>
+<p class="ix-intro">Play Turing&#x27;s game. Read each answer and guess: was it written by a person or by a chatbot? Then read the clue.</p>
+  <div class="ix-body"></div>
   <div class="ix-print">
     <p class="ix-print-label">Paper version</p>
-    <p>Play Turing&#39;s game on paper. For each question, read the answer and write PERSON or CHATBOT, with one reason. Example: question &#34;Add 34957 to 70764.&#34; Answer: &#34;(after a pause of about 30 seconds) 105621&#34;. This is the answer Turing imagined in 1950: slow, and wrong (the right sum is 105721). Clues that often give a chatbot away: it never says &#39;I don&#39;t know&#39;, it is very polite, it explains everything step by step, it is long and perfect.</p>
+    <p>Play Turing&#x27;s game on paper. For each question, read the answer and write PERSON or CHATBOT, with one reason. Example: question &quot;Add 34957 to 70764.&quot; Answer: &quot;(after a pause of about 30 seconds) 105621&quot;. This is the answer Turing imagined in 1950: slow, and wrong (the right sum is 105721). A machine that wants to pass has to pretend to be slow and to make mistakes.</p>
+  </div>
+</figure></div>
+<p class="wrap">This is the imaginary machine of 1936, built in your browser: a tape, a head, a table of rules.</p>
+    <div class="wrap-ix"><figure class="ix" data-ix="turing-machine" data-config="{&quot;preset&quot;: &quot;add-one&quot;, &quot;tape&quot;: &quot;1011&quot;}" id="ix-01-2">
+  <figcaption class="ix-title">Turing machine</figcaption>
+<p class="ix-intro">Press Step to watch the head follow the rules. Start with &#x27;add one&#x27; on 1011, then try 111 and the &#x27;flip bits&#x27; machine.</p>
+  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>Rules for &#x27;add one&#x27;: start on the LAST digit, state CARRY. Read 1 → write 0, move left, stay in CARRY. Read 0 → write 1, stop. Read an empty square → write 1, stop. Trace for 1011 (eleven): 1011 → 1010 → 1000 → 1100 (twelve). Same machine, different table of rules = different program.</p>
   </div>
 </figure></div>
   </section>
 
   <section class="block your-turn wrap" aria-labelledby="turn-h" data-section="turn">
-    <h2 id="turn-h" class="block-h"><span class="block-n" aria-hidden="true">05</span>Your turn</h2>
-    <label class="turn-prompt" for="turn-u1-01-can-machines-think-turn">Can machines think? Write your vote (YES, NO or IT DEPENDS). Then write one argument for and one argument against. Keep it: you will read it again in chapter 9.</label>
+    <h2 id="turn-h" class="block-h"><span class="block-n" aria-hidden="true">06</span>Your turn</h2>
+    <label class="turn-prompt" for="turn-u1-01-can-machines-think-turn">Write your own definition of &#x27;think&#x27; in one sentence. Then test it on three things: a calculator, a dog, and ChatGPT. Which of them &#x27;think&#x27; by your definition? Keep this answer: you will need it for the last paragraph of your Word document.</label>
     <textarea id="turn-u1-01-can-machines-think-turn" class="turn-text" data-turn-id="u1-01-can-machines-think-turn" rows="6" spellcheck="true"></textarea>
     <div class="turn-bar">
       <button type="button" class="btn btn-ghost" data-action="copy-turn" data-target="turn-u1-01-can-machines-think-turn">Copy</button>
@@ -195,111 +231,102 @@ d.className+=' js';})();
   </section>
 
   <section class="block exercises wrap" aria-labelledby="ex-h" data-section="exercises">
-    <h2 id="ex-h" class="block-h"><span class="block-n" aria-hidden="true">06</span>Exercises</h2>
+    <h2 id="ex-h" class="block-h"><span class="block-n" aria-hidden="true">07</span>Exercises</h2>
     <p class="block-lede">From ★☆☆ (easy) to ★★★ (hard). Use a hint if you are stuck.</p>
     <ol class="ex-list" role="list">
       <li class="ex">
         <p class="ex-head"><span class="ex-n">Exercise 1</span>
           <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
-        <div class="q q-type-match" id="q-01-can-machines-think-e1" data-kind="exercise" data-q="{&#34;type&#34;:&#34;match&#34;,&#34;obj&#34;:&#34;L1_IPOS&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;You ask a chatbot a question. Match each part to input, process, output or storage.&#34;,&#34;pairs&#34;:[[&#34;you type your question&#34;,&#34;input&#34;],[&#34;the program works on your words&#34;,&#34;process&#34;],[&#34;the answer appears on the screen&#34;,&#34;output&#34;],[&#34;the conversation is kept for later&#34;,&#34;storage&#34;]],&#34;explain&#34;:&#34;In, work, out, keep: every computer does these four things.&#34;,&#34;hint&#34;:&#34;What comes in? What goes out? What is kept?&#34;,&#34;solution&#34;:&#34;Typing = input · the program works = process · the answer on screen = output · the saved conversation = storage.&#34;}">
-  <p class="q-text">You ask a chatbot a question. Match each part to input, process, output or storage.</p>
-  <ul class="q-fallback"><li>you type your question — ?</li><li>the program works on your words — ?</li><li>the answer appears on the screen — ?</li><li>the conversation is kept for later — ?</li></ul>
+        <div class="q q-type-mc" id="q-01-can-machines-think-e1" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;In Turing&#x27;s imitation game, what does the interrogator do?&quot;, &quot;options&quot;: [&quot;opens the machine to look inside&quot;, &quot;types questions to two hidden players and says which one is the machine&quot;, &quot;measures how fast the machine calculates&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;The interrogator only sees typed answers. If they cannot tell, Turing says we should admit the machine thinks.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">In Turing&#x27;s imitation game, what does the interrogator do?</p>
+  <ol class="q-fallback" type="a"><li>opens the machine to look inside</li><li>types questions to two hidden players and says which one is the machine</li><li>measures how fast the machine calculates</li></ol>
 </div>
       </li>
       <li class="ex">
         <p class="ex-head"><span class="ex-n">Exercise 2</span>
           <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
-        <div class="q q-type-order" id="q-01-can-machines-think-e2" data-kind="exercise" data-q="{&#34;type&#34;:&#34;order&#34;,&#34;obj&#34;:&#34;L1_IPOS&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;Put the steps of taking a photo in order.&#34;,&#34;items&#34;:[&#34;Light enters the camera.&#34;,&#34;The chip follows its program and makes the picture.&#34;,&#34;The photo appears on the screen.&#34;,&#34;The photo is saved in the gallery.&#34;],&#34;explain&#34;:&#34;Input → process → output → storage.&#34;,&#34;hint&#34;:&#34;Start with what comes in.&#34;,&#34;solution&#34;:&#34;Light enters (input) → the chip works (process) → the photo on screen (output) → the photo saved (storage).&#34;}">
-  <p class="q-text">Put the steps of taking a photo in order.</p>
-  <ul class="q-fallback"><li>Light enters the camera.</li><li>The chip follows its program and makes the picture.</li><li>The photo appears on the screen.</li><li>The photo is saved in the gallery.</li></ul>
+        <div class="q q-type-tf" id="q-01-can-machines-think-e2" data-kind="exercise" data-q="{&quot;type&quot;: &quot;tf&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;The Bombe was the first programmable electronic computer.&quot;, &quot;answer&quot;: false, &quot;explain&quot;: &quot;No: the Bombe was electromechanical and did one job. Colossus (1943) was electronic and programmable.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">The Bombe was the first programmable electronic computer.</p>
+  <p class="q-fallback">True or false?</p>
 </div>
       </li>
       <li class="ex">
         <p class="ex-head"><span class="ex-n">Exercise 3</span>
           <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
-        <div class="q q-type-tf" id="q-01-can-machines-think-e3" data-kind="exercise" data-q="{&#34;type&#34;:&#34;tf&#34;,&#34;obj&#34;:&#34;L1_THINK&#34;,&#34;stars&#34;:1,&#34;q&#34;:&#34;In 1950 Turing built a machine that could think.&#34;,&#34;answer&#34;:false,&#34;explain&#34;:&#34;He asked a question and proposed a test, the imitation game. He did not build a thinking machine.&#34;,&#34;hint&#34;:&#34;Was the 1950 paper about a machine he built, or about a question?&#34;,&#34;solution&#34;:&#34;False. He asked &#39;Can machines think?&#39; and proposed a game to test it.&#34;}">
-  <p class="q-text">In 1950 Turing built a machine that could think.</p>
-  <p class="q-fallback">True or false?</p>
+        <div class="q q-type-num" id="q-01-can-machines-think-e3" data-kind="exercise" data-q="{&quot;type&quot;: &quot;num&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;In which year did Turing describe the universal machine?&quot;, &quot;answer&quot;: 1936, &quot;tolerance&quot;: 0, &quot;unit&quot;: &quot;&quot;, &quot;explain&quot;: &quot;1936, in &#x27;On Computable Numbers&#x27;. He was 23.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">In which year did Turing describe the universal machine?</p>
 </div>
       </li>
       <li class="ex">
         <p class="ex-head"><span class="ex-n">Exercise 4</span>
-          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
-        <div class="q q-type-mc" id="q-01-can-machines-think-e4" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L1_IPOS&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;A washing machine is a computer too. Which is its OUTPUT?&#34;,&#34;options&#34;:[&#34;the buttons you press&#34;,&#34;the program that decides how long to spin&#34;,&#34;the drum turning and the beep at the end&#34;],&#34;answer&#34;:2,&#34;explain&#34;:&#34;Output is what reaches the world: the drum turns, the beep sounds. The buttons are input; the program is the process.&#34;,&#34;hint&#34;:&#34;Output is what the machine does to the world.&#34;,&#34;solution&#34;:&#34;The drum turning and the beep at the end.&#34;}">
-  <p class="q-text">A washing machine is a computer too. Which is its OUTPUT?</p>
-  <ol class="q-fallback" type="a"><li>the buttons you press</li><li>the program that decides how long to spin</li><li>the drum turning and the beep at the end</li></ol>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-order" id="q-01-can-machines-think-e4" data-kind="exercise" data-q="{&quot;type&quot;: &quot;order&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Put these in time order, oldest first.&quot;, &quot;items&quot;: [&quot;Turing&#x27;s universal machine (1936)&quot;, &quot;Colossus (1943)&quot;, &quot;ENIAC (1946)&quot;, &quot;the transistor (1947)&quot;, &quot;the Intel 4004 (1971)&quot;], &quot;explain&quot;: &quot;1936 idea → 1943 first programmable electronic computer → 1946 first general-purpose one → 1947 the transistor → 1971 the whole CPU on one chip.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">Put these in time order, oldest first.</p>
+  <ul class="q-fallback"><li>Colossus (1943)</li><li>ENIAC (1946)</li><li>Turing&#x27;s universal machine (1936)</li><li>the Intel 4004 (1971)</li><li>the transistor (1947)</li></ul>
 </div>
       </li>
       <li class="ex">
         <p class="ex-head"><span class="ex-n">Exercise 5</span>
           <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
-        <div class="q q-type-num" id="q-01-can-machines-think-e5" data-kind="exercise" data-q="{&#34;type&#34;:&#34;num&#34;,&#34;obj&#34;:&#34;L1_THINK&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;In his 1950 paper, Turing imagines a machine that answers \&#34;Add 34957 to 70764\&#34; with 105621. What is the right answer?&#34;,&#34;answer&#34;:105721,&#34;tolerance&#34;:0,&#34;unit&#34;:&#34;&#34;,&#34;explain&#34;:&#34;34957 + 70764 = 105721. Turing&#39;s machine is slow and wrong, like a person. Turing said a machine could make mistakes on purpose, to seem human.&#34;,&#34;hint&#34;:&#34;Add the two numbers on paper, column by column.&#34;,&#34;solution&#34;:&#34;105721. The machine&#39;s answer, 105621, is wrong by 100.&#34;}">
-  <p class="q-text">In his 1950 paper, Turing imagines a machine that answers &#34;Add 34957 to 70764&#34; with 105621. What is the right answer?</p>
+        <div class="q q-type-match" id="q-01-can-machines-think-e5" data-kind="exercise" data-q="{&quot;type&quot;: &quot;match&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;A phone takes a photo. Match each step to its stage.&quot;, &quot;pairs&quot;: [[&quot;light reaches the camera sensor&quot;, &quot;input&quot;], [&quot;the chip runs the camera program&quot;, &quot;process&quot;], [&quot;the photo appears on the screen&quot;, &quot;output&quot;], [&quot;the photo is saved as a file&quot;, &quot;storage&quot;]], &quot;explain&quot;: &quot;Every computer does these four things, from a phone to a washing machine.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">A phone takes a photo. Match each step to its stage.</p>
+  <ul class="q-fallback"><li>light reaches the camera sensor — ?</li><li>the chip runs the camera program — ?</li><li>the photo appears on the screen — ?</li><li>the photo is saved as a file — ?</li></ul>
 </div>
       </li>
       <li class="ex">
         <p class="ex-head"><span class="ex-n">Exercise 6</span>
           <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
-        <div class="q q-type-mc" id="q-01-can-machines-think-e6" data-kind="exercise" data-q="{&#34;type&#34;:&#34;mc&#34;,&#34;obj&#34;:&#34;L1_THINK&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Which clue most often gives a chatbot away in the imitation game?&#34;,&#34;options&#34;:[&#34;it makes spelling mistakes&#34;,&#34;its answers are long, polite and perfect, and it never says &#39;I don&#39;t know&#39;&#34;,&#34;it answers in one word&#34;],&#34;answer&#34;:1,&#34;explain&#34;:&#34;People make mistakes, give short answers and say &#39;I don&#39;t know&#39;. Chatbots are often too perfect.&#34;,&#34;hint&#34;:&#34;Think of the &#39;Human or machine?&#39; game.&#34;,&#34;solution&#34;:&#34;Long, polite, perfect answers, and never &#39;I don&#39;t know&#39;.&#34;}">
-  <p class="q-text">Which clue most often gives a chatbot away in the imitation game?</p>
-  <ol class="q-fallback" type="a"><li>it makes spelling mistakes</li><li>its answers are long, polite and perfect, and it never says &#39;I don&#39;t know&#39;</li><li>it answers in one word</li></ol>
+        <div class="q q-type-mc" id="q-01-can-machines-think-e6" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;&#x27;37.2&#x27; is data. Which of these is information?&quot;, &quot;options&quot;: [&quot;37.2 °C&quot;, &quot;your temperature is 37.2 °C, slightly high&quot;, &quot;a number&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;Information is data with a meaning for a person. The same number on its own is only data.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">&#x27;37.2&#x27; is data. Which of these is information?</p>
+  <ol class="q-fallback" type="a"><li>37.2 °C</li><li>your temperature is 37.2 °C, slightly high</li><li>a number</li></ol>
 </div>
       </li>
       <li class="ex">
         <p class="ex-head"><span class="ex-n">Exercise 7</span>
           <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
-        <div class="q q-type-open" id="q-01-can-machines-think-e7" data-kind="exercise" data-q="{&#34;type&#34;:&#34;open&#34;,&#34;obj&#34;:&#34;L1_IPOS&#34;,&#34;stars&#34;:2,&#34;q&#34;:&#34;Name one object at home that is a computer but does not look like one. Write its input, process, output and storage.&#34;,&#34;hint&#34;:&#34;Think of the kitchen, the car, the TV remote, a smartwatch.&#34;,&#34;solution&#34;:&#34;Example: a microwave. Input: the buttons. Process: the chip follows its program (time and power). Output: heat, the light and the beep. Storage: it keeps the clock time and its saved programmes.&#34;}">
-  <p class="q-text">Name one object at home that is a computer but does not look like one. Write its input, process, output and storage.</p>
+        <div class="q q-type-mc" id="q-01-can-machines-think-e7" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Which statement about ENIAC is TRUE?&quot;, &quot;options&quot;: [&quot;it had a keyboard and a screen&quot;, &quot;it was programmed by re-plugging cables, which took days&quot;, &quot;it used transistors&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;ENIAC had no stored program: the program was the wiring. Transistors came in 1947; ENIAC used valves.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">Which statement about ENIAC is TRUE?</p>
+  <ol class="q-fallback" type="a"><li>it had a keyboard and a screen</li><li>it was programmed by re-plugging cables, which took days</li><li>it used transistors</li></ol>
 </div>
       </li>
       <li class="ex">
         <p class="ex-head"><span class="ex-n">Exercise 8</span>
           <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
-        <div class="q q-type-open" id="q-01-can-machines-think-e8" data-kind="exercise" data-q="{&#34;type&#34;:&#34;open&#34;,&#34;obj&#34;:&#34;L1_THINK&#34;,&#34;stars&#34;:3,&#34;q&#34;:&#34;Write one argument FOR and one argument AGAINST: &#39;A chatbot that fools a judge can think.&#39;&#34;,&#34;hint&#34;:&#34;One side looks at what the machine does. The other side looks at how it does it.&#34;,&#34;solution&#34;:&#34;For: if its answers are as good as a person&#39;s, we cannot tell the difference, and Turing said behaviour is what we can test. Against: it only follows a program and does not understand what the words mean; fooling someone is not the same as thinking.&#34;}">
-  <p class="q-text">Write one argument FOR and one argument AGAINST: &#39;A chatbot that fools a judge can think.&#39;</p>
+        <div class="q q-type-open" id="q-01-can-machines-think-e8" data-kind="exercise" data-q="{&quot;type&quot;: &quot;open&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Explain in two or three sentences why Turing&#x27;s 1936 idea separates hardware from software. Use the words &#x27;tape&#x27; and &#x27;table of rules&#x27;.&quot;, &quot;solution&quot;: &quot;Before 1936 a machine and its job were the same object. Turing imagined a universal machine whose job is written on the tape as a table of rules: the machine (hardware) stays the same, the instructions (software) change. That is why one computer can run any program, and why an app is just a new table of rules for the same machine.&quot;, &quot;hint&quot;: &quot;What stays the same, and what changes, when your phone switches from a game to a map?&quot;, &quot;stars&quot;: 3}">
+  <p class="q-text">Explain in two or three sentences why Turing&#x27;s 1936 idea separates hardware from software. Use the words &#x27;tape&#x27; and &#x27;table of rules&#x27;.</p>
 </div>
       </li>
     </ol>
   </section>
 
-  <section class="block one-sentence wrap" aria-labelledby="one-h">
-    <h2 id="one-h" class="block-h"><span class="block-n" aria-hidden="true">07</span>In one sentence</h2>
-    <p class="one-line">A computer follows instructions very fast; whether that is thinking is our question.</p>
-  </section>
-
-  <section class="block words wrap" aria-labelledby="words-h">
-    <h2 id="words-h" class="block-h"><span class="block-n" aria-hidden="true">08</span>Words of the chapter</h2>
+  <section class="block wrap" aria-labelledby="words-h">
+    <h2 id="words-h" class="block-h"><span class="block-n" aria-hidden="true">08</span>Words of this lesson</h2>
     <dl class="gloss">
-      <div class="gloss-row">
-        <dt>computer</dt>
-        <dd>a machine that takes in data, follows a program and gives out a result <span class="it" lang="it">computer</span></dd>
-      </div>
-      <div class="gloss-row">
-        <dt>input · process · output · storage</dt>
-        <dd>in, work, out, keep: the four things every computer does <span class="it" lang="it">ingresso · elaborazione · uscita · memorizzazione</span></dd>
-      </div>
-      <div class="gloss-row">
-        <dt>program</dt>
-        <dd>a list of precise instructions a machine follows <span class="it" lang="it">programma</span></dd>
-      </div>
-      <div class="gloss-row">
-        <dt>imitation game (Turing test)</dt>
-        <dd>can a machine pass as a person in a typed conversation? <span class="it" lang="it">gioco dell&#39;imitazione (test di Turing)</span></dd>
-      </div>
-      <div class="gloss-row">
-        <dt>judge</dt>
-        <dd>the person who asks the questions and decides <span class="it" lang="it">giudice</span></dd>
-      </div>
-      <div class="gloss-row">
-        <dt>chatbot</dt>
-        <dd>a program that writes answers to your messages <span class="it" lang="it">chatbot</span></dd>
-      </div>
+      <div class="gloss-row"><dt>Turing test (imitation game) <span class="it" lang="it">test di Turing</span></dt><dd>a text chat with a hidden human and a hidden machine; if the interrogator cannot tell which is which, the machine passes</dd></div>
+      <div class="gloss-row"><dt>interrogator <span class="it" lang="it">interrogante / giudice</span></dt><dd>the person asking questions in the Turing test</dd></div>
+      <div class="gloss-row"><dt>electromechanical <span class="it" lang="it">elettromeccanico</span></dt><dd>made of switches moved by magnets (relays) and rotating parts, like the Bombe</dd></div>
+      <div class="gloss-row"><dt>electronic <span class="it" lang="it">elettronico</span></dt><dd>made of valves or transistors, with no moving parts for the logic, like Colossus</dd></div>
+      <div class="gloss-row"><dt>programmable <span class="it" lang="it">programmabile</span></dt><dd>able to be given a different set of instructions for a different job</dd></div>
+      <div class="gloss-row"><dt>universal machine <span class="it" lang="it">macchina universale</span></dt><dd>Turing&#x27;s imaginary machine (1936) that can run any program read from its tape</dd></div>
+      <div class="gloss-row"><dt>computer <span class="it" lang="it">computer</span></dt><dd>an electronic device that takes input, processes it with stored instructions, stores data and gives output</dd></div>
+      <div class="gloss-row"><dt>input <span class="it" lang="it">input / ingresso</span></dt><dd>data going into the computer</dd></div>
+      <div class="gloss-row"><dt>process <span class="it" lang="it">elaborazione</span></dt><dd>the CPU following the instructions of a program</dd></div>
+      <div class="gloss-row"><dt>output <span class="it" lang="it">output / uscita</span></dt><dd>information coming out of the computer</dd></div>
+      <div class="gloss-row"><dt>storage <span class="it" lang="it">memorizzazione / archiviazione</span></dt><dd>keeping data and programs for later</dd></div>
+      <div class="gloss-row"><dt>data <span class="it" lang="it">dati</span></dt><dd>raw facts and numbers, without a meaning yet</dd></div>
+      <div class="gloss-row"><dt>information <span class="it" lang="it">informazione</span></dt><dd>data with a meaning for a person</dd></div>
+      <div class="gloss-row"><dt>hardware <span class="it" lang="it">hardware</span></dt><dd>the physical parts of a computer</dd></div>
+      <div class="gloss-row"><dt>software <span class="it" lang="it">software</span></dt><dd>the programs: instructions that tell the hardware what to do</dd></div>
+      <div class="gloss-row"><dt>firmware <span class="it" lang="it">firmware</span></dt><dd>software stored permanently on a chip inside a device (BIOS, printer, Arduino)</dd></div>
+      <div class="gloss-row"><dt>valve (vacuum tube) <span class="it" lang="it">valvola termoionica</span></dt><dd>a glass electronic switch used in Colossus and ENIAC, replaced by the transistor</dd></div>
+      <div class="gloss-row"><dt>transistor <span class="it" lang="it">transistor</span></dt><dd>a tiny electronic switch with no moving parts (1947); billions on every chip</dd></div>
+      <div class="gloss-row"><dt>integrated circuit (chip) <span class="it" lang="it">circuito integrato (chip)</span></dt><dd>many transistors made on one piece of silicon (1958)</dd></div>
+      <div class="gloss-row"><dt>microprocessor <span class="it" lang="it">microprocessore</span></dt><dd>a whole CPU on one chip; the first was the Intel 4004 (1971)</dd></div>
     </dl>
   </section>
 
   <nav class="pager wrap" aria-label="Chapters">
-    <a class="pager-link pager-prev" href="../../unit-1/index.html"><span class="pager-dir">Back to</span><span class="pager-title">Unit 1</span></a>
-    <a class="pager-link pager-next" href="../../unit-1/02-the-idea-of-a-program/index.html" rel="next"><span class="pager-dir">Next</span><span class="pager-title">The idea of a program</span></a>
+    <a class="pager-link pager-next" href="../../unit-1/02-inside-the-box/index.html" rel="next"><span class="pager-dir">Next</span><span class="pager-title">Inside the box</span></a>
   </nav>
 </article>
 </main>

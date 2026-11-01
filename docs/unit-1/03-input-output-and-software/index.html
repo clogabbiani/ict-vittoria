@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Input, output and software · Unit 1 · ICT · Liceo Vittoria</title>
+<meta name="description" content="How data gets in and out of the machine, and the programs that make the hardware useful: the operating system above all.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../../static/favicon.svg" type="image/svg+xml">
+<script>
+(function(){var d=document.documentElement;function g(k){try{var v=localStorage.getItem(k);return v===null?null:JSON.parse(v);}catch(e){return null;}}
+var t=g('ict-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
+if(g('ict-read'))d.setAttribute('data-read','1');if(g('ict-font')==='atkinson')d.setAttribute('data-font','atkinson');
+d.className+=' js';})();
+</script>
+<link rel="stylesheet" href="../../static/css/site.css">
+<link rel="stylesheet" href="../../static/css/ix-a.css">
+<link rel="stylesheet" href="../../static/css/ix-b.css">
+<link rel="stylesheet" href="../../static/css/ix-c.css">
+<script defer src="../../static/js/ict-core.js"></script>
+<script defer src="../../static/js/site.js"></script>
+<script defer src="../../static/js/ix/path-builder.js"></script>
+<script defer src="../../static/js/ix/label-machine.js"></script>
+</head>
+<body data-root="../../" data-page="chapter" data-slug="03-input-output-and-software">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="head-row wrap-wide">
+    <a class="brand" href="../../index.html"><span class="brand-ict">ICT</span><span class="brand-dot" aria-hidden="true">·</span><span class="brand-school">Liceo Vittoria</span></a>
+    <div class="tools" role="group" aria-label="Display options">
+      <button type="button" class="tool" data-action="theme" aria-label="Theme: auto. Change theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <span class="tool-label">Auto</span>
+      </button>
+      <button type="button" class="tool" data-action="read" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M3 19 8.5 5h1L15 19M5 14.5h8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 12.5c1-1 4-1.2 4 1.3V19m0-3.2c-3.2-.4-4.6.5-4.6 1.8 0 2 3.4 2 4.6-.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="tool-label">Readable</span>
+      </button>
+      <button type="button" class="tool tool-font" data-action="font" aria-pressed="false">
+        <span class="tool-glyph" aria-hidden="true">Ag</span>
+        <span class="tool-label">Easy font</span>
+      </button>
+      <button type="button" class="tool" data-action="print">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="tool-label">Print</span>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav wrap-wide" aria-label="Main">
+    <a href="../../index.html">Home</a>
+    <a href="../../unit-1/index.html" aria-current="page">Unit 1</a>
+    <a href="../../unit-1/review/index.html">Review</a>
+    <a href="../../about/index.html">About</a>
+  </nav>
+</header>
+<div class="progress" data-progress-slug="03-input-output-and-software">
+  <div class="progress-track" role="progressbar" aria-label="Chapter progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-fill"></span></div>
+  <span class="progress-text">0% done</span>
+</div>
+<main id="main" tabindex="-1">
+<article class="chapter">
+  <header class="ch-head wrap">
+    <p class="eyebrow"><a href="../../unit-1/index.html">Unit 1</a> · Lesson 3</p>
+    <h1 class="ch-title">Input, output and software</h1>
+    <p class="ch-hook">How data gets in and out of the machine, and the programs that make the hardware useful: the operating system above all.</p>
+    <nav class="toc" aria-label="On this page">
+      <a href="#test-h">In the test</a><a href="#story-h">The story</a><a href="#notes-h">The notes</a><a href="#check-h">Check now</a><a href="#try-h">Try it</a><a href="#ex-h">Exercises</a>
+    </nav>
+  </header>
+
+  <section class="block in-test wrap" aria-labelledby="test-h">
+    <h2 id="test-h" class="block-h"><span class="block-n" aria-hidden="true">01</span>What the test will ask</h2>
+    <p class="block-lede">After this lesson you should be able to:</p>
+    <ul class="plain-list objectives"><li>Name <strong>input devices</strong> (manual and direct data entry, including <strong>sensors</strong>) and <strong>output devices</strong> (for people and for the physical world: <strong>actuators</strong>), and devices that are both.</li><li>Classify software: <strong>system software</strong> (operating system, utilities, drivers, compilers/interpreters) vs <strong>application software</strong> (general purpose, specialist, bespoke, apps).</li><li>List the jobs of an <strong>operating system</strong> and the four kinds of interface (CLI, GUI, touch, voice).</li><li>Describe what happens when you press the <strong>power button</strong> (POST, BIOS/UEFI, boot order, bootloader, kernel, login).</li><li>Explain <strong>processes and multitasking</strong>, <strong>virtual memory</strong>, <strong>file systems</strong> and <strong>permissions</strong>.</li><li>Compare <strong>Windows, macOS, Linux, Android and iOS</strong> and define <strong>kernel</strong>, <strong>shell</strong>, <strong>distribution</strong>.</li><li>Explain what a <strong>driver</strong>, a <strong>utility</strong>, a <strong>compiler</strong> and an <strong>interpreter</strong> are.</li><li>Tell <strong>proprietary</strong>, <strong>open-source</strong> and <strong>&#x27;free&#x27;</strong> software apart.</li></ul>
+  </section>
+
+  <section class="block story" aria-labelledby="story-h">
+    <h2 id="story-h" class="block-h wrap"><span class="block-n" aria-hidden="true">02</span>The story</h2>
+      <p class="wrap story-p">Everything a computer knows about the world arrives through an <strong>input device</strong>. Some you operate: the keyboard (laid out in 1873 to stop typewriter arms jamming), the mouse (a wooden block with two wheels in 1964, shown to the world in 1968 in &#x27;the mother of all demos&#x27;), the touchscreen, the microphone, the camera. Some collect data by themselves: the barcode reader (the first product ever scanned was a packet of chewing gum, on 26 June 1974), the fingerprint reader, and <strong>sensors</strong> of every kind. A sensorised insole is an input device: pressure sensors under the foot send numbers to a computer smaller than a coin.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/v5_chat_phone.jpg"
+       srcset="../../img/v5_chat_phone-800.jpg 800w, ../../img/v5_chat_phone.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1280" height="853" alt="A phone has more than ten input devices: touchscreen, cameras, microphones, motion sensors, GPS, fingerprint or face reader, NFC." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">A phone has more than ten input devices: touchscreen, cameras, microphones, motion sensors, GPS, fingerprint or face reader, NFC.</span>    <span class="credit">Photo: Océanos y dados, CC0 · <a href="https://commons.wikimedia.org/wiki/File:Smartphone_Use.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">Information leaves through an <strong>output device</strong>: a screen, a printer, a speaker, a vibration. And, the kind people forget, outputs for the physical world: motors, lights, valves. A self-driving car&#x27;s outputs are its steering motor and its brakes; the Tech Club bin&#x27;s output is one servo. Some devices are both: a touchscreen, a headset, a 3D printer (a file in, an object out).</p>
+      <p class="wrap story-p">Between the hardware and you sits the <strong>software</strong>, in two families. <strong>System software</strong> runs the computer: the operating system, the little maintenance utilities, the drivers that let the OS talk to a printer, and the compilers and interpreters that turn human-written code into something the chip understands. <strong>Application software</strong> does jobs for you: Word, Chrome, Minecraft, the insole app.</p>
+      <div class="wrap-photo"><figure class="photo ">
+  <img src="../../img/h_macintosh.jpg"
+       srcset="../../img/h_macintosh-800.jpg 800w, ../../img/h_macintosh.jpg 1600w"
+       sizes="(min-width: 1140px) 1100px, 100vw"
+       width="1087" height="1600" alt="The Macintosh (1984) brought windows, icons and the mouse to the public. Before that, you typed commands." loading="lazy" decoding="async">
+  <figcaption>
+<span class="cap">The Macintosh (1984) brought windows, icons and the mouse to the public. Before that, you typed commands.</span>    <span class="credit">Photo: Bernard Gotfryd (edited by Cart), Public domain · <a href="https://commons.wikimedia.org/wiki/File:Steve_Jobs_and_Macintosh_computer,_January_1984,_by_Bernard_Gotfryd_-_edited.jpg" rel="noopener noreferrer">source</a></span>
+  </figcaption>
+</figure></div>
+      <p class="wrap story-p">The <strong>operating system</strong> is the boss of the hardware. It shares the processor between programs, hands out memory, organises files, talks to devices, keeps users apart, and draws what you see. Interfaces have changed four times: typing commands (MS-DOS, 1981), windows and a mouse (Macintosh 1984, Windows 1985), touch (iPhone 2007), voice (Siri 2011). On 25 August 1991 a Finnish student called Linus Torvalds posted that he was writing an OS &#x27;just for fun&#x27;; Linux now runs most of the internet, every Android phone and every one of the 500 fastest computers in the world.</p>
+      <p class="wrap story-p">And the news: on 14 October 2025 Microsoft stopped supporting Windows 10. Hundreds of millions of working PCs cannot run Windows 11, and their owners must choose: pay for updates, buy a new computer, or install Linux for free.</p>
+  </section>
+
+  <section class="block science wrap" aria-labelledby="notes-h">
+    <h2 id="notes-h" class="block-h"><span class="block-n" aria-hidden="true">03</span>The notes</h2>
+    <p class="block-lede">Everything from the lesson, in order. This is the part to study.</p>
+    <div class="concept">
+      <h3 class="concept-h">Input devices</h3>
+      <p>An <strong>input device</strong> sends data <strong>into</strong> the computer.</p>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col">Family</th><th scope="col">Examples</th><th scope="col">Note</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Manual input (a person operates it)</th><td>keyboard, mouse, touchpad, touchscreen, microphone, camera/webcam, scanner, game controller, graphics tablet</td><td>the user decides what goes in</td></tr>
+        <tr><th scope="row">Direct data entry (the machine collects data)</th><td>barcode / QR reader, RFID/NFC, magnetic stripe, biometric readers (fingerprint, face)</td><td>fast and accurate, fewer typing errors</td></tr>
+        <tr><th scope="row">Sensors</th><td>temperature, pressure, light, motion (accelerometer), GPS, proximity</td><td>the computer senses the world; a sensor&#x27;s reading is turned into a number by an analogue-to-digital converter</td></tr>
+        </tbody></table></div>
+      <p>Your phone has more than ten input devices: touchscreen, cameras, microphones, accelerometer, gyroscope, compass, GPS, light sensor, proximity sensor, fingerprint/face reader, NFC.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Output devices</h3>
+      <p>An <strong>output device</strong> presents information <strong>from</strong> the computer, to a person or to the world.</p>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col">For people</th><th scope="col">For the physical world (actuators)</th><th scope="col">Both input and output</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">monitor/screen (LCD, OLED; resolution, refresh rate), printer (inkjet, laser, 3D), speakers/headphones, projector, haptic vibration</th><td>motors and servos, LEDs and lights, valves, pumps, heaters: the outputs of robots, cars, washing machines, the Arduino bin</td><td>touchscreen (touch in, picture out), headset (mic in, sound out), smart speaker, 3D printer (file in, object out)</td></tr>
+        </tbody></table></div>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Software: the family tree</h3>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col">System software (runs the computer)</th><th scope="col">Application software (does jobs for you)</th></tr></thead>
+        <tbody>
+        <tr><th scope="row"><strong>Operating system</strong>: Windows, macOS, Linux, Android, iOS</th><td><strong>General purpose</strong>: Word, Excel, PowerPoint, Chrome</td></tr>
+        <tr><th scope="row"><strong>Utilities</strong>: antivirus, backup, compression (ZIP), disk clean-up, defragmentation</th><td><strong>Specialist</strong>: Photoshop, AutoCAD, Fusion 360, accounting software</td></tr>
+        <tr><th scope="row"><strong>Device drivers</strong>: make a printer or a graphics card work with the OS</th><td><strong>Bespoke / custom</strong>: written for one client (e.g. a hospital booking system, the insole app)</td></tr>
+        <tr><th scope="row"><strong>Compilers and interpreters</strong>: turn code into machine instructions (Python&#x27;s interpreter is system software)</th><td><strong>Apps and web apps</strong>: Spotify, WhatsApp, Google Docs, games</td></tr>
+        </tbody></table></div>
+      <p>Where does a game go? Application. Where does Python go? System software: it is a tool that runs programs; the program you write with it is the application.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">The operating system: six jobs</h3>
+      <ul class="plain-list notes-list"><li><strong>Processor</strong>: shares the CPU between running programs (multitasking).</li><li><strong>Memory</strong>: decides which program gets which part of RAM.</li><li><strong>Files</strong>: folders, names, saving and loading, permissions.</li><li><strong>Devices</strong>: talks to hardware through drivers.</li><li><strong>Security</strong>: users, passwords, updates, permissions.</li><li><strong>Interface</strong>: what you see and touch.</li></ul>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col">Interface</th><th scope="col">Since</th><th scope="col">Example</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">CLI, command line</th><td>1981</td><td>MS-DOS, the terminal, PowerShell</td></tr>
+        <tr><th scope="row">GUI: windows, icons, menus, pointer</th><td>1984–85</td><td>Macintosh, Windows</td></tr>
+        <tr><th scope="row">Touch and gestures</th><td>2007</td><td>iPhone, every phone and tablet</td></tr>
+        <tr><th scope="row">Voice</th><td>2011</td><td>Siri, Alexa, Google Assistant</td></tr>
+        </tbody></table></div>
+      <p>An unsupported OS (Windows 10 after 14 October 2025) still works but gets no security updates: every new hole stays open. Options: paid extended updates, a new PC, or Linux.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">What happens when you press the power button</h3>
+      <ol class="flow"><li>Power on</li><li>Firmware (BIOS/UEFI) + POST</li><li>Boot device</li><li>Bootloader</li><li>Kernel</li><li>Login and shell</li></ol>
+      <ul class="plain-list notes-list"><li><strong>Power on</strong>: the PSU stabilises; the CPU starts executing from a fixed address in ROM.</li><li><strong>Firmware</strong>: the BIOS (old, text) or UEFI (modern, graphical, Secure Boot) runs the <strong>POST</strong> (power-on self-test): counts RAM, finds keyboard, graphics, drives; beeps if something is missing. Press F2/DEL here to enter the settings.</li><li><strong>Boot device</strong>: the firmware follows the <strong>boot order</strong> (SSD, USB, network). A Linux USB stick &#x27;takes over&#x27; a PC because the firmware tries USB first.</li><li><strong>Bootloader</strong>: a tiny program (Windows Boot Manager, GRUB) loads the kernel.</li><li><strong>Kernel</strong>: the core of the OS is copied into RAM, takes control of CPU, memory and devices, starts drivers and services.</li><li><strong>Login and shell</strong>: the user interface appears. The desktop is the &#x27;shell&#x27; around the kernel.</li></ul>
+      <p>&#x27;Boot&#x27; comes from &#x27;bootstrap&#x27;: the computer must load the program that loads programs, starting from nothing. <strong>Sleep</strong> keeps RAM powered; <strong>hibernate</strong> saves RAM to disk and skips the last steps; &#x27;restart&#x27; does the full boot, &#x27;shut down&#x27; on Windows often does not.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Inside the OS: processes, memory, files</h3>
+      <ul class="plain-list notes-list"><li><strong>Process</strong>: a running program with its own protected memory; it can contain several <strong>threads</strong> (Chrome: one process per tab, so one crashed tab does not kill the browser).</li><li><strong>Scheduler / multitasking</strong>: each thread gets a time slice of a few milliseconds on a core, then the next; 500 threads on 8 cores look simultaneous. &#x27;Not responding&#x27; = the process stopped answering the OS.</li><li><strong>Virtual memory</strong>: programs see pretend addresses; the OS maps them to real RAM in <strong>pages</strong> (4 KB). One process cannot read another&#x27;s memory, so one crash does not take down the OS. When RAM is full, pages go to the <strong>pagefile / swap</strong> on the SSD: slow, hence &#x27;buy more RAM&#x27;.</li><li><strong>File system</strong>: how bytes on a drive become files and folders. NTFS (Windows), APFS (Apple), ext4 (Linux), exFAT/FAT32 (USB sticks: works everywhere, no permissions; FAT32 cannot hold a file over 4 GB).</li><li><strong>Permissions</strong>: owner / group / everyone × read / write / execute: who may open your file on the network share.</li><li><strong>Deleting</strong> removes the directory entry first; the bytes stay until overwritten (recovery is possible; wipe a drive before selling a laptop).</li></ul>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Which operating system?</h3>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col"></th><th scope="col">Windows</th><th scope="col">macOS</th><th scope="col">Linux</th><th scope="col">Android</th><th scope="col">iOS</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Maker</th><td>Microsoft</td><td>Apple</td><td>community (Linus Torvalds, 1991)</td><td>Google</td><td>Apple</td></tr>
+        <tr><th scope="row">Licence</th><td>proprietary, paid</td><td>proprietary, with Apple hardware</td><td>open source, free</td><td>open-source core + Google services</td><td>proprietary</td></tr>
+        <tr><th scope="row">Runs on</th><td>almost any PC</td><td>Macs only</td><td>anything: PCs, servers, Raspberry Pi, phones</td><td>most phones, TVs, cars</td><td>iPhone, iPad</td></tr>
+        <tr><th scope="row">Strong at</th><td>games, business, software choice</td><td>creative work, battery, integration</td><td>servers, cloud, supercomputers, coding</td><td>choice, price, customisation</td><td>privacy, long updates, polish</td></tr>
+        <tr><th scope="row">Weak at</th><td>malware target, licence cost</td><td>price, closed hardware</td><td>commercial software, learning curve</td><td>fragmentation, slow updates</td><td>closed ecosystem, price</td></tr>
+        </tbody></table></div>
+      <p>Shares (2025, approx.): desktop Windows ~70 %, macOS ~15 %, Linux ~4 %, ChromeOS ~2 %; mobile Android ~70 %, iOS ~29 %. Servers and all TOP500 supercomputers: Linux.</p>
+      <p><strong>Kernel</strong> = the core that manages CPU, memory, devices. <strong>Shell</strong> = the interface you see (the Windows desktop, a terminal). <strong>Distribution</strong> = kernel + tools + desktop packaged together (Ubuntu, Mint, Raspberry Pi OS).</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Utilities, drivers, compilers and interpreters</h3>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col"></th><th scope="col">What it does</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Antivirus</th><td>scans files and memory for malware</td></tr>
+        <tr><th scope="row">Backup</th><td>copies your files somewhere safe, automatically (rule 3-2-1: three copies, two kinds of storage, one elsewhere)</td></tr>
+        <tr><th scope="row">Compression</th><td>ZIP makes files smaller to send or store</td></tr>
+        <tr><th scope="row">Clean-up / defragmentation</th><td>removes junk; defrag reorganises an HDD (useless on an SSD)</td></tr>
+        <tr><th scope="row">Device driver</th><td>the translator between the OS and one device; without it the printer is just a box</td></tr>
+        <tr><th scope="row">Compiler</th><td>translates the whole program once into machine code: fast, you get an .exe (C, C++)</td></tr>
+        <tr><th scope="row">Interpreter</th><td>translates and runs the program line by line: easy to test, slower, portable (Python)</td></tr>
+        </tbody></table></div>
+      <p class="one-line">A Python program runs on Windows, a Mac and a Raspberry Pi without changes because the interpreter hides the hardware.</p>
+    </div>
+    <div class="concept">
+      <h3 class="concept-h">Application software and licences</h3>
+      <ul class="plain-list notes-list"><li><strong>Proprietary</strong>: you buy or subscribe; the code is secret (Office, Photoshop, Windows).</li><li><strong>Open source</strong>: the code is public and usually free to use and change (LibreOffice, GIMP, Blender, Python, Linux).</li><li><strong>&#x27;Free&#x27;</strong>: free of charge but closed; you pay with data and advertising (Chrome, Spotify&#x27;s free tier).</li><li>Since about 2013 buying software has turned into <strong>subscribing</strong> to it.</li></ul>
+      <div class="table-scroll"><table class="gloss-table notes-table">
+        <thead><tr><th scope="col">Category</th><th scope="col">Examples</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Word processing</th><td>Word, Google Docs, LibreOffice Writer</td></tr>
+        <tr><th scope="row">Spreadsheets</th><td>Excel, Google Sheets</td></tr>
+        <tr><th scope="row">Databases</th><td>Access, MySQL, Supabase</td></tr>
+        <tr><th scope="row">Web browsers</th><td>Chrome, Safari, Firefox, Edge</td></tr>
+        <tr><th scope="row">Graphics and video</th><td>Photoshop, GIMP, Canva, DaVinci Resolve</td></tr>
+        <tr><th scope="row">CAD and 3D</th><td>Tinkercad, Fusion 360, Blender</td></tr>
+        <tr><th scope="row">Programming</th><td>VS Code, Python IDLE, Scratch</td></tr>
+        <tr><th scope="row">Games and media</th><td>Minecraft, Spotify, YouTube</td></tr>
+        </tbody></table></div>
+    </div>
+  </section>
+
+  <section class="block check-now wrap" aria-labelledby="check-h" data-section="check">
+    <h2 id="check-h" class="block-h"><span class="block-n" aria-hidden="true">04</span>Check now</h2>
+    <p class="block-lede">Quick questions. You see the answer at once.</p>
+    <ol class="q-list" role="list">
+<li><div class="q q-type-match" id="q-03-input-output-and-software-c1" data-kind="check" data-q="{&quot;type&quot;: &quot;match&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Input, output or both?&quot;, &quot;pairs&quot;: [[&quot;a microphone&quot;, &quot;input&quot;], [&quot;a printer&quot;, &quot;output&quot;], [&quot;a touchscreen&quot;, &quot;both&quot;], [&quot;a servo motor&quot;, &quot;output&quot;]], &quot;explain&quot;: &quot;Sensors and microphones send data in; printers and motors act on the world; a touchscreen does both.&quot;}">
+  <p class="q-text">Input, output or both?</p>
+  <ul class="q-fallback"><li>a microphone — ?</li><li>a printer — ?</li><li>a touchscreen — ?</li><li>a servo motor — ?</li></ul>
+</div></li>
+<li><div class="q q-type-match" id="q-03-input-output-and-software-c2" data-kind="check" data-q="{&quot;type&quot;: &quot;match&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;System software or application?&quot;, &quot;pairs&quot;: [[&quot;Windows 11&quot;, &quot;system software&quot;], [&quot;a printer driver&quot;, &quot;system software&quot;], [&quot;Chrome&quot;, &quot;application&quot;], [&quot;the Python interpreter&quot;, &quot;system software&quot;]], &quot;explain&quot;: &quot;System software runs the computer and helps other software; applications do jobs for you.&quot;}">
+  <p class="q-text">System software or application?</p>
+  <ul class="q-fallback"><li>Windows 11 — ?</li><li>a printer driver — ?</li><li>Chrome — ?</li><li>the Python interpreter — ?</li></ul>
+</div></li>
+<li><div class="q q-type-order" id="q-03-input-output-and-software-c3" data-kind="check" data-q="{&quot;type&quot;: &quot;order&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Put the boot steps in order.&quot;, &quot;items&quot;: [&quot;power on&quot;, &quot;firmware runs the POST&quot;, &quot;bootloader loads the kernel&quot;, &quot;kernel starts drivers and services&quot;, &quot;login screen appears&quot;], &quot;explain&quot;: &quot;Power → firmware/POST → boot device and bootloader → kernel → login and shell.&quot;}">
+  <p class="q-text">Put the boot steps in order.</p>
+  <ul class="q-fallback"><li>bootloader loads the kernel</li><li>firmware runs the POST</li><li>kernel starts drivers and services</li><li>login screen appears</li><li>power on</li></ul>
+</div></li>
+    </ol>
+  </section>
+
+  <section class="block try" aria-labelledby="try-h">
+    <h2 id="try-h" class="block-h wrap"><span class="block-n" aria-hidden="true">05</span>Try it</h2>
+<p class="wrap">Files and folders: how the file system names where things are.</p>
+    <div class="wrap-ix"><figure class="ix" data-ix="path-builder" data-config="{}" id="ix-03-1">
+  <figcaption class="ix-title">Path builder</figcaption>
+<p class="ix-intro">Click the drive, then the folders, then the file, to build the full path. Then test some file names with the naming checker.</p>
+  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>Build the path of Anna Rossi&#x27;s ICT homework: C:\Users\Student\Documents\ICT\Rossi_Anna_Unit1.docx. Read it from the left: C: is the drive; Users, Student, Documents and ICT are folders, one inside the other; Rossi_Anna_Unit1 is the name and .docx is the extension (a Word document).</p>
+  </div>
+</figure></div>
+<p class="wrap">A smartphone with the back off: inputs, outputs and the chip that runs the operating system.</p>
+    <div class="wrap-ix"><figure class="ix" data-ix="label-machine" data-config="{&quot;machine&quot;: &quot;phone&quot;, &quot;image&quot;: &quot;img/L1_cold_teardown.jpg&quot;, &quot;labels&quot;: [{&quot;text&quot;: &quot;camera&quot;, &quot;x&quot;: 26.5, &quot;y&quot;: 10.5}, {&quot;text&quot;: &quot;logic board (the SoC is under this shield)&quot;, &quot;x&quot;: 31, &quot;y&quot;: 30}, {&quot;text&quot;: &quot;battery connector (under the cover)&quot;, &quot;x&quot;: 31, &quot;y&quot;: 45}, {&quot;text&quot;: &quot;battery&quot;, &quot;x&quot;: 64, &quot;y&quot;: 60}, {&quot;text&quot;: &quot;charging (dock) connector&quot;, &quot;x&quot;: 50, &quot;y&quot;: 96}, {&quot;text&quot;: &quot;metal frame: also the antenna&quot;, &quot;x&quot;: 87.5, &quot;y&quot;: 60}]}" id="ix-03-2">
+  <figcaption class="ix-title">Label the phone</figcaption>
+<p class="ix-intro">Drag each label to its number, or click a label and then a number. The CPU and the GPU are inside the same chip, under the metal shield.</p>
+  <div class="ix-body"></div>
+  <div class="ix-print">
+    <p class="ix-print-label">Paper version</p>
+    <p>An opened smartphone (an iPhone 4). Find and name: 1 camera (top left) · 2 logic board: the system on a chip (CPU and GPU together) is under the metal shield · 3 battery connector, under the small metal cover · 4 battery (the big black block) · 5 charging (dock) connector (bottom) · 6 the metal frame, which is also the antenna.</p>
+  </div>
+</figure></div>
+  </section>
+
+  <section class="block your-turn wrap" aria-labelledby="turn-h" data-section="turn">
+    <h2 id="turn-h" class="block-h"><span class="block-n" aria-hidden="true">06</span>Your turn</h2>
+    <label class="turn-prompt" for="turn-u1-03-input-output-and-software-turn">Software audit. Open Start → All apps on a PC (or Settings → Apps). Choose eight programs and write for each: name · system or application · category · proprietary / open source / free. Then find one device driver (Device Manager) and one utility.</label>
+    <textarea id="turn-u1-03-input-output-and-software-turn" class="turn-text" data-turn-id="u1-03-input-output-and-software-turn" rows="6" spellcheck="true"></textarea>
+    <div class="turn-bar">
+      <button type="button" class="btn btn-ghost" data-action="copy-turn" data-target="turn-u1-03-input-output-and-software-turn">Copy</button>
+      <p class="turn-note" aria-live="polite">Saved in this browser only. Nothing is sent anywhere.</p>
+    </div>
+  </section>
+
+  <section class="block exercises wrap" aria-labelledby="ex-h" data-section="exercises">
+    <h2 id="ex-h" class="block-h"><span class="block-n" aria-hidden="true">07</span>Exercises</h2>
+    <p class="block-lede">From ★☆☆ (easy) to ★★★ (hard). Use a hint if you are stuck.</p>
+    <ol class="ex-list" role="list">
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 1</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-mc" id="q-03-input-output-and-software-e1" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Which of these is direct data entry?&quot;, &quot;options&quot;: [&quot;typing a name on a keyboard&quot;, &quot;scanning a QR code&quot;, &quot;clicking with a mouse&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;Direct data entry: the machine collects the data itself, with fewer errors than typing.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">Which of these is direct data entry?</p>
+  <ol class="q-fallback" type="a"><li>typing a name on a keyboard</li><li>scanning a QR code</li><li>clicking with a mouse</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 2</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-match" id="q-03-input-output-and-software-e2" data-kind="exercise" data-q="{&quot;type&quot;: &quot;match&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Match the interface to its date.&quot;, &quot;pairs&quot;: [[&quot;command line (MS-DOS)&quot;, &quot;1981&quot;], [&quot;GUI (Macintosh)&quot;, &quot;1984&quot;], [&quot;touch (iPhone)&quot;, &quot;2007&quot;], [&quot;voice (Siri)&quot;, &quot;2011&quot;]], &quot;explain&quot;: &quot;Typing, pointing, touching, talking.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">Match the interface to its date.</p>
+  <ul class="q-fallback"><li>command line (MS-DOS) — ?</li><li>GUI (Macintosh) — ?</li><li>touch (iPhone) — ?</li><li>voice (Siri) — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 3</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-tf" id="q-03-input-output-and-software-e3" data-kind="exercise" data-q="{&quot;type&quot;: &quot;tf&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;A device driver is application software.&quot;, &quot;answer&quot;: false, &quot;explain&quot;: &quot;A driver is system software: it helps the OS control one device and does no job for the user directly.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">A device driver is application software.</p>
+  <p class="q-fallback">True or false?</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 4</span>
+          <span class="stars" role="img" aria-label="difficulty 1 of 3">★☆☆</span></p>
+        <div class="q q-type-mc" id="q-03-input-output-and-software-e4" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;What does the POST do?&quot;, &quot;options&quot;: [&quot;it posts your files to the cloud&quot;, &quot;it checks that RAM, keyboard, graphics and drives are present&quot;, &quot;it loads Chrome&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;Power-On Self-Test, run by the firmware before anything else.&quot;, &quot;stars&quot;: 1}">
+  <p class="q-text">What does the POST do?</p>
+  <ol class="q-fallback" type="a"><li>it posts your files to the cloud</li><li>it checks that RAM, keyboard, graphics and drives are present</li><li>it loads Chrome</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 5</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-03-input-output-and-software-e5" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Chrome uses a lot of RAM. Why?&quot;, &quot;options&quot;: [&quot;it is badly written&quot;, &quot;it runs every tab as a separate process, so one crash cannot kill the others&quot;, &quot;it downloads the whole internet&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;One process per tab is a deliberate safety choice; memory is the price.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">Chrome uses a lot of RAM. Why?</p>
+  <ol class="q-fallback" type="a"><li>it is badly written</li><li>it runs every tab as a separate process, so one crash cannot kill the others</li><li>it downloads the whole internet</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 6</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-03-input-output-and-software-e6" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;What does the OS do when RAM is full?&quot;, &quot;options&quot;: [&quot;it switches off&quot;, &quot;it moves pages to the pagefile/swap on the SSD, which is slow&quot;, &quot;it deletes your files&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;Virtual memory: the SSD stands in for RAM, a thousand times slower. The cure is more RAM.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">What does the OS do when RAM is full?</p>
+  <ol class="q-fallback" type="a"><li>it switches off</li><li>it moves pages to the pagefile/swap on the SSD, which is slow</li><li>it deletes your files</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 7</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-match" id="q-03-input-output-and-software-e7" data-kind="exercise" data-q="{&quot;type&quot;: &quot;match&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Match each file system to where you find it.&quot;, &quot;pairs&quot;: [[&quot;NTFS&quot;, &quot;Windows&quot;], [&quot;APFS&quot;, &quot;Apple&quot;], [&quot;ext4&quot;, &quot;Linux&quot;], [&quot;FAT32 / exFAT&quot;, &quot;USB sticks and cameras&quot;]], &quot;explain&quot;: &quot;FAT32 works everywhere but cannot hold a file over 4 GB.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">Match each file system to where you find it.</p>
+  <ul class="q-fallback"><li>NTFS — ?</li><li>APFS — ?</li><li>ext4 — ?</li><li>FAT32 / exFAT — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 8</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-mc" id="q-03-input-output-and-software-e8" data-kind="exercise" data-q="{&quot;type&quot;: &quot;mc&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Why do all the TOP500 supercomputers run Linux?&quot;, &quot;options&quot;: [&quot;it is the prettiest&quot;, &quot;it is free, open to modification, stable and scriptable&quot;, &quot;Windows does not exist for them&quot;], &quot;answer&quot;: 1, &quot;explain&quot;: &quot;Ten thousand licences would cost a fortune, and the engineers want to change the kernel for their hardware.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">Why do all the TOP500 supercomputers run Linux?</p>
+  <ol class="q-fallback" type="a"><li>it is the prettiest</li><li>it is free, open to modification, stable and scriptable</li><li>Windows does not exist for them</li></ol>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 9</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-match" id="q-03-input-output-and-software-e9" data-kind="exercise" data-q="{&quot;type&quot;: &quot;match&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Compiler or interpreter?&quot;, &quot;pairs&quot;: [[&quot;translates the whole program once into an .exe&quot;, &quot;compiler&quot;], [&quot;runs the code line by line&quot;, &quot;interpreter&quot;], [&quot;Python&quot;, &quot;interpreter&quot;], [&quot;C++&quot;, &quot;compiler&quot;]], &quot;explain&quot;: &quot;Compiled: fast, made for one CPU and OS. Interpreted: portable, easier to test, slower.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">Compiler or interpreter?</p>
+  <ul class="q-fallback"><li>translates the whole program once into an .exe — ?</li><li>runs the code line by line — ?</li><li>Python — ?</li><li>C++ — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 10</span>
+          <span class="stars" role="img" aria-label="difficulty 2 of 3">★★☆</span></p>
+        <div class="q q-type-match" id="q-03-input-output-and-software-e10" data-kind="exercise" data-q="{&quot;type&quot;: &quot;match&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Proprietary, open source or &#x27;free&#x27;?&quot;, &quot;pairs&quot;: [[&quot;Photoshop&quot;, &quot;proprietary&quot;], [&quot;Blender&quot;, &quot;open source&quot;], [&quot;Chrome&quot;, &quot;&#x27;free&#x27; (you pay with data)&quot;], [&quot;Linux&quot;, &quot;open source&quot;]], &quot;explain&quot;: &quot;Open source: code is public. Proprietary: you buy or subscribe. &#x27;Free&#x27;: paid for by advertising and data.&quot;, &quot;stars&quot;: 2}">
+  <p class="q-text">Proprietary, open source or &#x27;free&#x27;?</p>
+  <ul class="q-fallback"><li>Photoshop — ?</li><li>Blender — ?</li><li>Chrome — ?</li><li>Linux — ?</li></ul>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 11</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-03-input-output-and-software-e11" data-kind="exercise" data-q="{&quot;type&quot;: &quot;open&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;Describe the difference between system software and application software, with one example of each. [4]&quot;, &quot;solution&quot;: &quot;System software runs or manages the computer (1), e.g. the operating system, a driver, a utility (1); application software does tasks for the user (1), e.g. Word, Chrome (1).&quot;, &quot;stars&quot;: 3}">
+  <p class="q-text">Describe the difference between system software and application software, with one example of each. [4]</p>
+</div>
+      </li>
+      <li class="ex">
+        <p class="ex-head"><span class="ex-n">Exercise 12</span>
+          <span class="stars" role="img" aria-label="difficulty 3 of 3">★★★</span></p>
+        <div class="q q-type-open" id="q-03-input-output-and-software-e12" data-kind="exercise" data-q="{&quot;type&quot;: &quot;open&quot;, &quot;obj&quot;: &quot;&quot;, &quot;q&quot;: &quot;A friend&#x27;s PC still runs Windows 10. Explain in three sentences why that is a problem after October 2025 and give two options.&quot;, &quot;solution&quot;: &quot;Microsoft stopped supporting Windows 10 on 14 October 2025, so it no longer gets security updates; every new hole criminals find stays open, which makes the PC dangerous on the internet even though it still works. Options: pay for extended security updates, buy a new PC that supports Windows 11, or install Linux (e.g. Linux Mint) for free.&quot;, &quot;hint&quot;: &quot;What are updates for? What happens to a hole that is never patched?&quot;, &quot;stars&quot;: 3}">
+  <p class="q-text">A friend&#x27;s PC still runs Windows 10. Explain in three sentences why that is a problem after October 2025 and give two options.</p>
+</div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block wrap" aria-labelledby="words-h">
+    <h2 id="words-h" class="block-h"><span class="block-n" aria-hidden="true">08</span>Words of this lesson</h2>
+    <dl class="gloss">
+      <div class="gloss-row"><dt>input device <span class="it" lang="it">dispositivo di input</span></dt><dd>hardware that sends data into the computer</dd></div>
+      <div class="gloss-row"><dt>output device <span class="it" lang="it">dispositivo di output</span></dt><dd>hardware that presents information from the computer</dd></div>
+      <div class="gloss-row"><dt>sensor <span class="it" lang="it">sensore</span></dt><dd>an input device that measures something in the world (pressure, light, motion) and turns it into numbers</dd></div>
+      <div class="gloss-row"><dt>direct data entry <span class="it" lang="it">immissione diretta dei dati</span></dt><dd>input collected by the machine itself: barcode, RFID, biometrics</dd></div>
+      <div class="gloss-row"><dt>actuator <span class="it" lang="it">attuatore</span></dt><dd>an output device that acts on the world: motor, servo, valve, LED</dd></div>
+      <div class="gloss-row"><dt>haptic <span class="it" lang="it">aptico</span></dt><dd>output you feel: vibration</dd></div>
+      <div class="gloss-row"><dt>system software <span class="it" lang="it">software di sistema</span></dt><dd>software that runs the computer: OS, utilities, drivers, compilers</dd></div>
+      <div class="gloss-row"><dt>application software <span class="it" lang="it">software applicativo</span></dt><dd>programs that do jobs for the user</dd></div>
+      <div class="gloss-row"><dt>operating system (OS) <span class="it" lang="it">sistema operativo</span></dt><dd>system software that manages the hardware and runs applications</dd></div>
+      <div class="gloss-row"><dt>multitasking <span class="it" lang="it">multitasking</span></dt><dd>the OS switching the CPU between programs so fast they seem simultaneous</dd></div>
+      <div class="gloss-row"><dt>interface <span class="it" lang="it">interfaccia</span></dt><dd>how you interact with the computer: CLI, GUI, touch, voice</dd></div>
+      <div class="gloss-row"><dt>GUI <span class="it" lang="it">interfaccia grafica</span></dt><dd>graphical user interface: windows, icons, menus, pointer</dd></div>
+      <div class="gloss-row"><dt>CLI <span class="it" lang="it">riga di comando</span></dt><dd>command-line interface: you type commands</dd></div>
+      <div class="gloss-row"><dt>boot <span class="it" lang="it">avvio (boot)</span></dt><dd>starting the computer: firmware → bootloader → kernel → login</dd></div>
+      <div class="gloss-row"><dt>BIOS / UEFI <span class="it" lang="it">BIOS / UEFI</span></dt><dd>the firmware in ROM that tests the hardware (POST) and finds the boot device</dd></div>
+      <div class="gloss-row"><dt>POST <span class="it" lang="it">POST</span></dt><dd>power-on self-test: the firmware&#x27;s check of RAM, keyboard, graphics, drives</dd></div>
+      <div class="gloss-row"><dt>bootloader <span class="it" lang="it">bootloader</span></dt><dd>the tiny program that loads the kernel from the drive</dd></div>
+      <div class="gloss-row"><dt>kernel <span class="it" lang="it">kernel</span></dt><dd>the core of the OS that manages CPU, memory and devices</dd></div>
+      <div class="gloss-row"><dt>shell <span class="it" lang="it">shell</span></dt><dd>the interface around the kernel: the desktop, a terminal</dd></div>
+      <div class="gloss-row"><dt>distribution <span class="it" lang="it">distribuzione</span></dt><dd>a Linux kernel packaged with tools and a desktop (Ubuntu, Mint, Raspberry Pi OS)</dd></div>
+      <div class="gloss-row"><dt>process <span class="it" lang="it">processo</span></dt><dd>a running program with its own protected memory</dd></div>
+      <div class="gloss-row"><dt>thread <span class="it" lang="it">thread</span></dt><dd>one line of execution inside a process; several share its memory</dd></div>
+      <div class="gloss-row"><dt>virtual memory <span class="it" lang="it">memoria virtuale</span></dt><dd>pretend addresses mapped to real RAM in pages; when RAM is full, pages go to the SSD (swap)</dd></div>
+      <div class="gloss-row"><dt>file system <span class="it" lang="it">file system</span></dt><dd>how the OS organises bytes on a drive into files and folders: NTFS, APFS, ext4, FAT32</dd></div>
+      <div class="gloss-row"><dt>permissions <span class="it" lang="it">permessi</span></dt><dd>who may read, write or run a file</dd></div>
+      <div class="gloss-row"><dt>utility <span class="it" lang="it">utility</span></dt><dd>a small program that maintains the system: antivirus, backup, ZIP, clean-up</dd></div>
+      <div class="gloss-row"><dt>device driver <span class="it" lang="it">driver</span></dt><dd>software that lets the OS talk to one device</dd></div>
+      <div class="gloss-row"><dt>compiler <span class="it" lang="it">compilatore</span></dt><dd>translates a whole program once into machine code</dd></div>
+      <div class="gloss-row"><dt>interpreter <span class="it" lang="it">interprete</span></dt><dd>runs a program line by line, translating as it goes (Python)</dd></div>
+      <div class="gloss-row"><dt>proprietary software <span class="it" lang="it">software proprietario</span></dt><dd>software you buy or rent; the code is secret</dd></div>
+      <div class="gloss-row"><dt>open-source software <span class="it" lang="it">software open source</span></dt><dd>software whose code is public and free to change (Linux, Blender, Python)</dd></div>
+      <div class="gloss-row"><dt>subscription <span class="it" lang="it">abbonamento</span></dt><dd>paying monthly or yearly to use software instead of buying it once</dd></div>
+    </dl>
+  </section>
+
+  <nav class="pager wrap" aria-label="Chapters">
+    <a class="pager-link pager-prev" href="../../unit-1/02-inside-the-box/index.html" rel="prev"><span class="pager-dir">Previous</span><span class="pager-title">Inside the box</span></a>
+    <a class="pager-link pager-next" href="../../unit-1/04-from-smartwatch-to-supercomputer/index.html" rel="next"><span class="pager-dir">Next</span><span class="pager-title">From smartwatch to supercomputer</span></a>
+  </nav>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap-wide foot-grid">
+    <p class="foot-title">ICT · Liceo Vittoria<br><span>Prof. Claudio</span></p>
+    <p>No accounts, no tracking, no cookies. Your answers stay in this browser.<br>
+      Photos are free licences, credited under each photo and on the <a href="../../about/index.html">About</a> page.</p>
+  </div>
+</footer>
+</body>
+</html>
